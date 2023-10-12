@@ -17,7 +17,7 @@ function CardData() {
 
   useEffect(() => {
     axios
-      .get("79.137.203.173:3002/query_param?message=" + location.state.msg)
+      .get("http://localhost:3002/query_param?message=" + location.state.msg)
       .then((res) => {
         console.log(res);
         setData(res.data);

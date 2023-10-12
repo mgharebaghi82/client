@@ -24,7 +24,7 @@ function InsertData() {
     formData.append("img", img);
     formData.append("category", cat);
     axios
-      .post("79.137.203.173:3002/post_data", formData)
+      .post("http://localhost:3002/post_data", formData)
       .then((res) => {
         setLoading(false);
         setDataSent(true);
