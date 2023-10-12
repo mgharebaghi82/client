@@ -36,7 +36,7 @@ function CardsSection({ mainData }) {
       <Container maxWidth="lg">
         <Row>
           {mainData[0].map((data, i) => {
-            const myimg = require(data.img + "");
+            const myimg = data.img + "";
             return (
               <>
                 {data.category === "mainpage" ? (
