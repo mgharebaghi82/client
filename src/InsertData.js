@@ -14,22 +14,27 @@ function InsertData() {
   const [cat, setCat] = useState("whitepaper");
   const [loading, setLoading] = useState(false);
   const [dataSent, setDataSent] = useState(false);
+  const [err, setErr] = useState(false);
 
   function send() {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("body", body);
-    formData.append("desc", desc);
-    formData.append("img", img);
-    formData.append("category", cat);
-    axios
-      .post("http://79.137.203.173:3002/post_data", formData)
-      .then((res) => {
-        setLoading(false);
-        setDataSent(true);
-      })
-      .catch((err) => console.log(err));
+    if (cat != "None") {
+      setLoading(true);
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("body", body);
+      formData.append("desc", desc);
+      formData.append("img", img);
+      formData.append("category", cat);
+      axios
+        .post("http://79.137.203.173:3002/post_data", formData)
+        .then((res) => {
+          setLoading(false);
+          setDataSent(true);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setErr(true);
+    }
   }
 
   function handleImage(e) {
@@ -67,9 +72,10 @@ function InsertData() {
           <Col span={4}>
             <Select
               defaultValue="whitepapaer"
-              style={{ width: "98%", float:"right" }}
+              style={{ width: "98%", float: "right" }}
               onChange={handleSelect}
               options={[
+                { value: "None", label: "None" },
                 { value: "whitepaper", label: "whitepaper" },
                 { value: "mainpage", label: "mainpage" },
               ]}
@@ -143,10 +149,12 @@ function InsertData() {
           <Col span={24} style={{ display: "flex", justifyContent: "center" }}>
             {loading ? (
               <>
-                <HashLoader />
+                <HashLoader color="orange" />
               </>
             ) : dataSent ? (
               <span style={{ color: "green" }}>Card data sent</span>
+            ) : err ? (
+              <span style={{ color: "green" }}>Please choose a categore!</span>
             ) : null}
           </Col>
         </Row>

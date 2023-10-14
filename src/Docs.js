@@ -25,7 +25,6 @@ function Docs() {
   useEffect(() => {
     let akey = parseInt(activeKey);
     if (whitepaper.length > 0 && akey + 1 >= whitepaper.length) {
-     console.log(whitepaper.length)
       setNextDisable(1);
     } else {
       setNextDisable(0);
