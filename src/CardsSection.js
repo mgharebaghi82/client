@@ -35,8 +35,9 @@ function CardsSection({ mainData }) {
     <div style={{ width: "100%", float: "left", paddingTop: "20px" }}>
       <Container maxWidth="lg">
         <Row>
-          {mainData[0].map((data, i) => {
-            const myimg = data.img + "";
+          {mainData[0] ? (mainData[0].map((data, i) => {
+            let myImg = data.img + '';
+            console.log(myImg)
             return (
               <>
                 {data.category === "mainpage" ? (
@@ -55,7 +56,7 @@ function CardsSection({ mainData }) {
                         <CardMedia
                           key={i}
                           component="img"
-                          image={myimg}
+                          image={myImg}
                           alt=""
                           style={{ height: "400px" }}
                         />
@@ -73,7 +74,7 @@ function CardsSection({ mainData }) {
                 ) : null}
               </>
             );
-          })}
+          })) : <span>loading</span>}
         </Row>
       </Container>
     </div>

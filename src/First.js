@@ -26,12 +26,12 @@ function First() {
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
-          <MyHeader />
-          <IntroduceComp />
-          <ExplainFair />
-          <BecomeAnode />
-          <SafeConnectionExplain />
-          {dataLoaded && <CardsSection mainData={mainData} />}
+      <MyHeader />
+      <IntroduceComp />
+      <ExplainFair />
+      <BecomeAnode />
+      <SafeConnectionExplain />
+      {dataLoaded && <CardsSection mainData={mainData} />}
     </div>
   );
 }
