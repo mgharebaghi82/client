@@ -16,7 +16,7 @@ function First() {
   const [mainData, setMainData] = useState([]);
   const [dataLoaded, setDataLoade] = useState(false);
   useEffect(() => {
-    axios.get("https://79.137.203.173:3002/").then((res) => {
+    axios.get("http://localhost:3002/").then((res) => {
       mainData.push(res.data);
       setMainData(mainData);
       setDataLoade(true);
