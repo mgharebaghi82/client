@@ -84,7 +84,7 @@ function Docs() {
                       Prev
                     </Button>
                   </Col>
-                  <Col span={17}></Col>
+                  <Col span={16}></Col>
                   <Col span={3}>
                     <Button
                       onClick={nextHandle}
