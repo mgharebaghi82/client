@@ -71,7 +71,7 @@ function InsertData() {
           </Col>
           <Col span={4}>
             <Select
-              defaultValue="whitepapaer"
+              defaultValue="None"
               style={{ width: "98%", float: "right" }}
               onChange={handleSelect}
               options={[
