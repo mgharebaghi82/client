@@ -154,7 +154,7 @@ function InsertData() {
             ) : dataSent ? (
               <span style={{ color: "green" }}>Card data sent</span>
             ) : err ? (
-              <span style={{ color: "green" }}>Please choose a categore!</span>
+              <span style={{ color: "red" }}>Please choose a categore!</span>
             ) : null}
           </Col>
         </Row>
