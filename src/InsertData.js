@@ -11,7 +11,7 @@ function InsertData() {
   const [body, setBody] = useState("");
   const [desc, setDesc] = useState("");
   const [img, setImg] = useState("");
-  const [cat, setCat] = useState("whitepaper");
+  const [cat, setCat] = useState("None");
   const [loading, setLoading] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   const [err, setErr] = useState(false);
