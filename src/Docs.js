@@ -15,7 +15,7 @@ function Docs() {
 
   //   get whitepapers data from backend after component loaded
   useEffect(() => {
-    axios.get("http://79.137.203.173:3002/whitepaper").then((res) => {
+    axios.get("https://centichain.org:3002/whitepaper").then((res) => {
     //   whitepaper.push(res.data);
       setWhitepaper((prevData) => prevData.concat(res.data));
       setDataLoad(true);

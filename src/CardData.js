@@ -17,7 +17,7 @@ function CardData() {
 
   useEffect(() => {
     axios
-      .get("http://79.137.203.173:3002/query_param?message=" + location.state.msg)
+      .get("https://centichain.org:3002/query_param?message=" + location.state.msg)
       .then((res) => {
         console.log(res);
         setData(res.data);
