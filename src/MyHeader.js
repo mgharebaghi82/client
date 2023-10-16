@@ -13,7 +13,7 @@ function MyHeader({title}) {
       style={{
         width: "100%",
         backgroundImage: `url(${headImg})`,
-        backgroundSize: "auto 100%",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundPositionY:"center",
         backgroundPositionX:"center",
@@ -25,9 +25,9 @@ function MyHeader({title}) {
       }}
     >
       <Row style={{display:"grid", height:"100%", width:"100%"}}>
-        <Col span={24} style={{ textAlign: "center", height:"100%" }}>
+        <Col span={24} style={{ textAlign: "center", height:"100%", marginTop:"5px" }}>
           <ThemeProvider theme={theme}>
-            <Typography variant="h2" style={{ color: "white", textShadow:"0px 0px 10px white" }}>
+            <Typography variant="h2" style={{ color: "white", textShadow:"0px 0px 5px white" }}>
               {title}
             </Typography>
           </ThemeProvider>
