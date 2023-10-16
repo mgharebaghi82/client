@@ -26,7 +26,7 @@ function First() {
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
-      <MyHeader />
+      <MyHeader title="Centichain"/>
       <IntroduceComp />
       <ExplainFair />
       <BecomeAnode />

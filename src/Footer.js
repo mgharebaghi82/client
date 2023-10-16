@@ -5,7 +5,7 @@ function MyFooter() {
         <Row>
           <Col
             span={24}
-            style={{ backgroundColor: "#000522", height: "400px", display:"grid", justifyContent:"center", alignContent:"center", color:"white" }}
+            style={{ backgroundColor: "#020015", height: "400px", display:"grid", justifyContent:"center", alignContent:"center", color:"white" }}
           >
             <span style={{fontSize:"50px"}}>
                 Footer
