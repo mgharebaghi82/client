@@ -1,4 +1,5 @@
-import {Typography } from "@mui/material";
+import {Button, Typography } from "@mui/material";
+import {Download} from '@mui/icons-material';
 import headImg from "./Images/_f85cb894-2b32-4d19-addf-8940222426b2.jpg";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { Col, Row } from "antd";
@@ -12,23 +13,27 @@ function MyHeader({title}) {
       style={{
         width: "100%",
         backgroundImage: `url(${headImg})`,
-        backgroundSize: "contain",
+        backgroundSize: "auto 100%",
         backgroundPosition: "center",
-        backgroundPositionY: "50px",
+        backgroundPositionY:"center",
+        backgroundPositionX:"center",
         backgroundRepeat: "no-repeat",
-        height: "500px",
+        height: "600px",
         backgroundColor: "#020015",
         float: "left",
         userSelect: "none",
       }}
     >
-      <Row>
-        <Col span={24} style={{ textAlign: "center", marginTop: "30px" }}>
+      <Row style={{display:"grid", height:"100%", width:"100%"}}>
+        <Col span={24} style={{ textAlign: "center", height:"100%" }}>
           <ThemeProvider theme={theme}>
             <Typography variant="h2" style={{ color: "white", textShadow:"0px 0px 10px white" }}>
               {title}
             </Typography>
           </ThemeProvider>
+        </Col>
+        <Col span={24} style={{display:"grid",justifyContent:"center",alignContent:"end",  height:"100%"}}>
+          <Button variant="contained" style={{marginBottom:"25px"}}><Download />coming soon...</Button>
         </Col>
       </Row>
     </div>
