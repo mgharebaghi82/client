@@ -12,7 +12,7 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (location.pathname == "/whitepaper") {
+    if (location.pathname === "/whitepaper") {
       setValue(0);
     }
   }, [location]);

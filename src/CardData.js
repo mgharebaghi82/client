@@ -2,15 +2,15 @@ import { Container, Typography } from "@mui/material";
 import { Col, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import MyHeader from "./MyHeader";
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function CardData() {
+  const navigate = useNavigate();
   const [dataLoad, setDataLoad] = useState(false);
   const [data, setData] = useState();
   const parse = require("html-react-parser");
@@ -22,7 +22,7 @@ function CardData() {
         console.log(res);
         setData(res.data);
         setDataLoad(true);
-      });
+      }).catch(() => navigate('/notfound'));
   }, []);
 
   useEffect(() => {
