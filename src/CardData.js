@@ -6,24 +6,30 @@ import { useLocation } from "react-router-dom";
 import { BounceLoader } from "react-spinners";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import MyHeader from "./MyHeader";
+import {useParams} from 'react-router-dom';
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function CardData() {
   const [dataLoad, setDataLoad] = useState(false);
-  const location = useLocation();
   const [data, setData] = useState();
   const parse = require("html-react-parser");
-
+  const {title} = useParams();
   useEffect(() => {
     axios
-      .get("https://centichain.org:3002/query_param?message=" + location.state.msg)
+      .get("https://centichain.org:3002/query_param?message=" + title)
       .then((res) => {
         console.log(res);
         setData(res.data);
         setDataLoad(true);
       });
   }, []);
+
+  useEffect(() => {
+    if (dataLoad) {
+      document.title = "Centichain - " + data.title
+    }
+  }, [dataLoad])
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>

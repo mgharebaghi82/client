@@ -12,6 +12,7 @@ import { Layout } from "antd";
 import MenuBar from "./MenuBar";
 import { CssBaseline } from "@mui/material";
 import MyFooter from "./Footer";
+import {createBrowserHistory} from 'history';
 const { Header, Content } = Layout;
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
           <Routes>
             <Route path="/" element={<First />} />
             <Route path="/post_data" element={<InsertData />} />
-            <Route path="/card_data" element={<CardData />} />
-            <Route path="/docs" element={<Docs />} />
+            <Route path="/features/:title" element={<CardData />} />
+            <Route path="/whitepaper" element={<Docs />} />
           </Routes>
         </Content>
         <MyFooter />

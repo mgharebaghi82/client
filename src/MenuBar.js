@@ -12,7 +12,7 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (location.pathname == "/docs") {
+    if (location.pathname == "/whitepaper") {
       setValue(0);
     }
   }, [location]);
@@ -36,7 +36,7 @@ function MenuBar() {
           <Tab
             label="WhitePaper"
             onClick={() => {
-              navigate("/docs");
+              navigate("/whitepaper");
               window.scroll(0, 0)
             }}
           

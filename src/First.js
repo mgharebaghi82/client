@@ -22,6 +22,7 @@ function First() {
       setDataLoade(true);
       console.log(mainData);
     });
+    document.title = "Centichain - Home";
   }, []);
 
   return (

@@ -20,6 +20,8 @@ function Docs() {
       setWhitepaper((prevData) => prevData.concat(res.data));
       setDataLoad(true);
     });
+
+    document.title = "Centichain - Whitepaper"
   }, []);
 
   useEffect(() => {
