@@ -38,7 +38,6 @@ function InsertData() {
   }
 
   function handleImage(e) {
-    console.log(e.target.files);
     setImg(e.target.files[0]);
   }
 

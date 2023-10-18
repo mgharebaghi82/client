@@ -37,7 +37,6 @@ function CardsSection({ mainData }) {
         <Row>
           {mainData[0] ? (mainData[0].map((data, i) => {
             let myImg = data.img + '';
-            console.log(myImg)
             return (
               <>
                 {data.category === "mainpage" ? (

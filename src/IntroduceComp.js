@@ -3,7 +3,7 @@ import { Col, Row } from "antd";
 import oip from "./Images/_6c926770-1fe6-487e-9d10-2815abd63c71.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { forwardRef, useEffect } from "react";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 
 let theme = createTheme();
@@ -22,7 +22,7 @@ function IntroduceComp() {
         padding: "25px",
         backgroundColor: "#fcf9e8",
       }}
-      data-aos="flip-up"
+      data-aos="fade-up"
     >
       <Container maxWidth="lg">
         <Row>
@@ -40,7 +40,7 @@ function IntroduceComp() {
                 }}
               >
                 <Typography style={{ fontWeight: "bold" }} variant="h3">
-                  What is Centipede chain?
+                  What is Centichain?
                 </Typography>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -64,4 +64,4 @@ function IntroduceComp() {
   );
 }
 
-export default IntroduceComp;
+export default forwardRef(IntroduceComp);

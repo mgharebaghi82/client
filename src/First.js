@@ -13,6 +13,7 @@ import BecomeAnode from "./BecomeAnode";
 import SafeConnectionExplain from "./SafeConnetionExplain";
 
 function First() {
+
   const [mainData, setMainData] = useState([]);
   const [dataLoaded, setDataLoade] = useState(false);
   useEffect(() => {
@@ -20,15 +21,14 @@ function First() {
       mainData.push(res.data);
       setMainData(mainData);
       setDataLoade(true);
-      console.log(mainData);
     });
     document.title = "Centichain - Home";
   }, []);
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
-      <MyHeader title="Centichain"/>
-      <IntroduceComp />
+      <MyHeader />
+      <IntroduceComp/>
       <ExplainFair />
       <BecomeAnode />
       <SafeConnectionExplain />

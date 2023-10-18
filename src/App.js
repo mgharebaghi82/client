@@ -13,6 +13,7 @@ import MenuBar from "./MenuBar";
 import { CssBaseline } from "@mui/material";
 import MyFooter from "./Footer";
 import Notfound from "./Notfound";
+import IntroduceComp from "./IntroduceComp";
 const { Header, Content } = Layout;
 
 function App() {

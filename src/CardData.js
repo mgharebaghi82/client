@@ -19,7 +19,6 @@ function CardData() {
     axios
       .get("https://centichain.org:3002/query_param?message=" + title)
       .then((res) => {
-        console.log(res);
         setData(res.data);
         setDataLoad(true);
       }).catch(() => navigate('/notfound'));

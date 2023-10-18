@@ -12,7 +12,7 @@ function Notfound() {
     return ( 
         <div style={{width:"100%",height:"500px", display:"grid", justifyContent:"center", alignContent:"center"}}>
             <ThemeProvider theme={theme}>
-                <Typography variant="h1">
+                <Typography variant="h3">
                     Sorry - Page Not Found
                 </Typography>
             </ThemeProvider>

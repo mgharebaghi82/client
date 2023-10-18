@@ -1,17 +1,80 @@
+import { Container, Typography } from "@mui/material";
 import { Col, Row } from "antd";
+import { useNavigate } from "react-router-dom";
+import {
+  RiTwitterXFill,
+  RiTelegramFill,
+  RiInstagramFill,
+  RiGithubFill,
+  RiDiscordFill,
+} from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+
+const topCols = {
+  marginTop: "25px",
+  display: "grid",
+  justifyContent: "center",
+  alignContent: "center",
+  height: "200px",
+};
+
+const typoStyle = {
+  marginTop: "5px",
+};
+
+const icons = {
+  width: "30px",
+  height: "30px",
+};
+
 function MyFooter() {
+  const navigate = useNavigate();
   return (
-    <div style={{ float: "left", width: "100%" }}>
+    <div
+      style={{
+        float: "left",
+        width: "100%",
+        backgroundColor: "#020015",
+        overflow: "hidden",
+        userSelect: "none",
+      }}
+    >
+      <Container maxWidth="md">
         <Row>
-          <Col
-            span={24}
-            style={{ backgroundColor: "#020015", height: "400px", display:"grid", justifyContent:"center", alignContent:"center", color:"white" }}
-          >
-            <span style={{fontSize:"50px"}}>
-                Footer
-            </span>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
+            <Typography color="white">Home</Typography>
+            <Typography color="white">Whitepaper</Typography>
+            <Typography color="white">Validation</Typography>
+          </Col>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
+            <Typography color="white">Security</Typography>
+            <Typography color="white">Become a node</Typography>
+            <Typography color="white">Become a relay</Typography>
+          </Col>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
+            <RiTwitterXFill color="white" style={icons} />
+            <br />
+            <RiTelegramFill color="white" style={icons} />
+            <br />
+            <RiInstagramFill color="white" style={icons} />
+          </Col>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
+            <RiGithubFill color="white" style={icons} />
+            <br />
+            <RiDiscordFill color="white" style={icons} />
+            <br />
+            <MdEmail color="white" style={icons} />
           </Col>
         </Row>
+        <Row style={{ marginTop: "25px", textAlign:"center" }}>
+          <Col span={24} style={{ display: "grid", justifyContent: "center" }}>
+            <Typography color="lightgray">
+              Copyright © 2023 Centichain - a network for easier communication
+              with digital assets. All rights reserved.
+            </Typography>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
