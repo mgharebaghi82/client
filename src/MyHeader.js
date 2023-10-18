@@ -21,6 +21,7 @@ function MyHeader() {
         backgroundImage: `url(${backImg})`,
         backgroundRepeat: "repeat-x",
         backgroundSize: "auto 100%",
+        userSelect:"none"
       }}
     >
       <CssBaseline />

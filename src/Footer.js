@@ -1,6 +1,5 @@
 import { Container, Typography } from "@mui/material";
 import { Col, Row } from "antd";
-import { useNavigate } from "react-router-dom";
 import {
   RiTwitterXFill,
   RiTelegramFill,
@@ -18,17 +17,12 @@ const topCols = {
   height: "200px",
 };
 
-const typoStyle = {
-  marginTop: "5px",
-};
-
 const icons = {
   width: "30px",
   height: "30px",
 };
 
 function MyFooter() {
-  const navigate = useNavigate();
   return (
     <div
       style={{

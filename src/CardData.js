@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BounceLoader } from "react-spinners";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import MyHeader from "./MyHeader";
 import {useNavigate, useParams} from 'react-router-dom';
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -31,15 +30,10 @@ function CardData() {
   }, [dataLoad])
 
   return (
-    <div style={{ width: "100%", overflow: "hidden" }}>
+    <div style={{ width: "100%", overflow: "hidden", minHeight:"500px" }}>
       {dataLoad ? (
         <div>
           <ThemeProvider theme={theme}>
-            <Row>
-              <Col span={24}>
-                <MyHeader title={data.title}/>
-              </Col>
-            </Row>
             <Row>
               <Col
                 span={24}
