@@ -24,7 +24,6 @@ function MyHeader() {
         userSelect:"none"
       }}
     >
-      <CssBaseline />
       <Row>
         <Col
           xs={24}
