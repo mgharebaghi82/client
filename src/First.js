@@ -5,12 +5,14 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import MyHeader from "./MyHeader";
 import CardsSection from "./CardsSection";
-import IntroduceComp from "./IntroduceComp";
+import WtsExp from "./WtsExp";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ExplainFair from "./ExplainFair";
-import BecomeAnode from "./BecomeAnode";
-import SafeConnectionExplain from "./SafeConnetionExplain";
+import WhyUseExp from "./WhyUseExp";
+import WhoRunExp from "./WhoRunExp";
+import CentiExp from "./CentiExp";
+import EnergyExp from "./EnergyExp";
+import ConsensusExp from "./ConsensusExp";
 
 function First() {
 
@@ -28,10 +30,12 @@ function First() {
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
       <MyHeader />
-      <IntroduceComp/>
-      <ExplainFair />
-      <BecomeAnode />
-      <SafeConnectionExplain />
+      <WtsExp/>
+      <WhyUseExp />
+      <WhoRunExp />
+      <CentiExp />
+      <EnergyExp />
+      <ConsensusExp />
       {dataLoaded && <CardsSection mainData={mainData} />}
     </div>
   );
