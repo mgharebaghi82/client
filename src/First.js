@@ -19,7 +19,7 @@ function First() {
   const [mainData, setMainData] = useState([]);
   const [dataLoaded, setDataLoade] = useState(false);
   useEffect(() => {
-    axios.get("http://centichain.org:3002/").then((res) => {
+    axios.get("https://centichain.org:3002/").then((res) => {
       mainData.push(res.data);
       setMainData(mainData);
       setDataLoade(true);

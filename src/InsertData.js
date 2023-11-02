@@ -26,7 +26,7 @@ function InsertData() {
       formData.append("img", img);
       formData.append("category", cat);
       axios
-        .post("http://centichain.org:3002/post_data", formData)
+        .post("https://centichain.org:3002/post_data", formData)
         .then((res) => {
           setLoading(false);
           setDataSent(true);
