@@ -16,7 +16,7 @@ function CardData() {
   const {title} = useParams();
   useEffect(() => {
     axios
-      .get("https://centichain.org:3002/query_param?message=" + title)
+      .get("http://centichain.org:3002/query_param?message=" + title)
       .then((res) => {
         setData(res.data);
         setDataLoad(true);
