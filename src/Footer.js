@@ -60,7 +60,7 @@ function MyFooter() {
             <MdEmail color="white" style={icons} />
           </Col>
         </Row>
-        <Row style={{ marginTop: "25px", textAlign:"center" }}>
+        <Row style={{ marginTop: "25px", textAlign:"center", marginBottom:"20px" }}>
           <Col span={24} style={{ display: "grid", justifyContent: "center" }}>
             <Typography color="lightgray">
               Copyright © 2023 Centichain - a network for easier communication

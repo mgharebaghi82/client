@@ -1,7 +1,7 @@
-import { Button, CssBaseline, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Download } from "@mui/icons-material";
-import headImg from "./Images/imageedit_9_2071507953.png";
-import backImg from "./Images/_6c3f35f2-a88d-4efa-8eba-9339899eb046.jpg";
+import headImg from "./Images/Logo.png";
+import backImg from "./Images/imageedit_8_7256968585.png";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { Col, Row } from "antd";
 
@@ -16,7 +16,7 @@ function MyHeader() {
         width: "100%",
         float: "left",
         padding: "25px",
-        backgroundColor: "#f6f7f1",
+        backgroundColor: "#e2e7ed",
         minHeight: "650px",
         backgroundImage: `url(${backImg})`,
         backgroundRepeat: "repeat-x",
@@ -42,7 +42,8 @@ function MyHeader() {
             <Typography variant="h1" color="#020015">
               Centichain
             </Typography>
-            <Typography color="#020015">
+            <br />
+            <Typography variant="h5" color="#020015" style={{ lineHeight: "1.7" }}>
               Without having strange hardware or a very powerful computing
               device like miners and without staking any value, easily become a
               member of the network and confirm and register blocks and get its
@@ -50,7 +51,7 @@ function MyHeader() {
               network communication as a relay and get rewarded again.
             </Typography>
           </ThemeProvider>
-          <Row style={{ marginTop: "100px" }}>
+          <Row style={{ marginTop: "80px" }}>
             <Col
               xs={24}
               sm={24}
@@ -96,7 +97,6 @@ function MyHeader() {
             display: "grid",
             justifyContent: "center",
             height: "100%",
-            paddingTop: "10%",
             marginBottom: "80px",
           }}
         >
