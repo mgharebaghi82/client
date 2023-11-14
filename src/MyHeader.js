@@ -21,7 +21,7 @@ function MyHeader() {
         width: "100%",
         float: "left",
         padding: "25px",
-        backgroundColor: "#0c041b",
+        backgroundColor: "#011422",
         minHeight: "600px",
         userSelect: "none",
       }}
@@ -47,7 +47,7 @@ function MyHeader() {
                   variant="h1"
                   fontWeight="bold"
                   color="white"
-                  style={{ textShadow: "0px 0px 50px #AEC9FF" }}
+                  style={{ textShadow: "0px 0px 25px #AEC9FF" }}
                 >
                   Centichain
                 </Typography>

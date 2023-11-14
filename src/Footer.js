@@ -28,7 +28,7 @@ function MyFooter() {
       style={{
         float: "left",
         width: "100%",
-        backgroundColor: "#020015",
+        backgroundColor: "#011422",
         overflow: "hidden",
         userSelect: "none",
       }}

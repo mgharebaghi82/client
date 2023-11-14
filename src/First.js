@@ -13,8 +13,6 @@ import WhoRunExp from "./WhoRunExp";
 import CentiExp from "./CentiExp";
 import EnergyExp from "./EnergyExp";
 import ConsensusExp from "./ConsensusExp";
-import { Helmet } from "react-helmet";
-import headImg from "./Images/C-Logo.png";
 
 function First() {
   const [mainData, setMainData] = useState([]);
@@ -30,31 +28,6 @@ function First() {
 
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
-      {/* <Helmet>
-        <meta property="og:title" content="A new blockchain network for store digital assets" />
-        <meta property="og:type" content="article" />
-        <meta
-          name="description"
-          content="Centichain is a decentralized digital asset which you can use as
-          money or store of value. Like other decentralized digital
-          assets, Centichain does not need a reliable third person
-          (middlemen like the banks). However, it technically presents
-          dissimilitude to others, something like a consensus mechanism,
-          and so can be more effective for network participants with
-          regard to energy consumption and cost. In fact, Centichain is a
-          blockchain network for a safe value saving and transferring,
-          both energy-wise and financial-wise."
-        />
-        <meta
-          property="og:image"
-          content={headImg}
-        />
-        <meta
-          property="og:url"
-          content="https://centichain.org"
-        />
-        <meta name="twitter:card" content="summary_large" />
-      </Helmet> */}
       <MyHeader />
       <WtsExp />
       <WhyUseExp />

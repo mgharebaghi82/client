@@ -3,6 +3,7 @@ import { Container, Typography } from "@mui/material";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import patience from "./Images/Patience-beside_computer.png";
 import pow from "./Images/-infographics-Proof-of-Work-PoW-.png";
+import pos from "./Images/-infographics-Proof-of-Stake-PoS-.png";
 import poet from "./Images/PoET-1.png";
 import pop from "./Images/proof_of_patience.png";
 import { TiPencil } from "react-icons/ti";
@@ -317,7 +318,7 @@ function Docs() {
             />
           </Col>
           <Col xs={24} sm={24} md={7} lg={7} xl={7} style={{ padding: "1px" }}>
-            <img alt="Proof of Stake" src={pow} width="100%" height="280px" />
+            <img alt="Proof of Stake" src={pos} width="100%" height="280px" />
           </Col>
         </Row>
         {/* Solution section */}

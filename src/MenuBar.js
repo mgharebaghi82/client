@@ -18,7 +18,7 @@ function MenuBar() {
   }, [location]);
 
   return (
-    <AppBar position="fixed" style={{ backgroundColor: "#020015" }}>
+    <AppBar position="fixed" style={{ backgroundColor: "#011422" }}>
       <Toolbar>
         <div style={{ cursor: "pointer" }} onClick={() => {
           navigate("/")
