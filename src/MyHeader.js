@@ -40,24 +40,33 @@ function MyHeader() {
             display: "grid",
           }}
         >
-          <ThemeProvider theme={theme}>
-            <Typography variant="h1" fontWeight="bold" color="white" style={{textShadow:"0px 0px 50px #AEC9FF"}}>
-              Centichain
-            </Typography>
-            <br />
-            <Typography
-              variant="h5"
-              color="lightgray"
-              style={{ lineHeight: "1.7" }}
-            >
-              Without having strange hardware or a very powerful computing
-              device like miners and without staking any value, easily become a
-              member of the network and confirm and register blocks and get its
-              reward, or even if you have a public IP address, You can help
-              network communication as a relay and get rewarded again.
-            </Typography>
-          </ThemeProvider>
-          <Row style={{ marginTop: "100px" }}>
+          <Row>
+            <Col span={24}>
+              <ThemeProvider theme={theme}>
+                <Typography
+                  variant="h1"
+                  fontWeight="bold"
+                  color="white"
+                  style={{ textShadow: "0px 0px 50px #AEC9FF" }}
+                >
+                  Centichain
+                </Typography>
+                <br />
+                <Typography
+                  color="lightgray"
+                  style={{ lineHeight: "2" }}
+                >
+                  Without having strange hardware or a very powerful computing
+                  device like miners and without staking any value, easily
+                  become a member of the network and confirm and register blocks
+                  and get its reward, or even if you have a public IP address,
+                  You can help network communication as a relay and get rewarded
+                  again.
+                </Typography>
+              </ThemeProvider>
+            </Col>
+          </Row>
+          <Row style={{ marginTop: "20px" }}>
             <Col
               xs={24}
               sm={24}
@@ -105,10 +114,13 @@ function MyHeader() {
             display: "grid",
             justifyContent: "center",
             height: "100%",
-            marginBottom: "80px",
           }}
         >
-          <img src={headImg} data-aos="zoom-in-left" style={{ width: "100%" }} />
+          <img
+            src={headImg}
+            data-aos="zoom-in-left"
+            style={{ width: "100%" }}
+          />
         </Col>
       </Row>
     </div>
