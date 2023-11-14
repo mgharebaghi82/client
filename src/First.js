@@ -15,7 +15,6 @@ import EnergyExp from "./EnergyExp";
 import ConsensusExp from "./ConsensusExp";
 
 function First() {
-
   const [mainData, setMainData] = useState([]);
   const [dataLoaded, setDataLoade] = useState(false);
   useEffect(() => {
@@ -28,16 +27,24 @@ function First() {
   }, []);
 
   return (
-    <div style={{ width: "100%", overflow: "hidden" }}>
-      <MyHeader />
-      <WtsExp/>
-      <WhyUseExp />
-      <WhoRunExp />
-      <CentiExp />
-      <EnergyExp />
-      <ConsensusExp />
-      {dataLoaded && <CardsSection mainData={mainData} />}
-    </div>
+    <html>
+      <head>
+        <meta
+          property="og:description"
+          content="Centichain is a blockchain network for storing the self-generated and non-inflationary digital assets of CENTI, which also provides a new solution for consensus mechanisms in blockchain networks. Centichain is easy to install, fast, secure and completely decentralized."
+        />
+      </head>
+      <body style={{ width: "100%", overflow: "hidden" }}>
+        <MyHeader />
+        <WtsExp />
+        <WhyUseExp />
+        <WhoRunExp />
+        <CentiExp />
+        <EnergyExp />
+        <ConsensusExp />
+        {dataLoaded && <CardsSection mainData={mainData} />}
+      </body>
+    </html>
   );
 }
 

@@ -1,14 +1,19 @@
 import { Button, Typography } from "@mui/material";
 import { Download } from "@mui/icons-material";
-import headImg from "./Images/Logo.png";
-import backImg from "./Images/imageedit_8_7256968585.png";
+import headImg from "./Images/C-Logo.png";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { Col, Row } from "antd";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function MyHeader() {
+  useEffect(() => {
+    AOS.init({ duration: "1000" });
+  }, []);
 
   return (
     <div
@@ -16,12 +21,9 @@ function MyHeader() {
         width: "100%",
         float: "left",
         padding: "25px",
-        backgroundColor: "#e2e7ed",
-        minHeight: "650px",
-        backgroundImage: `url(${backImg})`,
-        backgroundRepeat: "repeat-x",
-        backgroundSize: "auto 100%",
-        userSelect:"none"
+        backgroundColor: "#0c041b",
+        minHeight: "600px",
+        userSelect: "none",
       }}
     >
       <Row>
@@ -39,19 +41,23 @@ function MyHeader() {
           }}
         >
           <ThemeProvider theme={theme}>
-            <Typography variant="h1" color="#020015">
+            <Typography variant="h1" fontWeight="bold" color="white" style={{textShadow:"0px 0px 50px #AEC9FF"}}>
               Centichain
             </Typography>
             <br />
-            <Typography variant="h5" color="#020015" style={{ lineHeight: "1.7" }}>
+            <Typography
+              variant="h5"
+              color="lightgray"
+              style={{ lineHeight: "1.7" }}
+            >
               Without having strange hardware or a very powerful computing
               device like miners and without staking any value, easily become a
               member of the network and confirm and register blocks and get its
-              reward, or even if you have a public IP address. You can help
+              reward, or even if you have a public IP address, You can help
               network communication as a relay and get rewarded again.
             </Typography>
           </ThemeProvider>
-          <Row style={{ marginTop: "80px" }}>
+          <Row style={{ marginTop: "100px" }}>
             <Col
               xs={24}
               sm={24}
@@ -80,6 +86,8 @@ function MyHeader() {
                 style={{
                   height: "50px",
                   width: "100%",
+                  color: "white",
+                  borderColor: "white",
                 }}
               >
                 Learn more
@@ -100,7 +108,7 @@ function MyHeader() {
             marginBottom: "80px",
           }}
         >
-          <img src={headImg} style={{ width: "100%" }} />
+          <img src={headImg} data-aos="zoom-in-left" style={{ width: "100%" }} />
         </Col>
       </Row>
     </div>
