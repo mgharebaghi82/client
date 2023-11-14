@@ -183,13 +183,18 @@ function Docs() {
 
   return (
     <div style={{ width: "100%", paddingTop: "20px", paddingBottom: "20px" }}>
-      <Helmet>
+      {/* <Helmet>
         <meta charSet="utf-8" />
         <meta
           name="description"
           content="This white paper describes a new consensus mechanism called Proof of Patience for blockchain networks. This new mechanism does not need a special hardware or to stake assets and chooses the block generators in turn."
         />
-      </Helmet>
+        <meta
+          property="og:image"
+          content={pop}
+        />
+        <meta name="twitter:card" content="summary_large" />
+      </Helmet> */}
       <Container maxWidth="lg">
         {/* title section */}
         <Row>
