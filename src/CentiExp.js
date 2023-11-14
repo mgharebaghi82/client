@@ -39,16 +39,16 @@ function CentiExp() {
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">
-                What is Centi?
+                What is CENTI?
               </Typography>
               <Typography variant="h5" style={{ lineHeight: "1.7" }}>
-                Centi is the name of the value in the blockchain network of
-                decentralized Centichain. Centi, in fact, is a digital asset
+                CENTI is the name of the value in the blockchain network of
+                decentralized Centichain. CENTI, in fact, is a digital asset
                 which can be kept or spent as a value. The reward for being in
                 Centichain network and the cost for any transactions is paid by
-                Centi. Having Centichain wallet, you can also do all your
-                transactions by Centi if your other party has a Centi wallet
-                address. Centi is verily a new self-generated value.
+                CENTI. Having Centichain wallet, you can also do all your
+                transactions by Centi if your other party has a CENTI wallet
+                address. CENTI is verily a new self-generated value.
               </Typography>
             </ThemeProvider>
           </Col>
