@@ -38,6 +38,7 @@ function MyHeader() {
             padding: "25px",
             justifyContent: "center",
             display: "grid",
+            minHeight:"600px"
           }}
         >
           <Row>
