@@ -11,11 +11,17 @@ import { TiPencil } from "react-icons/ti";
 import { TiTick } from "react-icons/ti";
 import { ImCancelCircle } from "react-icons/im";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function Docs() {
+
+  useEffect(() => {
+    document.title = "Centichain - Whitepaper"
+  }, [])
+
   const dataSource = [
     {
       key: "1",
