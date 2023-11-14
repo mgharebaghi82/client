@@ -13,6 +13,7 @@ import WhoRunExp from "./WhoRunExp";
 import CentiExp from "./CentiExp";
 import EnergyExp from "./EnergyExp";
 import ConsensusExp from "./ConsensusExp";
+import { Helmet } from "react-helmet";
 
 function First() {
   const [mainData, setMainData] = useState([]);
@@ -27,24 +28,23 @@ function First() {
   }, []);
 
   return (
-    <html>
-      <head>
+    <div style={{ width: "100%", overflow: "hidden" }}>
+      <Helmet>
+        <meta charSet="utf-8" />
         <meta
-          property="og:description"
-          content="Centichain is a blockchain network for storing the self-generated and non-inflationary digital assets of CENTI, which also provides a new solution for consensus mechanisms in blockchain networks. Centichain is easy to install, fast, secure and completely decentralized."
+          name="description"
+          content="Centichain is a decentralized digital asset which you can use as money or store of value. Like other decentralized digital assets, Centichain does not need a reliable third person (middlemen like the banks). However, it technically presents dissimilitude to others, something like a consensus mechanism, and so can be more effective for network participants with regard to energy consumption and cost. In fact, Centichain is a blockchain network for a safe value saving and transferring, both energy-wise and financial-wise."
         />
-      </head>
-      <body style={{ width: "100%", overflow: "hidden" }}>
-        <MyHeader />
-        <WtsExp />
-        <WhyUseExp />
-        <WhoRunExp />
-        <CentiExp />
-        <EnergyExp />
-        <ConsensusExp />
-        {dataLoaded && <CardsSection mainData={mainData} />}
-      </body>
-    </html>
+      </Helmet>
+      <MyHeader />
+      <WtsExp />
+      <WhyUseExp />
+      <WhoRunExp />
+      <CentiExp />
+      <EnergyExp />
+      <ConsensusExp />
+      {dataLoaded && <CardsSection mainData={mainData} />}
+    </div>
   );
 }
 
