@@ -24,7 +24,7 @@ function CardsSection({ mainData }) {
   const navigate = useNavigate();
 
   function showCard(msg) {
-    navigate(`/features/${msg}`);
+    navigate(`/${msg}`);
   }
 
   useEffect(() => {

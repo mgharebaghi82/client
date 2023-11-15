@@ -27,7 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<First />} />
             <Route path="/post_data" element={<InsertData />} />
-            <Route path="/features/:title" element={<CardData />} />
+            <Route path="/:title" element={<CardData />} />
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>
