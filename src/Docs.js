@@ -311,31 +311,8 @@ function Docs() {
             </ThemeProvider>
           </Col>
         </Row>
-        <Row style={{ marginTop: "15px" }}>
-          <Col xs={24} sm={24} md={7} lg={7} xl={7} style={{ padding: "1px" }}>
-            <img alt="Proof of Work" src={pow} width="100%" height="280px" />
-          </Col>
-          <Col
-            xs={24}
-            sm={24}
-            md={10}
-            lg={10}
-            xl={10}
-            style={{ padding: "1px" }}
-          >
-            <img
-              alt="Proof of Elapsed Time"
-              src={poet}
-              width="100%"
-              height="280px"
-            />
-          </Col>
-          <Col xs={24} sm={24} md={7} lg={7} xl={7} style={{ padding: "1px" }}>
-            <img alt="Proof of Stake" src={pos} width="100%" height="280px" />
-          </Col>
-        </Row>
         {/* Solution section */}
-        <Row style={{ marginTop: "15px" }}>
+        <Row style={{ marginTop: "40px" }}>
           <Col span={24}>
             <ThemeProvider theme={theme}>
               <Typography variant="h4" fontWeight="bold">
@@ -500,7 +477,7 @@ function Docs() {
                 forwarding or use a VPN to bypass NAT to be a validator in the
                 Centichain network, and it is easy to become a validator without
                 any special configuration and with a home internet. Also, if
-                someone has a public and accessible internet address or even a
+                someone has a public and accessible internet address or even a{" "}
                 <a
                   href="https://www.ibm.com/topics/vps"
                   target="_blank"
