@@ -1,10 +1,10 @@
 import { Container, Typography } from "@mui/material";
-import { Col, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BounceLoader } from "react-spinners";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import {useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
@@ -13,46 +13,69 @@ function CardData() {
   const [dataLoad, setDataLoad] = useState(false);
   const [data, setData] = useState();
   const parse = require("html-react-parser");
-  const {title} = useParams();
+  const { title } = useParams();
+  const [body, setBody] = useState("");
   useEffect(() => {
     axios
       .get("https://centichain.org:3002/query_param?message=" + title)
       .then((res) => {
         setData(res.data);
         setDataLoad(true);
-      }).catch(() => navigate('/notfound'));
+      })
+      .catch(() => navigate("/notfound"));
   }, []);
 
   useEffect(() => {
     if (dataLoad) {
-      document.title = "Centichain - " + data.title
+      document.title = "Centichain - " + data.title;
+      setBody(parse(data.body));
     }
-  }, [dataLoad])
+  }, [dataLoad]);
 
   return (
-    <div style={{ width: "100%", overflow: "hidden", minHeight:"500px" }}>
+    <div
+      style={{
+        width: "100%",
+        overflow: "hidden",
+        minHeight: "500px",
+        backgroundColor: "white",
+      }}
+    >
       {dataLoad ? (
-        <div>
+        <Container maxWidth="lg">
           <ThemeProvider theme={theme}>
+            <Row style={{ minHeight: "400px" }}>
+              <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                <img src={data.img} width="100%" />
+              </Col>
+              <Col xs={24} sm={24} md={24} lg={16} xl={16}>
+                <Typography variant="h2" fontWeight="bold">
+                  {data.title}
+                </Typography>
+                <Typography variant="h4" style={{ lineHeight: "1.7" }}>
+                  {data.desc}
+                </Typography>
+              </Col>
+            </Row>
+            <Divider />
             <Row>
-              <Col
-                span={24}
-                style={{ paddingTop: "10px", paddingBottom: "10px" }}
-              >
-                <Container maxWidth="lg">
-                  <ThemeProvider theme={theme}>
-                    <Col span={24}>
-                      <Typography>{parse(data.body)}</Typography>
-                    </Col>
-                  </ThemeProvider>
-                </Container>
+              <Col span={24}>
+                <Typography>{body}</Typography>
               </Col>
             </Row>
           </ThemeProvider>
-        </div>
+        </Container>
       ) : (
-        <div style={{width:"100%", height:"700px", display:"grid", justifyContent:"center", alignContent:"center"}}>
-          <BounceLoader color="lightorange"/>
+        <div
+          style={{
+            width: "100%",
+            height: "700px",
+            display: "grid",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
+        >
+          <BounceLoader color="lightorange" />
         </div>
       )}
     </div>
