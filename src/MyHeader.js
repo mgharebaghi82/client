@@ -119,7 +119,7 @@ function MyHeader() {
         >
           <img
             src={headImg}
-            data-aos="zoom-in-left"
+            data-aos="zoom-in"
             style={{ width: "100%" }}
           />
         </Col>

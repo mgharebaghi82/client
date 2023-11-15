@@ -589,7 +589,7 @@ function Docs() {
           <Col span={24}>
             <ThemeProvider theme={theme}>
               <Typography variant="h4" fontWeight="bold">
-                CENTI, Suply, Halving, UTXO
+                CENTI, Supply, Halving, UTXO
               </Typography>
               <Typography variant="h5" style={{ lineHeight: "1.7" }}>
                 <b>CENTI</b> is a cryptocurrency that uses Centichain to record
