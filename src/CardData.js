@@ -48,7 +48,7 @@ function CardData() {
               <Col xs={24} sm={24} md={24} lg={8} xl={8}>
                 <img src={data.img} width="100%" />
               </Col>
-              <Col xs={24} sm={24} md={24} lg={16} xl={16}>
+              <Col xs={24} sm={24} md={24} lg={16} xl={16} style={{padding:"15px"}}>
                 <Typography variant="h2" fontWeight="bold">
                   {data.title}
                 </Typography>
