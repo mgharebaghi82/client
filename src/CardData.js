@@ -38,13 +38,12 @@ function CardData() {
         width: "100%",
         overflow: "hidden",
         minHeight: "500px",
-        backgroundColor: "white",
       }}
     >
       {dataLoad ? (
         <Container maxWidth="lg">
           <ThemeProvider theme={theme}>
-            <Row style={{ minHeight: "400px" }}>
+            <Row style={{ minHeight: "400px", marginTop:"10px" }}>
               <Col xs={24} sm={24} md={24} lg={8} xl={8}>
                 <img src={data.img} width="100%" />
               </Col>
