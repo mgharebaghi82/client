@@ -1,10 +1,11 @@
 import axios from "axios";
 import { Col, Input, Row, Select } from "antd";
-import { Editor } from "@tinymce/tinymce-react";
 import { useState } from "react";
-import { Container, Button, Typography } from "@mui/material";
+import { Container, Button, Typography, toolbarClasses } from "@mui/material";
 import { HashLoader } from "react-spinners";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 function InsertData() {
   const [title, setTitle] = useState("");
@@ -15,6 +16,28 @@ function InsertData() {
   const [loading, setLoading] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   const [err, setErr] = useState(false);
+  var toolbarOptions = [
+    ["bold", "italic", "underline", "strike", "image"], // toggled buttons
+    ["blockquote", "code-block"],
+
+    [{ header: 1 }, { header: 2 }], // custom button values
+    [{ list: "ordered" }, { list: "bullet" }],
+    [{ script: "sub" }, { script: "super" }], // superscript/subscript
+    [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+    [{ direction: "rtl" }], // text direction
+
+    [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+    [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+    [{ font: [] }],
+    [{ align: [] }],
+
+    ["clean"], // remove formatting button];
+  ];
+  const module = {
+    toolbar: toolbarOptions,
+  };
 
   function send() {
     if (cat != "None") {
@@ -114,20 +137,14 @@ function InsertData() {
 
         <Row style={{ marginTop: "10px" }}>
           <Col span={24}>
-            <Editor
-              apiKey="2xuwpiwtg6dpym37fkznj8mvxvgl0yknv717zz9p0jpyffrx"
-              init={{
-                plugins: "image code codesample",
-                max_width: "100%",
-                max_height: "700",
-                image_class_list: [
-                  // Bootstrap class
-                  { title: "Responsive", value: "img-fluid" }, // Materialize class
-                ],
-              }}
-              onEditorChange={(newValue) => {
+            <ReactQuill
+              onChange={(newValue) => {
+                console.log(newValue);
                 setBody(newValue);
               }}
+              placeholder="add your doc"
+              theme="snow"
+              modules={module}
             />
           </Col>
         </Row>
