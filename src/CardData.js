@@ -38,31 +38,41 @@ function CardData() {
         width: "100%",
         overflow: "hidden",
         minHeight: "500px",
+        backgroundColor: "white"
       }}
     >
       {dataLoad ? (
         <Container maxWidth="lg">
-          <ThemeProvider theme={theme}>
-            <Row style={{ minHeight: "400px", marginTop:"10px" }}>
-              <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-                <img src={data.img} width="100%" />
-              </Col>
-              <Col xs={24} sm={24} md={24} lg={16} xl={16} style={{padding:"15px"}}>
-                <Typography variant="h2" fontWeight="bold">
-                  {data.title}
-                </Typography>
-                <Typography variant="h4" style={{ lineHeight: "1.7" }}>
-                  {data.desc}
-                </Typography>
-              </Col>
-            </Row>
-            <Divider />
-            <Row>
-              <Col span={24}>
-                <Typography>{body}</Typography>
-              </Col>
-            </Row>
-          </ThemeProvider>
+          <div style={{ width: "100%", backgroundColor: "white" }}>
+            <ThemeProvider theme={theme}>
+              <Row style={{ minHeight: "400px", marginTop: "10px" }}>
+                <Col xs={24} sm={24} md={24} lg={8} xl={8}>
+                  <img src={data.img} width="100%" />
+                </Col>
+                <Col
+                  xs={24}
+                  sm={24}
+                  md={24}
+                  lg={16}
+                  xl={16}
+                  style={{ padding: "15px" }}
+                >
+                  <Typography variant="h2" fontWeight="bold">
+                    {data.title}
+                  </Typography>
+                  <Typography variant="h4" style={{ lineHeight: "1.7" }}>
+                    {data.desc}
+                  </Typography>
+                </Col>
+              </Row>
+              <Divider />
+              <Row>
+                <Col span={24}>
+                  <Typography>{body}</Typography>
+                </Col>
+              </Row>
+            </ThemeProvider>
+          </div>
         </Container>
       ) : (
         <div
