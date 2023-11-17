@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Container, Button, Typography, toolbarClasses } from "@mui/material";
 import { HashLoader } from "react-spinners";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
+import ImageResize from "quill-image-resize-module-react";
 import "react-quill/dist/quill.snow.css";
 
 function InsertData() {
@@ -16,6 +17,9 @@ function InsertData() {
   const [loading, setLoading] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   const [err, setErr] = useState(false);
+
+  Quill.register("modules/imageResize", ImageResize);
+  
   var toolbarOptions = [
     ["bold", "italic", "underline", "strike", "image"], // toggled buttons
     ["blockquote", "code-block"],
@@ -37,6 +41,10 @@ function InsertData() {
   ];
   const module = {
     toolbar: toolbarOptions,
+    imageResize: {
+      // You can customize the modules you want to use
+      modules: ['Resize', 'DisplaySize'],
+    }
   };
 
   function send() {
