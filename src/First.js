@@ -13,6 +13,7 @@ import WhoRunExp from "./WhoRunExp";
 import CentiExp from "./CentiExp";
 import EnergyExp from "./EnergyExp";
 import ConsensusExp from "./ConsensusExp";
+import Roadmap from "./Roadmap";
 
 function First() {
   const [mainData, setMainData] = useState([]);
@@ -36,6 +37,7 @@ function First() {
       <EnergyExp />
       <ConsensusExp />
       {dataLoaded && <CardsSection mainData={mainData} />}
+      <Roadmap />
     </div>
   );
 }
