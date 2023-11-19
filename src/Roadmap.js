@@ -30,14 +30,14 @@ function Roadmap() {
         <Row>
           <Col span={24} style={{ textAlign: "left" }}>
             <ThemeProvider theme={theme}>
-              <Typography variant="h3" fontWeight="bold">
+              <Typography variant="h2" fontWeight="bold">
                 Centichain Roadmap - 2024
               </Typography>
             </ThemeProvider>
           </Col>
         </Row>
 
-        <Row style={{ height: "600px" }}>
+        <Row>
           <RoadmapSection
             imagesrc={wallet}
             title="Wallet:"

@@ -23,7 +23,7 @@ function RoadmapSection({ imagesrc, q, title, desc, bottom, titleBG, dataAos, an
       md={24}
       lg={6}
       xl={6}
-      style={{ height: "100%", padding: "1.5%" }}
+      style={{ height: "600px", padding: "1.5%" }}
     >
       <div
         style={{ position: "absolute", bottom: bottom }}
@@ -46,13 +46,15 @@ function RoadmapSection({ imagesrc, q, title, desc, bottom, titleBG, dataAos, an
             span={24}
             style={{
               backgroundColor: titleBG,
-              height: "80px",
+              height: "10%",
               borderRadius: "5px",
+              paddingTop:"3px"
             }}
           >
             <ThemeProvider theme={theme}>
               <Typography
-                variant="h2"
+                variant="h3"
+                fontWeight="bold"
                 style={{
                   fontFamily: "sans-serif",
                   color: "",
@@ -66,10 +68,10 @@ function RoadmapSection({ imagesrc, q, title, desc, bottom, titleBG, dataAos, an
             </ThemeProvider>
           </Col>
         </Row>
-        <Row>
+        <Row style={{marginTop:"10px"}}>
           <Col span={24} style={{ textAlign: "center" }}>
             <ThemeProvider theme={theme}>
-              <Typography variant="h4" fontWeight="bold">
+              <Typography variant="h5" fontWeight="bold">
                 {title}
               </Typography>
             </ThemeProvider>
