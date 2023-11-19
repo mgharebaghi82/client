@@ -51,7 +51,7 @@ function Roadmap() {
             imagesrc={signature}
             title="Multi Sig:"
             q="Q2"
-            desc="Complete configuration of Node as a service in the operating system"
+            desc="Add multiple signatures for transactions and validate signatures by Validators"
             bottom="15%"
             titleBG="#F79494 "
             dataAos="fade-down-right"
@@ -60,7 +60,7 @@ function Roadmap() {
             imagesrc={runService}
             title="Run as Service:"
             q="Q3"
-            desc="Add multiple signatures for transactions and validate signatures by Validators"
+            desc="Complete configuration of Node as a service in the operating system"
             bottom="30%"
             titleBG="#94ECF7"
             dataAos="fade-down-right"
