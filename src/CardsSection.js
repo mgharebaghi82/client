@@ -59,7 +59,7 @@ function CardsSection({ mainData }) {
                           alt=""
                           style={{ height: "400px" }}
                         />
-                        <CardContent>
+                        <CardContent style={{height:"150px"}}>
                           <Typography gutterBottom variant="h5" component="div">
                             <span>{data.title}</span>
                           </Typography>
