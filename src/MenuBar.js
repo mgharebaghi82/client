@@ -51,6 +51,9 @@ function MenuBar() {
           style={{ cursor: "pointer" }}
           onClick={() => {
             navigate("/");
+            if (toggle) {
+              setToggle(false);
+            }
             window.scroll(0, 0);
           }}
         >
