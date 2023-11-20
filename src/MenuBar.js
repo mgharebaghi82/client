@@ -105,7 +105,7 @@ function MenuBar() {
               PaperProps={{
                 elevation: 0,
                 sx: {
-                  width: "50%",
+                  width: "65%",
                   position: "absolute",
                   top: "64px",
                   backgroundColor: "#011422",
