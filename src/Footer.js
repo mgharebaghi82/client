@@ -26,7 +26,7 @@ const icons = {
 function MyFooter() {
   const navigate = useNavigate();
   const validator = "Become a Validator";
-  const relay = "Become a relay";
+  const relay = "Become a Relay";
   return (
     <div
       style={{
