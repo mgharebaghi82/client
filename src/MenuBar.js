@@ -45,7 +45,7 @@ function MenuBar() {
 
 
   return (
-    <AppBar position="fixed" style={{ backgroundColor: "#011422" }}>
+    <AppBar position="fixed" style={{ backgroundColor: "#011422" }} sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}>
       <Toolbar>
         <div
           style={{ cursor: "pointer" }}
