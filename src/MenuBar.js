@@ -1,48 +1,203 @@
 import { Home } from "@mui/icons-material";
-import { AppBar, Tab, Tabs, Toolbar } from "@mui/material";
-import { useEffect, useState } from "react";
+import {
+  AppBar,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Tab,
+  Tabs,
+  Toolbar,
+  useMediaQuery,
+} from "@mui/material";
+import React, {  useEffect, useState, forceUpdate } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RiNewspaperLine, RiPassValidLine } from "react-icons/ri";
+import { FaDownload } from "react-icons/fa";
+import { SiRelay } from "react-icons/si";
+import headImg from "./Images/C-Logo.png";
 
 function MenuBar() {
   const [value, setValue] = useState();
   const navigate = useNavigate();
   const location = useLocation();
+  const match = useMediaQuery("(min-width: 600px)");
+  const [toggle, setToggle] = useState(false);
+  const validator = "Become a Validator";
+  const relay = "Become a Relay";
 
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
     if (location.pathname === "/whitepaper") {
+      setValue(2);
+    }
+    if (location.pathname === "/Become%20a%20Validator") {
       setValue(0);
     }
+    if (location.pathname === "/Become%20a%20Relay") {
+      setValue(1);
+    }
   }, [location]);
+
 
   return (
     <AppBar position="fixed" style={{ backgroundColor: "#011422" }}>
       <Toolbar>
-        <div style={{ cursor: "pointer" }} onClick={() => {
-          navigate("/")
-          window.scroll(0,0)
-        }}>
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            navigate("/");
+            window.scroll(0, 0);
+          }}
+        >
           <Home />
         </div>
-        <Tabs
-          sx={{ marginLeft: "auto" }}
-          textColor="white"
-          value={value}
-          TabIndicatorProps={{ style: { backgroundColor: "white" } }}
-          indicatorColor="secondary"
-        >
-          <Tab
-            label="WhitePaper"
-            onClick={() => {
-              navigate("/whitepaper");
-              window.scroll(0, 0)
-            }}
-          
-          />
-          <Tab label="Download" />
-        </Tabs>
+        {match ? (
+          <Tabs
+            sx={{ marginLeft: "auto" }}
+            textColor="white"
+            value={value}
+            TabIndicatorProps={{ style: { backgroundColor: "white" } }}
+            indicatorColor="secondary"
+          >
+            <Tab
+              label="Become a Validator"
+              onClick={() => {
+                navigate(`/${validator}`);
+                window.location.reload();
+                window.scroll(0, 0);
+              }}
+            />
+            <Tab
+              label="Become a Relay"
+              onClick={() => {
+                navigate(`/${relay}`);
+                window.location.reload()
+                window.scroll(0, 0);
+              }}
+            />
+            <Tab
+              label="WhitePaper"
+              onClick={() => {
+                navigate("/whitepaper");
+                window.scroll(0, 0);
+              }}
+            />
+            <Tab label="Download" style={{color:"gray"}}/>
+          </Tabs>
+        ) : (
+          <>
+            <IconButton
+              edge="end"
+              aria-label="menu"
+              sx={{ marginLeft: "auto" }}
+              onClick={() => {
+                setToggle(!toggle);
+              }}
+            >
+              <GiHamburgerMenu color="white" />
+            </IconButton>
+            <Drawer
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  width: "50%",
+                  position: "absolute",
+                  top: "64px",
+                  backgroundColor: "#011422",
+                  color: "white",
+                },
+              }}
+              anchor="right"
+              open={toggle}
+              onClose={() => setToggle(!toggle)}
+            >
+              <List>
+                <ListItem
+                  key={1}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    navigate(`/${validator}`);
+                    window.location.reload();
+                    window.scroll(0, 0);
+                  }}
+                >
+                  <ListItemText>
+                    <div style={{ width: "100%" }}>
+                      <RiPassValidLine style={{ float: "left", marginTop: "3px" }} />
+                      <p style={{ float: "left", paddingLeft: "10px" }}>
+                        Become a Validator
+                      </p>
+                    </div>
+                  </ListItemText>
+                </ListItem>
+
+                <ListItem
+                  key={2}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    navigate(`/${relay}`);
+                    window.location.reload();
+                    window.scroll(0, 0);
+                  }}
+                >
+                  <ListItemText>
+                    <div style={{ width: "100%" }}>
+                      <SiRelay style={{ float: "left", marginTop: "3px" }} />
+                      <p style={{ float: "left", paddingLeft: "10px" }}>
+                        Become a Relay
+                      </p>
+                    </div>
+                  </ListItemText>
+                </ListItem>
+
+                <ListItem
+                  key={3}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    navigate("/whitepaper");
+                    window.scroll(0, 0);
+                  }}
+                >
+                  <ListItemText>
+                    <div style={{ width: "100%" }}>
+                      <RiNewspaperLine
+                        style={{ float: "left", marginTop: "3px" }}
+                      />
+                      <p style={{ float: "left", paddingLeft: "10px" }}>
+                        Whitepaper
+                      </p>
+                    </div>
+                  </ListItemText>
+                </ListItem>
+
+                <ListItem
+                  key={4}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    // navigate("/whitepaper");
+                    // window.scroll(0, 0);
+                  }}
+                >
+                  <ListItemText>
+                    <div style={{ width: "100%" }}>
+                      <FaDownload style={{ float: "left", marginTop: "3px", color:"gray" }} />
+                      <p style={{ float: "left", paddingLeft: "10px", color:"gray" }}>
+                        Download
+                      </p>
+                    </div>
+                  </ListItemText>
+                </ListItem>
+              </List>
+
+              <img src={headImg} width="100%" style={{position:"absolute", bottom:"7%"}}/>
+            </Drawer>
+          </>
+        )}
       </Toolbar>
     </AppBar>
   );

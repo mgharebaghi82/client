@@ -8,6 +8,7 @@ import {
   RiDiscordFill,
 } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const topCols = {
   marginTop: "25px",
@@ -23,6 +24,9 @@ const icons = {
 };
 
 function MyFooter() {
+  const navigate = useNavigate();
+  const validator = "Become a Validator";
+  const relay = "Become a relay";
   return (
     <div
       style={{
@@ -36,31 +40,78 @@ function MyFooter() {
       <Container maxWidth="md">
         <Row>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
-            <Typography color="white">Home</Typography>
-            <Typography color="white">Whitepaper</Typography>
-            <Typography color="white">Validation</Typography>
+            <div
+              onClick={() => {
+                navigate("/");
+                window.scroll(0, 0);
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              <Typography color="white">Home</Typography>
+            </div>
+            <div
+              onClick={() => {
+                navigate("/whitepaper");
+                window.scroll(0, 0);
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              <Typography color="white">Whitepaper</Typography>
+            </div>
+            <div
+              onClick={() => {
+                // navigate("/");
+                // window.scroll(0, 0);
+              }}
+              style={{ cursor: "pointer" }}
+            >
+              <Typography color="gray">Download</Typography>
+            </div>
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
-            <Typography color="white">Security</Typography>
-            <Typography color="white">Become a node</Typography>
-            <Typography color="white">Become a relay</Typography>
+          <div
+              onClick={() => {
+                navigate(`/${validator}`);
+                window.location.reload();
+                window.scroll(0, 0);
+              }}
+              style={{cursor:"pointer"}}
+            >
+              <Typography color="white">Become a Validator</Typography>
+            </div>
+            <div
+              onClick={() => {
+                navigate(`/${relay}`);
+                window.location.reload();
+                window.scroll(0, 0);
+              }}
+              style={{cursor:"pointer"}}
+            >
+              <Typography color="white">Become a Relay</Typography>
+            </div>
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
-            <RiTwitterXFill color="white" style={icons} />
+            <RiTwitterXFill color="gray" style={icons} />
             <br />
-            <RiTelegramFill color="white" style={icons} />
+            <RiTelegramFill color="gray" style={icons} />
             <br />
-            <RiInstagramFill color="white" style={icons} />
+            <RiInstagramFill color="gray" style={icons} />
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
-            <RiGithubFill color="white" style={icons} />
+            <RiGithubFill color="gray" style={icons} />
             <br />
-            <RiDiscordFill color="white" style={icons} />
+            <RiDiscordFill color="gray" style={icons} />
             <br />
-            <MdEmail color="white" style={icons} />
+            <MdEmail color="gray" style={icons} />
           </Col>
         </Row>
-        <Row style={{ marginTop: "25px", textAlign:"center", marginBottom:"20px" }}>
+        <Row
+          style={{
+            marginTop: "25px",
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
           <Col span={24} style={{ display: "grid", justifyContent: "center" }}>
             <Typography color="lightgray">
               Copyright © 2023 Centichain - a network for easier communication
