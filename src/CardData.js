@@ -15,22 +15,18 @@ function CardData() {
   const parse = require("html-react-parser");
   const { title } = useParams();
   const [body, setBody] = useState("");
+
   useEffect(() => {
     axios
       .get("https://centichain.org/api/query_param?message=" + title)
       .then((res) => {
         setData(res.data);
         setDataLoad(true);
+        document.title = "Centichain - " + res.data.title;
+        setBody(parse(res.data.body));
       })
       .catch(() => navigate("/notfound"));
-  }, []);
-
-  useEffect(() => {
-    if (dataLoad) {
-      document.title = "Centichain - " + data.title;
-      setBody(parse(data.body));
-    }
-  }, [dataLoad]);
+  }, [title]);
 
   return (
     <div
@@ -38,7 +34,7 @@ function CardData() {
         width: "100%",
         overflow: "hidden",
         minHeight: "500px",
-        backgroundColor: "white"
+        backgroundColor: "white",
       }}
     >
       {dataLoad ? (

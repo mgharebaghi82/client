@@ -6,11 +6,16 @@ import { Col, Row } from "antd";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function MyHeader() {
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ duration: "1000" });
   }, []);
@@ -79,8 +84,12 @@ function MyHeader() {
               <Button
                 variant="contained"
                 style={{ height: "50px", width: "100%" }}
+                onClick={() => {
+                  navigate("/dl");
+                  window.scroll(0, 0)
+                }}
               >
-                <Download /> comming soon...
+                <Download /> Download
               </Button>
             </Col>
             <Col

@@ -13,6 +13,7 @@ import MenuBar from "./MenuBar";
 import { CssBaseline } from "@mui/material";
 import MyFooter from "./Footer";
 import Notfound from "./Notfound";
+import Download from "./Download";
 const { Header, Content } = Layout;
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
           <Routes>
             <Route path="/" element={<First />} />
             <Route path="/post_data" element={<InsertData />} />
-            <Route path="/:title" element={<CardData />} />
+            <Route path="/:title" element={<CardData />}/>
             <Route path="/whitepaper" element={<Docs />} />
+            <Route path="/dl" element={<Download />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>
         </Content>

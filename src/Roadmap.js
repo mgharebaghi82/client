@@ -31,7 +31,7 @@ function Roadmap() {
           <Col span={24} style={{ textAlign: "left" }}>
             <ThemeProvider theme={theme}>
               <Typography variant="h2" fontWeight="bold">
-                Centichain Roadmap - 2024
+                Centichain Roadmap
               </Typography>
             </ThemeProvider>
           </Col>
@@ -41,7 +41,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={wallet}
             title="Wallet:"
-            q="Q1"
+            q="Stage 1"
             desc="Create a wallet for most platforms for easier use and control of user CENTIs"
             bottom="0"
             titleBG="white"
@@ -50,7 +50,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={signature}
             title="Multi Sig:"
-            q="Q2"
+            q="Stage 2"
             desc="Add multiple signatures for transactions and validate signatures by Validators"
             bottom="15%"
             titleBG="#F79494 "
@@ -59,7 +59,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={runService}
             title="Run as Service:"
-            q="Q3"
+            q="Stage 3"
             desc="Complete configuration of Node as a service in the operating system"
             bottom="30%"
             titleBG="#94ECF7"
@@ -68,7 +68,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={cip}
             title="CIP:"
-            q="Q4"
+            q="Stage 4"
             desc="Creating CIP (Centichain Improvement Proposal) and opening Centichain source code for developers"
             bottom="40%"
             titleBG="#E0F794"

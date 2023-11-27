@@ -11,7 +11,7 @@ import {
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
-import React, {  useEffect, useState, forceUpdate } from "react";
+import React, {  useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiNewspaperLine, RiPassValidLine } from "react-icons/ri";
@@ -32,14 +32,17 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
+    if (location.pathname === "/dl") {
+      setValue(3);
+    }
     if (location.pathname === "/whitepaper") {
       setValue(2);
     }
-    if (location.pathname === "/Become%20a%20Validator") {
-      setValue(0);
-    }
     if (location.pathname === "/Become%20a%20Relay") {
       setValue(1);
+    }
+    if (location.pathname === "/Become%20a%20Validator") {
+      setValue(0);
     }
   }, [location]);
 
@@ -71,7 +74,6 @@ function MenuBar() {
               label="Become a Validator"
               onClick={() => {
                 navigate(`/${validator}`);
-                window.location.reload();
                 window.scroll(0, 0);
               }}
             />
@@ -79,7 +81,6 @@ function MenuBar() {
               label="Become a Relay"
               onClick={() => {
                 navigate(`/${relay}`);
-                window.location.reload()
                 window.scroll(0, 0);
               }}
             />
@@ -90,7 +91,12 @@ function MenuBar() {
                 window.scroll(0, 0);
               }}
             />
-            <Tab label="Download" style={{color:"gray"}}/>
+            <Tab label="Download" onClick={
+              () => {
+                navigate("/dl");
+                window.scroll(0, 0);
+              }
+            }/>
           </Tabs>
         ) : (
           <>
@@ -125,7 +131,6 @@ function MenuBar() {
                   onClick={() => {
                     setToggle(!toggle);
                     navigate(`/${validator}`);
-                    window.location.reload();
                     window.scroll(0, 0);
                   }}
                 >
@@ -144,7 +149,6 @@ function MenuBar() {
                   onClick={() => {
                     setToggle(!toggle);
                     navigate(`/${relay}`);
-                    window.location.reload();
                     window.scroll(0, 0);
                   }}
                 >
@@ -182,8 +186,8 @@ function MenuBar() {
                   key={4}
                   onClick={() => {
                     setToggle(!toggle);
-                    // navigate("/whitepaper");
-                    // window.scroll(0, 0);
+                    navigate("/dl");
+                    window.scroll(0, 0);
                   }}
                 >
                   <ListItemText>
