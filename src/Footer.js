@@ -60,8 +60,8 @@ function MyFooter() {
             </div>
             <div
               onClick={() => {
-                // navigate("/");
-                // window.scroll(0, 0);
+                navigate("/dl");
+                window.scroll(0, 0);
               }}
               style={{ cursor: "pointer" }}
             >
