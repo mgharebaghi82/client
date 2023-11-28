@@ -27,7 +27,7 @@ function Download() {
   });
 
   return (
-    <Container style={{ minHeight: "700px" }}>
+    <Container style={{ minHeight: "700px", overflowWrap:"break-word" }}>
       <ThemeProvider theme={theme}>
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>

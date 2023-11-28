@@ -23,7 +23,6 @@ function LinuxDlBox({ icon, text }) {
     minHeight: "70px",
     marginTop: "30px",
     marginBottom: "30px",
-    overflowWrap: "break-word"
   };
 
   const btnBox = {
@@ -56,7 +55,7 @@ function LinuxDlBox({ icon, text }) {
         md={19}
         lg={19}
         xl={19}
-        style={{ display: "grid", alignItems: "center", padding: "10px" }}
+        style={{ display: "grid", alignItems: "center", padding: "10px", wordBreak:"break-word" }}
       >
         <Typography variant="h5">{text}</Typography>
       </Col>

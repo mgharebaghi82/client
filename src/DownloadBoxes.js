@@ -9,7 +9,6 @@ function DownloadBoxes({ appType, icon }) {
     borderRadius: "5px",
     minHeight: "70px",
     marginTop: "30px",
-    overflowWrap: "break-word"
   };
 
   const btnBox = {
@@ -43,7 +42,7 @@ function DownloadBoxes({ appType, icon }) {
           md={19}
           lg={19}
           xl={19}
-          style={{ display: "grid", alignItems: "center", padding: "10px" }}
+          style={{ display: "grid", alignItems: "center", padding: "10px", wordBreak:"break-word" }}
         >
           <Typography variant="h4">Download for {appType}</Typography>
         </Col>
