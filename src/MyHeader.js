@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { Download } from "@mui/icons-material";
-import headImg from "./Images/C-Logo.png";
+import headImg from "./Images/LOGO-Transparent.png";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { Col, Row } from "antd";
 import AOS from "aos";
