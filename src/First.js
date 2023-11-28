@@ -27,10 +27,22 @@ function First() {
     document.title = "Centichain - Home";
   }, []);
 
+  const id = "whats?";
+
+  function learnClick() {
+    const target = document.getElementById(id);
+    const rect = target.getBoundingClientRect();
+
+    window.scrollTo({
+      top: rect.top + window.scrollY,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
-      <MyHeader />
-      <WtsExp />
+      <MyHeader learnClick={learnClick} />
+      <WtsExp id={id} />
       <WhyUseExp />
       <WhoRunExp />
       <CentiExp />

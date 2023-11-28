@@ -65,7 +65,7 @@ function MyFooter() {
               }}
               style={{ cursor: "pointer" }}
             >
-              <Typography color="gray">Download</Typography>
+              <Typography color="white">Download</Typography>
             </div>
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>

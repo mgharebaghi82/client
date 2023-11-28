@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-function MyHeader() {
+function MyHeader({learnClick}) {
 
   const navigate = useNavigate();
 
@@ -106,8 +106,9 @@ function MyHeader() {
                   height: "50px",
                   width: "100%",
                   color: "white",
-                  borderColor: "white",
+                  borderColor: "white",                  
                 }}
+                onClick={learnClick}
               >
                 Learn more
               </Button>

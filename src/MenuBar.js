@@ -193,7 +193,7 @@ function MenuBar() {
                   <ListItemText>
                     <div style={{ width: "100%" }}>
                       <FaDownload style={{ float: "left", marginTop: "3px", color:"gray" }} />
-                      <p style={{ float: "left", paddingLeft: "10px", color:"gray" }}>
+                      <p style={{ float: "left", paddingLeft: "10px", color:"white" }}>
                         Download
                       </p>
                     </div>

@@ -9,26 +9,38 @@ import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-function WtsExp() {
+function WtsExp({ id }) {
   useEffect(() => {
     AOS.init({ duration: "1000" });
   }, []);
 
   return (
     <div
+      id={id}
       style={{
         width: "100%",
         float: "left",
-        minHeight:"600px",
-        display:"grid",
-        alignContent:"center"
+        minHeight: "600px",
+        display: "grid",
+        alignContent: "center",
       }}
       data-aos="fade-up"
     >
       <Container maxWidth="lg">
         <Row>
-          <Col xs={24} sm={24} md={24} lg={9} xl={9} style={{display:"grid", justifyContent:"center", alignContent:"center"}}>
-            <img src={oip} width="100%"/>
+          <Col
+            xs={24}
+            sm={24}
+            md={24}
+            lg={9}
+            xl={9}
+            style={{
+              display: "grid",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
+            <img src={oip} width="100%" />
           </Col>
           <Col
             xs={24}
@@ -36,13 +48,13 @@ function WtsExp() {
             md={24}
             lg={15}
             xl={15}
-            style={{whiteSpace:"break-spaces", padding:"25px"}}
+            style={{ whiteSpace: "break-spaces", padding: "25px" }}
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 What is Centichain?
               </Typography>
-              <Typography variant="h5" style={{lineHeight:"1.7"}}>
+              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
                 Centichain is a decentralized digital asset which you can use as
                 money or store of value. Like other decentralized digital
                 assets, Centichain does not need a reliable third person
