@@ -9,6 +9,7 @@ function DownloadBoxes({ appType, icon }) {
     borderRadius: "5px",
     minHeight: "70px",
     marginTop: "30px",
+    overflowWrap: "break-word"
   };
 
   const btnBox = {

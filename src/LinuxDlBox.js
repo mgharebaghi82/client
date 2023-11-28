@@ -22,7 +22,8 @@ function LinuxDlBox({ icon, text }) {
     borderRadius: "5px",
     minHeight: "70px",
     marginTop: "30px",
-    marginBottom: "30px"
+    marginBottom: "30px",
+    overflowWrap: "break-word"
   };
 
   const btnBox = {
