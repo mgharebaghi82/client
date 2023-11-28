@@ -72,7 +72,6 @@ function MyFooter() {
           <div
               onClick={() => {
                 navigate(`/${validator}`);
-                window.location.reload();
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}
@@ -82,7 +81,6 @@ function MyFooter() {
             <div
               onClick={() => {
                 navigate(`/${relay}`);
-                window.location.reload();
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}

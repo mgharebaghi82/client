@@ -44,7 +44,7 @@ function DownloadBoxes({ appType, icon }) {
           xl={19}
           style={{ display: "grid", alignItems: "center", padding: "10px", wordBreak:"break-word" }}
         >
-          <Typography variant="h4">Download for {appType}</Typography>
+          <Typography variant="h4">{appType}</Typography>
         </Col>
         <Col xs={24} sm={24} md={4} lg={4} xl={4} style={btnBox}>
           <Button
