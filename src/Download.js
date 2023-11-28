@@ -18,9 +18,9 @@ theme = responsiveFontSizes(theme);
 
 function Download() {
   const relayCmd =
-    "wget https://centichain.org/downloads/relay-node && chmod 777 relay-node && ./relay-node";
+    "wget https://centichain.org/Downloads/relay-node && chmod 777 relay-node && ./relay-node";
   const validatorCmd =
-    "wget https://centichain.org/downloads/centichain && chmod +x centichain && ./centichain";
+    "wget https://centichain.org/Downloads/centichain && chmod +x centichain && ./centichain";
 
   useEffect(() => {
     document.title = "Centichain - Download";
