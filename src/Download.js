@@ -32,14 +32,17 @@ function Download() {
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
             <Typography variant="h2" fontWeight="bold">
-              Validator Node <div style={{ color: "#7952FF" }}>0.9.1</div>
+              Validator Node
+            </Typography>
+            <Typography variant="h3" color="#493393">
+              0.9.1
             </Typography>
           </Col>
         </Row>
 
         <Row>
-          <Col span={24} style={{ textAlign: "center" }}>
-            <Typography variant="h5">
+          <Col span={24} style={{ textAlign: "center", color:"darkgray" }}>
+            <Typography >
               Release date: Monday, November 27, 2023
             </Typography>
           </Col>
@@ -70,14 +73,17 @@ function Download() {
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
             <Typography variant="h2" fontWeight="bold">
-              Relay Node <div style={{ color: "#7952FF" }}>1.0.0</div>
+              Relay Node
+            </Typography>
+            <Typography variant="h3" color="#493393">
+              1.0.0
             </Typography>
           </Col>
         </Row>
 
         <Row>
-          <Col span={24} style={{ textAlign: "center" }}>
-            <Typography variant="h5">
+          <Col span={24} style={{ textAlign: "center", color:"darkgray" }}>
+            <Typography>
               Release date: Monday, November 27, 2023
             </Typography>
           </Col>

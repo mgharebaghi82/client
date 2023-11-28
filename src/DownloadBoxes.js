@@ -39,14 +39,14 @@ function DownloadBoxes({ appType, icon }) {
         <Col
           xs={24}
           sm={24}
-          md={19}
-          lg={19}
-          xl={19}
+          md={21}
+          lg={21}
+          xl={21}
           style={{ display: "grid", alignItems: "center", padding: "10px", wordBreak:"break-word" }}
         >
           <Typography variant="h4">{appType}</Typography>
         </Col>
-        <Col xs={24} sm={24} md={4} lg={4} xl={4} style={btnBox}>
+        <Col xs={24} sm={24} md={2} lg={2} xl={2} style={btnBox}>
           <Button
             variant="contained"
             style={{
@@ -56,8 +56,7 @@ function DownloadBoxes({ appType, icon }) {
               position: "absolute",
             }}
           >
-            <Typography color="gray">Comming soon...</Typography>
-            {/* <FaDownload style={{ width: "60%", height: "60%" }} /> */}
+            <Typography variant="h4" color="gray"><FaDownload /></Typography>
           </Button>
         </Col>
       </Row>
