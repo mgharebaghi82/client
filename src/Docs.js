@@ -1,10 +1,7 @@
 import { Col, Divider, Row, Table } from "antd";
 import { Container, Typography } from "@mui/material";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import patience from "./Images/Patience-beside_computer.png";
-import pow from "./Images/-infographics-Proof-of-Work-PoW-.png";
-import pos from "./Images/-infographics-Proof-of-Stake-PoS-.png";
-import poet from "./Images/PoET-1.png";
+import patience from "./Images/Patience_beside_computer.png";
 import pop from "./Images/proof_of_patience.png";
 import rd from "./Images/relays-diagram.png";
 import { TiPencil } from "react-icons/ti";
