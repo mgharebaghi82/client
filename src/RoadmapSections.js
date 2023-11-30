@@ -53,7 +53,7 @@ function RoadmapSection({ imagesrc, q, title, desc, bottom, titleBG, dataAos, an
           >
             <ThemeProvider theme={theme}>
               <Typography
-                variant="h3"
+                variant="h4"
                 fontWeight="bold"
                 style={{
                   fontFamily: "sans-serif",

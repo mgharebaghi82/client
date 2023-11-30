@@ -89,7 +89,7 @@ function MyHeader({learnClick}) {
                   window.scroll(0, 0)
                 }}
               >
-                <Download /> Download
+                <Download /> <Typography>Download</Typography>
               </Button>
             </Col>
             <Col
@@ -110,7 +110,7 @@ function MyHeader({learnClick}) {
                 }}
                 onClick={learnClick}
               >
-                Learn more
+                <Typography>learn more</Typography>
               </Button>
             </Col>
           </Row>

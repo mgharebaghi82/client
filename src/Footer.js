@@ -89,9 +89,9 @@ function MyFooter() {
             </div>
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
-            <RiTwitterXFill color="gray" style={icons} />
+            <a href="https://twitter.com/centichain" target="_blank"><RiTwitterXFill color="white" style={icons} /></a>
             <br />
-            <RiTelegramFill color="gray" style={icons} />
+            <a href="https://t.me/centichain" target="_blank"><RiTelegramFill color="white" style={icons} /></a>
             <br />
             <RiInstagramFill color="gray" style={icons} />
           </Col>

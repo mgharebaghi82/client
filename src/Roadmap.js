@@ -7,8 +7,8 @@ import {
 } from "@mui/material";
 import { Col, Row } from "antd";
 import wallet from "./Images/wallet.png";
-import signature from "./Images/signature.png";
-import runService from "./Images/customer-service.png";
+import wOpenSource from "./Images/coding.png";
+import rOpenSource from "./Images/developer.png";
 import cip from "./Images/handshake.png";
 import RoadmapSection from "./RoadmapSections";
 
@@ -48,19 +48,19 @@ function Roadmap() {
             dataAos="fade-down-right"
           />
           <RoadmapSection
-            imagesrc={signature}
-            title="Multi Sig:"
+            imagesrc={wOpenSource}
+            title="Open-sourcing the wallet:"
             q="Stage 2"
-            desc="Add multiple signatures for transactions and validate signatures by Validators"
+            desc="Open-sourcing the wallet for more interaction with developers"
             bottom="15%"
             titleBG="#F79494 "
             dataAos="fade-down-right"
           />
           <RoadmapSection
-            imagesrc={runService}
+            imagesrc={rOpenSource}
             title="Run as Service:"
             q="Stage 3"
-            desc="Complete configuration of Node as a service in the operating system"
+            desc="Open source relay node for more interaction with developers"
             bottom="30%"
             titleBG="#94ECF7"
             dataAos="fade-down-right"

@@ -35,8 +35,8 @@ function ConsensusExp() {
             lg={16}
             xl={16}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}
-            data-aos="fade-right"
-            data-aos-duration="700"
+            // data-aos="fade-right"
+            // data-aos-duration="700"
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">
@@ -64,8 +64,8 @@ function ConsensusExp() {
               justifyContent: "center",
               alignContent: "center",
             }}
-            data-aos="fade-left"
-            data-aos-duration="700"
+            // data-aos="fade-left"
+            // data-aos-duration="700"
           >
             <img src={oip} width="100%" />
           </Col>

@@ -23,7 +23,7 @@ function EnergyExp() {
         display: "grid",
         alignContent: "center",
       }}
-      data-aos="flip-up"
+      data-aos="fade-up"
     >
       <Container maxWidth="lg">
         <Row>

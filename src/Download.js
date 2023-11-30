@@ -18,7 +18,7 @@ theme = responsiveFontSizes(theme);
 
 function Download() {
   const relayCmd =
-    "wget https://centichain.org/Downloads/relay-node && chmod 777 relay-node && ./relay-node";
+    "wget https://centichain.org/downloads/relay-service && chmod 777 relay-service && ./relay-service";
   const validatorCmd =
     "wget https://centichain.org/Downloads/centichain && chmod +x centichain && ./centichain";
 
