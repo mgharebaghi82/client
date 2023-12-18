@@ -22,7 +22,7 @@ function ConsensusExp() {
         minHeight: "600px",
         display: "grid",
         alignContent: "center",
-        backgroundColor: "#CEB4FF",
+        backgroundColor: "#7FD8FF",
       }}
       data-aos="fade-up"
     >

@@ -11,7 +11,7 @@ import {
   Toolbar,
   useMediaQuery,
 } from "@mui/material";
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiNewspaperLine, RiPassValidLine } from "react-icons/ri";
@@ -46,9 +46,12 @@ function MenuBar() {
     }
   }, [location]);
 
-
   return (
-    <AppBar position="fixed" style={{ backgroundColor: "#011422" }} sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}>
+    <AppBar
+      position="fixed"
+      style={{ backgroundColor: "#011422" }}
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
       <Toolbar>
         <div
           style={{ cursor: "pointer" }}
@@ -76,6 +79,7 @@ function MenuBar() {
                 navigate(`/${validator}`);
                 window.scroll(0, 0);
               }}
+              icon={<RiPassValidLine />}
             />
             <Tab
               label="Become a Relay"
@@ -83,6 +87,7 @@ function MenuBar() {
                 navigate(`/${relay}`);
                 window.scroll(0, 0);
               }}
+              icon={<SiRelay />}
             />
             <Tab
               label="WhitePaper"
@@ -90,13 +95,16 @@ function MenuBar() {
                 navigate("/whitepaper");
                 window.scroll(0, 0);
               }}
+              icon={<RiNewspaperLine />}
             />
-            <Tab label="Download" onClick={
-              () => {
+            <Tab
+              label="Download"
+              onClick={() => {
                 navigate("/dl");
                 window.scroll(0, 0);
-              }
-            }/>
+              }}
+              icon={<FaDownload />}
+            />
           </Tabs>
         ) : (
           <>
@@ -136,7 +144,9 @@ function MenuBar() {
                 >
                   <ListItemText>
                     <div style={{ width: "100%" }}>
-                      <RiPassValidLine style={{ float: "left", marginTop: "3px" }} />
+                      <RiPassValidLine
+                        style={{ float: "left", marginTop: "3px" }}
+                      />
                       <p style={{ float: "left", paddingLeft: "10px" }}>
                         Become a Validator
                       </p>
@@ -192,16 +202,29 @@ function MenuBar() {
                 >
                   <ListItemText>
                     <div style={{ width: "100%" }}>
-                      <FaDownload style={{ float: "left", marginTop: "3px", color:"white" }} />
-                      <p style={{ float: "left", paddingLeft: "10px", color:"white" }}>
+                      <FaDownload
+                        style={{
+                          float: "left",
+                          marginTop: "3px",
+                          color: "white",
+                        }}
+                      />
+                      <p
+                        style={{
+                          float: "left",
+                          paddingLeft: "10px",
+                          color: "white",
+                        }}
+                      >
                         Download
                       </p>
                     </div>
                   </ListItemText>
                 </ListItem>
               </List>
-
-              <img src={headImg} width="100%" style={{position:"absolute", bottom:"7%"}}/>
+              <div style={{ position: "absolute", bottom: "7%", width:"100%", display:"flex",justifyContent:"center", paddingBottom:"20px" }}>
+                <img src={headImg} width="50%" />
+              </div>
             </Drawer>
           </>
         )}

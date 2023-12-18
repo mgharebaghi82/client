@@ -45,10 +45,10 @@ function First() {
       <WtsExp id={id} />
       <WhyUseExp />
       <WhoRunExp />
+      {dataLoaded && <CardsSection mainData={mainData} />}
       <CentiExp />
       <EnergyExp />
       <ConsensusExp />
-      {dataLoaded && <CardsSection mainData={mainData} />}
       <Roadmap />
     </div>
   );

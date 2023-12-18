@@ -12,7 +12,7 @@ function LinuxDlBox({ icon, text }) {
 
   function handleClose(event, reason) {
     if (reason == "clickaway") {
-        return;
+      return;
     }
     setOpen(false);
   }
@@ -55,7 +55,12 @@ function LinuxDlBox({ icon, text }) {
         md={21}
         lg={21}
         xl={21}
-        style={{ display: "grid", alignItems: "center", padding: "10px", wordBreak:"break-word" }}
+        style={{
+          display: "grid",
+          alignItems: "center",
+          padding: "10px",
+          wordBreak: "break-word",
+        }}
       >
         <Typography variant="h5">{text}</Typography>
       </Col>
@@ -69,16 +74,23 @@ function LinuxDlBox({ icon, text }) {
             position: "absolute",
           }}
           onClick={() => {
-            navigator.clipboard.writeText(text);
-            handleOpen();
+            if (text !== "Comming soon...") {
+              navigator.clipboard.writeText(text);
+              handleOpen();
+            }
           }}
         >
-          <Typography variant="h4"><FaCopy /></Typography>
+          <Typography
+            variant="h4"
+            color={text !== "Comming soon..." ? "white" : "gray"}
+          >
+            <FaCopy />
+          </Typography>
         </Button>
       </Col>
 
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
           Commands copied!
         </Alert>
       </Snackbar>

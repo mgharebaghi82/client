@@ -41,7 +41,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={wallet}
             title="Wallet:"
-            q="Stage 1"
+            q="first"
             desc="Create a wallet for most platforms for easier use and control of user CENTIs"
             bottom="0"
             titleBG="white"
@@ -50,7 +50,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={wOpenSource}
             title="Open-sourcing the wallet:"
-            q="Stage 2"
+            q="second"
             desc="Open-sourcing the wallet for more interaction with developers"
             bottom="15%"
             titleBG="#F79494 "
@@ -58,9 +58,9 @@ function Roadmap() {
           />
           <RoadmapSection
             imagesrc={rOpenSource}
-            title="Run as Service:"
-            q="Stage 3"
-            desc="Open source relay node for more interaction with developers"
+            title="Open-sourcing the Relay node:"
+            q="third"
+            desc="Open source Relay node for more interaction with developers"
             bottom="30%"
             titleBG="#94ECF7"
             dataAos="fade-down-right"
@@ -68,7 +68,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={cip}
             title="CIP:"
-            q="Stage 4"
+            q="last"
             desc="Creating CIP (Centichain Improvement Proposal) and opening Centichain source code for developers"
             bottom="40%"
             titleBG="#E0F794"
