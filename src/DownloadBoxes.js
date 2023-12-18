@@ -53,14 +53,19 @@ function DownloadBoxes({ appType, icon }) {
         </Col>
         <Col xs={24} sm={24} md={2} lg={2} xl={2} style={btnBox}>
           <a
-            href={appType === "Windows msi-x64" ? "https://centichain.org/downloads/Centichain_0.8.5_x64_en-US.msi" : appType === "Windows nsis-x64" ? "https://centichain.org/downloads/Centichain_0.8.5_x64-setup.exe" : null}
-            download="Centichain-Validator-Node"
+            href={
+              appType === "Windows msi-x64"
+                ? "https://centichain.org/downloads/Centichain_0.8.5_x64_en-US.msi"
+                : appType === "Windows nsis-x64"
+                ? "https://centichain.org/downloads/Centichain_0.8.5_x64-setup.exe"
+                : null
+            }
             style={{
               backgroundColor: "#011422",
               width: "100%",
               height: "100%",
               position: "absolute",
-              borderRadius:"5px"
+              borderRadius: "5px",
             }}
           >
             <Button
@@ -72,7 +77,10 @@ function DownloadBoxes({ appType, icon }) {
                 position: "absolute",
               }}
             >
-              <Typography variant="h4" color={appType === "Comming soon..." ? "gray" : "white"}>
+              <Typography
+                variant="h4"
+                color={appType === "Comming soon..." ? "gray" : "white"}
+              >
                 <FaDownload />
               </Typography>
             </Button>

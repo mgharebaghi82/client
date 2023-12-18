@@ -15,7 +15,7 @@ import { useEffect } from "react";
 const cardsStyle = {
   marginLeft: "auto",
   marginRight: "auto",
-  width: "95%",
+  width: "75%",
   marginTop: "10px",
   marginBottom: "10px",
 };
@@ -57,7 +57,7 @@ function CardsSection({ mainData }) {
                           component="img"
                           image={myImg}
                           alt=""
-                          style={{ height: "400px" }}
+                          style={{ height: "300px" }}
                         />
                         <CardContent style={{height:"150px"}}>
                           <Typography gutterBottom variant="h5" component="div">
