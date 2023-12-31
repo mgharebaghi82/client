@@ -53,13 +53,13 @@ function DownloadBoxes({ appType, icon }) {
         </Col>
         <Col xs={24} sm={24} md={2} lg={2} xl={2} style={btnBox}>
           <a
-            href={
-              appType === "Windows msi-x64"
-                ? "https://centichain.org/downloads/Centichain_0.8.5_x64_en-US.msi"
-                : appType === "Windows nsis-x64"
-                ? "https://centichain.org/downloads/Centichain_0.8.5_x64-setup.exe"
-                : null
-            }
+            // href={
+            //   appType === "Windows msi-x64"
+            //     ? "https://centichain.org/downloads/Centichain_0.8.5_x64_en-US.msi"
+            //     : appType === "Windows nsis-x64"
+            //     ? "https://centichain.org/downloads/Centichain_0.8.5_x64-setup.exe"
+            //     : null
+            // }
             style={{
               backgroundColor: "#011422",
               width: "100%",
