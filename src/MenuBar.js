@@ -32,7 +32,7 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (location.pathname === "/api") {
+    if (location.pathname === "/rest_api") {
       setValue(4);
     }
     if (location.pathname === "/dl") {
@@ -111,7 +111,7 @@ function MenuBar() {
             <Tab
               label="API"
               onClick={() => {
-                navigate("/api");
+                navigate("/rest_api");
                 window.scroll(0, 0);
               }}
               icon={<RiCodeSSlashFill />}
@@ -237,7 +237,7 @@ function MenuBar() {
                   key={5}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate("/api");
+                    navigate("/rest_api");
                     window.scroll(0, 0);
                   }}
                 >

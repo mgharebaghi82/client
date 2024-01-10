@@ -32,7 +32,7 @@ function App() {
             <Route path="/:title" element={<CardData />}/>
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/dl" element={<Download />} />
-            <Route path="/api" element={<API />} />
+            <Route path="/rest_api" element={<API />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>
         </Content>
