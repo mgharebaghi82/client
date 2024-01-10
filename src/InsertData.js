@@ -26,7 +26,7 @@ function InsertData() {
   }
 
   function send() {
-    if (data.cat != "None") {
+    if (data.category != "None") {
       setLoading(true);
       console.log(data)
       axios
