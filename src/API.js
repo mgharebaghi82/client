@@ -67,7 +67,7 @@ function API() {
                   defaultSelectedKeys={["0"]}
                 ></Menu>
               </Col>
-              <Col span={20} style={{paddingRight:"1%"}}>
+              <Col span={20} style={{paddingRight:"2%"}}>
                 <Row>
                   <Col span={24}>
                     <div
@@ -200,6 +200,7 @@ function API() {
                   paddingLeft: "15px",
                   width: "100%",
                   minHeight: "650px",
+                  paddingRight:"2%"
                 }}
               />
               <Row>
