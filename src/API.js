@@ -1,3 +1,4 @@
+import "./prism.css";
 import {
   Button,
   Drawer,
@@ -66,7 +67,7 @@ function API() {
                   defaultSelectedKeys={["0"]}
                 ></Menu>
               </Col>
-              <Col span={20}>
+              <Col span={20} style={{paddingRight:"1%"}}>
                 <Row>
                   <Col span={24}>
                     <div
@@ -77,7 +78,7 @@ function API() {
                         paddingTop: "25px",
                         paddingLeft: "15px",
                         width: "100%",
-                        minHeight: "650px",
+                        minHeight: "600px",
                       }}
                     />
                   </Col>

@@ -134,7 +134,7 @@ function InsertData() {
                   { title: "Responsive", value: "img-fluid" }, // Materialize class
                 ],
                 content_css:{tinyMceStyle},
-                body_class: {tinyMceStyle}
+                body_class: {tinyMceStyle},
               }}
               onEditorChange={(newValue) => {
                 data.body = newValue
