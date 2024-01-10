@@ -14,6 +14,7 @@ import { CssBaseline } from "@mui/material";
 import MyFooter from "./Footer";
 import Notfound from "./Notfound";
 import Download from "./Download";
+import API from "./API";
 const { Header, Content } = Layout;
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/:title" element={<CardData />}/>
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/dl" element={<Download />} />
+            <Route path="/RPC" element={<API />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>
         </Content>

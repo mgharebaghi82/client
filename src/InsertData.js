@@ -5,51 +5,51 @@ import { useState } from "react";
 import { Container, Button, Typography } from "@mui/material";
 import { HashLoader } from "react-spinners";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function InsertData() {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-  const [desc, setDesc] = useState("");
-  const [img, setImg] = useState("");
-  const [cat, setCat] = useState("None");
   const [loading, setLoading] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   const [err, setErr] = useState(false);
+  const [data, setData] = useState({
+    title: "",
+    desc: "",
+    body : "",
+    img: "",
+    category: "None"
+  });
 
   const tinyMceStyle = {
     backgroundColor: "white"
   }
 
   function send() {
-    if (cat != "None") {
+    if (data.cat != "None") {
       setLoading(true);
-      const formData = new FormData();
-      formData.append("title", title);
-      formData.append("body", body);
-      formData.append("desc", desc);
-      formData.append("img", img);
-      formData.append("category", cat);
+      console.log(data)
       axios
-        .post("https://centichain.org/api/post_data", formData)
+        .post("https://centichain.org/api/post_data", data)
         .then((res) => {
           setLoading(false);
-          setDataSent(true);
+         setDataSent(true);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {console.log(err)
+          setLoading(false)
+        });
     } else {
       setErr(true);
     }
   }
 
-  function handleImage(e) {
-    setImg(e.target.files[0]);
-  }
+  // function handleImage(e) {
+  //   setData({img: e.target.files[0]})
+  // }
 
   function handleSelect(value) {
-    setCat(value);
+    data.category = value
+   setData(data)
   }
 
   return (
@@ -71,7 +71,8 @@ function InsertData() {
             <Input
               type="text"
               onChange={(e) => {
-                setTitle(e.target.value);
+                data.title = e.target.value
+               setData(data);
               }}
             />
           </Col>
@@ -82,21 +83,21 @@ function InsertData() {
               onChange={handleSelect}
               options={[
                 { value: "None", label: "None" },
-                { value: "whitepaper", label: "whitepaper" },
                 { value: "mainpage", label: "mainpage" },
+                { value: "api", label: "api" },
               ]}
             />
           </Col>
         </Row>
 
-        <Row style={{ marginTop: "10px" }}>
+        {/* <Row style={{ marginTop: "10px" }}>
           <Col span={3}>
             <Typography variant="h5">Image: </Typography>
           </Col>
           <Col span={21}>
             <Input type="file" name="file" onChange={handleImage} />
           </Col>
-        </Row>
+        </Row> */}
 
         <Row style={{ marginTop: "10px" }}>
           <Col span={3}>
@@ -105,7 +106,8 @@ function InsertData() {
           <Col span={21}>
             <textarea
               onChange={(e) => {
-                setDesc(e.target.value);
+                data.desc = e.target.value
+               setData(data)
               }}
               style={{
                 width: "100%",
@@ -135,7 +137,8 @@ function InsertData() {
                 body_class: {tinyMceStyle}
               }}
               onEditorChange={(newValue) => {
-                setBody(newValue);
+                data.body = newValue
+               setData(data)
               }}
             />
           </Col>

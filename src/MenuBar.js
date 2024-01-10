@@ -14,9 +14,9 @@ import {
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RiNewspaperLine, RiPassValidLine } from "react-icons/ri";
+import { RiNewspaperLine, RiPassValidLine,RiCodeSSlashFill  } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa";
-import { SiRelay } from "react-icons/si";
+import { SiRelay  } from "react-icons/si";
 import headImg from "./Images/C-Logo.png";
 
 function MenuBar() {
@@ -31,6 +31,9 @@ function MenuBar() {
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
+    }
+    if (location.pathname === "/RPC") {
+      setValue(4);
     }
     if (location.pathname === "/dl") {
       setValue(3);
@@ -104,6 +107,14 @@ function MenuBar() {
                 window.scroll(0, 0);
               }}
               icon={<FaDownload />}
+            />
+            <Tab
+              label="RPC"
+              onClick={() => {
+                navigate("/RPC");
+                window.scroll(0, 0);
+              }}
+              icon={<RiCodeSSlashFill />}
             />
           </Tabs>
         ) : (
@@ -217,6 +228,36 @@ function MenuBar() {
                         }}
                       >
                         Download
+                      </p>
+                    </div>
+                  </ListItemText>
+                </ListItem>
+
+                <ListItem
+                  key={5}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    navigate("/RPC");
+                    window.scroll(0, 0);
+                  }}
+                >
+                  <ListItemText>
+                    <div style={{ width: "100%" }}>
+                      <RiCodeSSlashFill
+                        style={{
+                          float: "left",
+                          marginTop: "3px",
+                          color: "white",
+                        }}
+                      />
+                      <p
+                        style={{
+                          float: "left",
+                          paddingLeft: "10px",
+                          color: "white",
+                        }}
+                      >
+                        RPC
                       </p>
                     </div>
                   </ListItemText>
