@@ -44,7 +44,7 @@ function API() {
 
   return (
     <>
-      {dataLoaded ? (
+      {dataLoaded && apis.length > 0 ? (
         <div
           style={{
             width: "100%",
