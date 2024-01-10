@@ -109,9 +109,9 @@ function MenuBar() {
               icon={<FaDownload />}
             />
             <Tab
-              label="RPC"
+              label="API"
               onClick={() => {
-                navigate("/RPC");
+                navigate("/api");
                 window.scroll(0, 0);
               }}
               icon={<RiCodeSSlashFill />}
@@ -237,7 +237,7 @@ function MenuBar() {
                   key={5}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate("/RPC");
+                    navigate("/api");
                     window.scroll(0, 0);
                   }}
                 >
@@ -257,7 +257,7 @@ function MenuBar() {
                           color: "white",
                         }}
                       >
-                        RPC
+                        API
                       </p>
                     </div>
                   </ListItemText>
