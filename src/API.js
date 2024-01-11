@@ -23,7 +23,7 @@ function API() {
   const [toggel, setToggle] = useState(false);
 
   useEffect(() => {
-    document.title = "Centichain - API";
+    document.title = "Centichain - DEV";
     axios
       .get("https://centichain.org/api/apis")
       .then((res) => {
