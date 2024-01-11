@@ -32,7 +32,7 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (location.pathname === "/rest_api") {
+    if (location.pathname === "/dev") {
       setValue(4);
     }
     if (location.pathname === "/dl") {
