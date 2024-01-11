@@ -89,7 +89,7 @@ function MyFooter() {
             </div>
             <div
               onClick={() => {
-                navigate(`/dev`);
+                navigate(`/dev/API Providers`);
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}

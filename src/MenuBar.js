@@ -12,7 +12,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiNewspaperLine, RiPassValidLine,RiCodeSSlashFill  } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa";
@@ -27,12 +27,13 @@ function MenuBar() {
   const [toggle, setToggle] = useState(false);
   const validator = "Become a Validator";
   const relay = "Become a Relay";
+  const {title} = useParams();
 
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (location.pathname === "/dev") {
+    if (decodeURI(location.pathname) === `/dev/API Providers`) {
       setValue(4);
     }
     if (location.pathname === "/dl") {
@@ -111,7 +112,8 @@ function MenuBar() {
             <Tab
               label="DEV"
               onClick={() => {
-                navigate("/dev");
+                let title = "API Providers"
+                navigate(`/dev/${title}`);
                 window.scroll(0, 0);
               }}
               icon={<RiCodeSSlashFill />}

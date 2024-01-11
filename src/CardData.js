@@ -25,7 +25,7 @@ function CardData() {
         document.title = "Centichain - " + res.data.title;
         setBody(parse(res.data.body));
       })
-      .catch(() => navigate("/notfound"));
+      .catch(() => navigate("/dfd"));
   }, [title]);
 
   return (

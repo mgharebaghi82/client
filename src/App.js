@@ -15,6 +15,7 @@ import MyFooter from "./Footer";
 import Notfound from "./Notfound";
 import Download from "./Download";
 import API from "./API";
+import DevContent from "./DevContent";
 const { Header, Content } = Layout;
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
             <Route path="/:title" element={<CardData />}/>
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/dl" element={<Download />} />
-            <Route path="/dev" element={<API />} />
+            <Route path="/dev/:title" element={<API />} />
             <Route path="/*" element={<Notfound />} />
           </Routes>
         </Content>

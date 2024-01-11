@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { FaList } from "react-icons/fa";
 import { DNA } from "react-loader-spinner";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { useNavigate, useParams } from "react-router-dom";
 
 function API() {
   const [apis, setApis] = useState([]);
@@ -21,6 +22,9 @@ function API() {
   const [key, setKey] = useState("0");
   const match = useMediaQuery("(min-width: 600px)");
   const [toggel, setToggle] = useState(false);
+  const navigate = useNavigate();
+  const { title } = useParams();
+  const [defaultItem, setDefaultItem] = useState("");
 
   useEffect(() => {
     document.title = "Centichain - DEV";
@@ -29,7 +33,6 @@ function API() {
       .then((res) => {
         setApis(res.data);
         setDataLoaded(true);
-        console.log(apis);
       })
       .catch((_) => {
         setErr(true);
@@ -42,6 +45,16 @@ function API() {
       setItems((prevData) => prevData.concat(itemData));
     });
   }, [apis]);
+
+  useEffect(() => {
+    items.map((item) => {
+      if (item.label === decodeURI(title)) {
+        console.log(title);
+        setDefaultItem(item.key + "");
+        setKey(item.key);
+      }
+    });
+  }, [items, title]);
 
   return (
     <>
@@ -58,13 +71,13 @@ function API() {
                   style={{ paddingTop: "15px", width: "100%", height: "100%" }}
                   onClick={(menuInfo) => {
                     setKey(menuInfo.key);
+                    navigate(`/dev/${items[menuInfo.key].label}`);
                     window.scroll(0, 0);
                   }}
                   mode="vertical"
                   className="ant-menu-item"
                   items={items}
-                  selectedKeys={key}
-                  defaultSelectedKeys={["0"]}
+                  selectedKeys={defaultItem}
                 ></Menu>
               </Col>
               <Col span={20} style={{ paddingRight: "2%" }}>
@@ -106,6 +119,7 @@ function API() {
                         let newKey =
                           Number(key) > 0 ? Number(key) - 1 : Number(key);
                         setKey(newKey.toString());
+                        navigate(`/dev/${items[newKey].label}`);
                         window.scroll(0, 0);
                       }}
                     >
@@ -141,6 +155,7 @@ function API() {
                             ? Number(key) + 1
                             : Number(key);
                         setKey(newKey.toString());
+                        navigate(`/dev/${items[newKey].label}`);
                         window.scroll(0, 0);
                       }}
                     >
@@ -185,28 +200,34 @@ function API() {
                   style={{ paddingTop: "5px", width: "100%", height: "100%" }}
                   onClick={(menuInfo) => {
                     setKey(menuInfo.key);
+                    navigate(`/dev/${items[menuInfo.key].label}`);
                     setToggle(!toggel);
                     window.scroll(0, 0);
                   }}
                   mode="vertical"
                   className="ant-menu-item"
                   items={items}
-                  selectedKeys={key}
-                  defaultSelectedKeys={[key]}
+                  selectedKeys={defaultItem}
                 ></Menu>
               </Drawer>
-              <Typography>
-                <div
-                  dangerouslySetInnerHTML={{ __html: apis[Number(key)].body }}
-                  style={{
-                    paddingTop: "25px",
-                    paddingLeft: "15px",
-                    width: "100%",
-                    minHeight: "650px",
-                    paddingRight: "2%",
-                  }}
-                />
-              </Typography>
+              <Row>
+                <Col span={24}>
+                  <Typography>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: apis[Number(key)].body,
+                      }}
+                      style={{
+                        paddingTop: "25px",
+                        paddingLeft: "15px",
+                        width: "100%",
+                        minHeight: "650px",
+                        paddingRight: "2%",
+                      }}
+                    />
+                  </Typography>
+                </Col>
+              </Row>
               <Row>
                 <Col
                   span={12}
@@ -220,12 +241,14 @@ function API() {
                     variant="outlined"
                     style={{
                       width: "95%",
+                      height:"60px",
                       display: apis[Number(key) - 1] ? "inline-block" : "none",
                     }}
                     onClick={() => {
                       let newKey =
                         Number(key) > 0 ? Number(key) - 1 : Number(key);
                       setKey(newKey.toString());
+                      navigate(`/dev/${items[newKey].label}`);
                       window.scroll(0, 0);
                     }}
                   >
@@ -250,6 +273,7 @@ function API() {
                   <Button
                     style={{
                       width: "100%",
+                      height:"60px",
                       display: apis[Number(key) + 1] ? "inline-block" : "none",
                     }}
                     variant="outlined"
@@ -259,6 +283,7 @@ function API() {
                           ? Number(key) + 1
                           : Number(key);
                       setKey(newKey.toString());
+                      navigate(`/dev/${items[newKey].label}`);
                       window.scroll(0, 0);
                     }}
                   >
