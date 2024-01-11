@@ -67,20 +67,22 @@ function API() {
                   defaultSelectedKeys={["0"]}
                 ></Menu>
               </Col>
-              <Col span={20} style={{paddingRight:"2%"}}>
+              <Col span={20} style={{ paddingRight: "2%" }}>
                 <Row>
                   <Col span={24}>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: apis[Number(key)].body,
-                      }}
-                      style={{
-                        paddingTop: "25px",
-                        paddingLeft: "15px",
-                        width: "100%",
-                        minHeight: "600px",
-                      }}
-                    />
+                    <Typography>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: apis[Number(key)].body,
+                        }}
+                        style={{
+                          paddingTop: "25px",
+                          paddingLeft: "15px",
+                          width: "100%",
+                          minHeight: "600px",
+                        }}
+                      />
+                    </Typography>
                   </Col>
                 </Row>
                 <Row>
@@ -95,7 +97,7 @@ function API() {
                     <Button
                       variant="outlined"
                       style={{
-                        width: "50%",
+                        width: "90%",
                         display: apis[Number(key) - 1]
                           ? "inline-block"
                           : "none",
@@ -122,12 +124,12 @@ function API() {
                       textAlign: "right",
                       paddingTop: "10px",
                       paddingBottom: "10px",
-                      paddingRight: "10%",
+                      paddingRight: "5%",
                     }}
                   >
                     <Button
                       style={{
-                        width: "50%",
+                        width: "90%",
                         display: apis[Number(key) + 1]
                           ? "inline-block"
                           : "none",
@@ -193,16 +195,18 @@ function API() {
                   defaultSelectedKeys={[key]}
                 ></Menu>
               </Drawer>
-              <div
-                dangerouslySetInnerHTML={{ __html: apis[Number(key)].body }}
-                style={{
-                  paddingTop: "25px",
-                  paddingLeft: "15px",
-                  width: "100%",
-                  minHeight: "650px",
-                  paddingRight:"2%"
-                }}
-              />
+              <Typography>
+                <div
+                  dangerouslySetInnerHTML={{ __html: apis[Number(key)].body }}
+                  style={{
+                    paddingTop: "25px",
+                    paddingLeft: "15px",
+                    width: "100%",
+                    minHeight: "650px",
+                    paddingRight: "2%",
+                  }}
+                />
+              </Typography>
               <Row>
                 <Col
                   span={12}

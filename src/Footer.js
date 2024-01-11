@@ -87,6 +87,15 @@ function MyFooter() {
             >
               <Typography color="white">Become a Relay</Typography>
             </div>
+            <div
+              onClick={() => {
+                navigate(`/dev`);
+                window.scroll(0, 0);
+              }}
+              style={{cursor:"pointer"}}
+            >
+              <Typography color="white">DEV</Typography>
+            </div>
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
             <a href="https://twitter.com/centichain" target="_blank"><RiTwitterXFill color="white" style={icons} /></a>
