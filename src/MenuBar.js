@@ -33,7 +33,7 @@ function MenuBar() {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (decodeURI(location.pathname) === `/dev/API Providers`) {
+    if (decodeURI(location.pathname) === `/dev/${decodeURI(title)}`) {
       setValue(4);
     }
     if (location.pathname === "/dl") {
@@ -239,7 +239,8 @@ function MenuBar() {
                   key={5}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate("/dev");
+                    let title = "API Providers"
+                    navigate(`/dev/${title}`);
                     window.scroll(0, 0);
                   }}
                 >
