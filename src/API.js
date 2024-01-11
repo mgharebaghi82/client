@@ -49,11 +49,18 @@ function API() {
   useEffect(() => {
     items.map((item) => {
       if (item.label === decodeURI(title)) {
-        console.log(title);
         setDefaultItem(item.key + "");
-        setKey(item.key);
+        setKey(item.key.toString());
       }
     });
+    let findItem = items.find((item) => item.label === title);
+    if (dataLoaded) {
+      if (items.length > 0 && findItem) {
+        
+      } else {
+        navigate("/notFound");
+      }
+    }
   }, [items, title]);
 
   return (
@@ -241,7 +248,7 @@ function API() {
                     variant="outlined"
                     style={{
                       width: "95%",
-                      height:"60px",
+                      height: "60px",
                       display: apis[Number(key) - 1] ? "inline-block" : "none",
                     }}
                     onClick={() => {
@@ -273,7 +280,7 @@ function API() {
                   <Button
                     style={{
                       width: "100%",
-                      height:"60px",
+                      height: "60px",
                       display: apis[Number(key) + 1] ? "inline-block" : "none",
                     }}
                     variant="outlined"

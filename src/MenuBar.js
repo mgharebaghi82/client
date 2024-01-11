@@ -27,13 +27,12 @@ function MenuBar() {
   const [toggle, setToggle] = useState(false);
   const validator = "Become a Validator";
   const relay = "Become a Relay";
-  const {title} = useParams();
 
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/card_data") {
       setValue(null);
     }
-    if (decodeURI(location.pathname) === `/dev/${decodeURI(title)}`) {
+    if (decodeURI(location.pathname).split("/")[1] === "dev") {
       setValue(4);
     }
     if (location.pathname === "/dl") {
@@ -42,10 +41,10 @@ function MenuBar() {
     if (location.pathname === "/whitepaper") {
       setValue(2);
     }
-    if (location.pathname === "/Become%20a%20Relay") {
+    if (location.pathname === "/cards/Become%20a%20Relay") {
       setValue(1);
     }
-    if (location.pathname === "/Become%20a%20Validator") {
+    if (location.pathname === "/cards/Become%20a%20Validator") {
       setValue(0);
     }
   }, [location]);
@@ -71,6 +70,7 @@ function MenuBar() {
         </div>
         {match ? (
           <Tabs
+            key={0}
             sx={{ marginLeft: "auto" }}
             textColor="white"
             value={value}
@@ -78,22 +78,25 @@ function MenuBar() {
             indicatorColor="secondary"
           >
             <Tab
+            key={1}
               label="Become a Validator"
               onClick={() => {
-                navigate(`/${validator}`);
+                navigate(`/cards/${validator}`);
                 window.scroll(0, 0);
               }}
               icon={<RiPassValidLine />}
             />
             <Tab
+            key={2}
               label="Become a Relay"
               onClick={() => {
-                navigate(`/${relay}`);
+                navigate(`/cards/${relay}`);
                 window.scroll(0, 0);
               }}
               icon={<SiRelay />}
             />
             <Tab
+            key={3}
               label="WhitePaper"
               onClick={() => {
                 navigate("/whitepaper");
@@ -102,6 +105,7 @@ function MenuBar() {
               icon={<RiNewspaperLine />}
             />
             <Tab
+            key={4}
               label="Download"
               onClick={() => {
                 navigate("/dl");
@@ -110,6 +114,7 @@ function MenuBar() {
               icon={<FaDownload />}
             />
             <Tab
+            key={5}
               label="DEV"
               onClick={() => {
                 let title = "API Providers"
@@ -151,7 +156,7 @@ function MenuBar() {
                   key={1}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate(`/${validator}`);
+                    navigate(`/cards/${validator}`);
                     window.scroll(0, 0);
                   }}
                 >
@@ -171,7 +176,7 @@ function MenuBar() {
                   key={2}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate(`/${relay}`);
+                    navigate(`/cards/${relay}`);
                     window.scroll(0, 0);
                   }}
                 >
@@ -239,7 +244,7 @@ function MenuBar() {
                   key={5}
                   onClick={() => {
                     setToggle(!toggle);
-                    let title = "API Providers"
+                    let title = "API Providers";
                     navigate(`/dev/${title}`);
                     window.scroll(0, 0);
                   }}

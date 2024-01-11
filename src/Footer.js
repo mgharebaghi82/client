@@ -71,7 +71,7 @@ function MyFooter() {
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
           <div
               onClick={() => {
-                navigate(`/${validator}`);
+                navigate(`/cards/${validator}`);
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}
@@ -80,7 +80,7 @@ function MyFooter() {
             </div>
             <div
               onClick={() => {
-                navigate(`/${relay}`);
+                navigate(`/cards/${relay}`);
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}

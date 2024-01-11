@@ -30,11 +30,11 @@ function App() {
           <Routes>
             <Route path="/" element={<First />} />
             <Route path="/post_data" element={<InsertData />} />
-            <Route path="/:title" element={<CardData />}/>
+            <Route path="/cards/:title" element={<CardData />}/>
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/dl" element={<Download />} />
             <Route path="/dev/:title" element={<API />} />
-            <Route path="/*" element={<Notfound />} />
+            <Route path="*" element={<Notfound />} />
           </Routes>
         </Content>
         <MyFooter />
