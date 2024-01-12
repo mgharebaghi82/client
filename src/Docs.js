@@ -1,23 +1,24 @@
 import { Col, Divider, Row, Table } from "antd";
 import { Container, Typography } from "@mui/material";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
-import patience from "./Images/Patience_beside_computer.png";
+import patience from "./Images/Patience-beside_computer.png";
 import pop from "./Images/proof_of_patience.png";
 import rd from "./Images/relays-diagram.png";
 import { TiPencil } from "react-icons/ti";
 import { TiTick } from "react-icons/ti";
 import { ImCancelCircle } from "react-icons/im";
-import { Helmet } from "react-helmet";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 function Docs() {
-
   useEffect(() => {
-    document.title = "Centichain - Whitepaper"
-  }, [])
+    document.title = "Centichain - Whitepaper";
+    AOS.init({ duration: "1000" });
+  }, []);
 
   const dataSource = [
     {
@@ -190,74 +191,79 @@ function Docs() {
     <div
       style={{
         width: "100%",
-        paddingTop: "20px",
-        paddingBottom: "20px",
         overflow: "hidden",
       }}
     >
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="This whitepaper introduces a new blockchain network with a novel consensus mechanism and easy-to-use functionality. In fact, to participate in this blockchain network, you do not need any specific or powerful hardware, nor do you need to stake any type of asset."
-        />
-        <meta property="og:image" content={pop} />
-        <meta name="twitter:card" content="summary_large" />
-      </Helmet>
-      <Container maxWidth="lg">
-        {/* title section */}
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#8ac7cb",
+          padding: "2%",
+          minHeight: "600px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <Row>
-          <Col span={24} style={{ textAlign: "center" }}>
-            <ThemeProvider theme={theme}>
-              <Typography variant="h3">
-                A Blockchain network with high scalability and very low cost is
-                established
-              </Typography>
-            </ThemeProvider>
-          </Col>
-        </Row>
-        <Divider />
-        {/* Abstract section */}
-        <Row style={{ marginTop: "30px" }}>
           <Col
             xs={24}
             sm={24}
-            md={24}
-            lg={8}
-            xl={8}
+            md={11}
+            lg={11}
+            xl={11}
             style={{
               display: "grid",
               justifyContent: "center",
-              alignContent: "center",
+              // minHeight: "600px",
+              width: "100%",
+              alignItems: "center",
             }}
           >
-            <img src={patience} width="100%" />
+            <img
+              src={patience}
+              data-aos="fade-right"
+              style={{ borderRadius: "50%", width: "100%" }}
+              alt="Proof Of Patience"
+            />
           </Col>
           <Col
             xs={24}
             sm={24}
-            md={24}
-            lg={16}
-            xl={16}
-            style={{ padding: "25px" }}
+            md={13}
+            lg={13}
+            xl={13}
+            style={{
+              display: "grid",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            data-aos="zoom-in"
           >
-            <ThemeProvider theme={theme}>
-              <Typography variant="h3" fontWeight="bold">
-                Abstract
-              </Typography>
-              <Typography variant="h4" style={{ lineHeight: "1.7" }}>
-                This whitepaper introduces a new blockchain network with a novel
-                consensus mechanism and easy-to-use functionality. In fact, to
-                participate in this blockchain network, you do not need any
-                specific or powerful hardware, nor do you need to stake any type
-                of asset.
-              </Typography>
-            </ThemeProvider>
+            <div style={{textAlign:"center", paddingLeft:"1%"}}>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h3" fontWeight="bold" color="#004750">
+                  A Blockchain network with high scalability and very low cost
+                  is established
+                </Typography>
+                <Divider />
+                <Typography variant="h4" fontWeight="bold">
+                  Abstract
+                </Typography>
+                <Typography variant="h5">
+                  This whitepaper presents a new blockchain network that offers
+                  a unique consensus mechanism and user-friendly features.
+                  Unlike other blockchain networks, this one does not require
+                  any special or powerful hardware, or any kind of asset
+                  staking, to join and participate.
+                </Typography>
+              </ThemeProvider>
+            </div>
           </Col>
         </Row>
-        <Divider />
+      </div>
+      <Container maxWidth="lg">
         {/* Introduction section */}
-        <Row>
+        <Row style={{ marginTop: "25px" }}>
           <Col span={24}>
             <ThemeProvider theme={theme}>
               <Typography variant="h4" fontWeight="bold">
