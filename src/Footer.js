@@ -121,8 +121,7 @@ function MyFooter() {
         >
           <Col span={24} style={{ display: "grid", justifyContent: "center" }}>
             <Typography color="lightgray">
-              Copyright © 2024 Centichain - a network for easier communication
-              with digital assets. All rights reserved.
+              Copyright © 2024 Centichain - No Mining, No Staking, No Problem. All rights reserved.
             </Typography>
           </Col>
         </Row>

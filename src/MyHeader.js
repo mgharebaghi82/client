@@ -8,12 +8,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
-function MyHeader({learnClick}) {
-
+function MyHeader({ learnClick }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,7 +41,7 @@ function MyHeader({learnClick}) {
             padding: "25px",
             justifyContent: "center",
             display: "grid",
-            minHeight:"600px"
+            minHeight: "600px",
           }}
         >
           <Row>
@@ -58,16 +56,15 @@ function MyHeader({learnClick}) {
                   Centichain
                 </Typography>
                 <br />
-                <Typography
-                  color="lightgray"
-                  style={{ lineHeight: "2" }}
-                >
-                  Without having strange hardware or a very powerful computing
-                  device like miners and without staking any value, easily
-                  become a member of the network and confirm and register blocks
-                  and get its reward, or even if you have a public IP address,
-                  You can help network communication as a relay and get rewarded
-                  again.
+                <Typography color="lightgray" style={{ lineHeight: "2" }}>
+                  Centichain is a blockchain network that allows anyone to join
+                  and participate without any special requirements. You do not
+                  need specialized hardware or high-performance computing
+                  devices like miners, nor do you need to stake any value in the
+                  network. Therefore, you can easily become a member of the
+                  network, confirm and register blocks, and get rewarded. In
+                  addition, if you have a public IP address, you can help
+                  network communication as a relay and get rewarded again.
                 </Typography>
               </ThemeProvider>
             </Col>
@@ -86,7 +83,7 @@ function MyHeader({learnClick}) {
                 style={{ height: "50px", width: "100%" }}
                 onClick={() => {
                   navigate("/dl");
-                  window.scroll(0, 0)
+                  window.scroll(0, 0);
                 }}
               >
                 <Download /> <Typography>Download</Typography>
@@ -106,7 +103,7 @@ function MyHeader({learnClick}) {
                   height: "50px",
                   width: "100%",
                   color: "white",
-                  borderColor: "white",                  
+                  borderColor: "white",
                 }}
                 onClick={learnClick}
               >
@@ -129,7 +126,7 @@ function MyHeader({learnClick}) {
         >
           <img
             src={headImg}
-            data-aos="zoom-in"
+            data-aos="fade-zoom-in"
             style={{ width: "100%" }}
           />
         </Col>
