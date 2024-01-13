@@ -192,7 +192,6 @@ function Docs() {
       style={{
         width: "100%",
         overflow: "hidden",
-        minHeight:"600px"
       }}
     >
       <div
