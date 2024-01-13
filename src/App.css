@@ -125,7 +125,7 @@
   position: relative;
   isolation: isolate;
   background-color: #8ac7cb;
-  min-height: 600px;
+  min-height: 650px;
 }
 
 .low-opacity-whitepaper::after {

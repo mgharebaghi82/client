@@ -19,7 +19,7 @@ function WhoRunExp() {
       style={{
         width: "100%",
         float: "left",
-        minHeight: "600px",
+        minHeight: "500px",
         display: "grid",
         alignContent: "center",
       }}
@@ -54,7 +54,7 @@ function WhoRunExp() {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 Who runs Centichain?
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
+              <Typography variant="h5">
                 No official institution or center runs Centichain. As long as
                 there are linked computers which follow Centichain protocols to
                 add data, Centichain will work. Such network computers are

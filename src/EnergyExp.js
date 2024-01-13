@@ -53,7 +53,7 @@ function EnergyExp() {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 How does Centichain consume energy?
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
+              <Typography variant="h5">
                 Centichain energy consumption is the same as usual PCs. As
                 mentioned earlier, by presenting a new consensus mechanism,
                 there would be no need of high power-consuming computers to

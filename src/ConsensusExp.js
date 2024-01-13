@@ -42,7 +42,7 @@ function ConsensusExp() {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 A fair consensus
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
+              <Typography variant="h5">
                 It has repeatedly been mentioned that Centichain brings a new
                 consensus mechanism. Contrary to Proof of Work (POW) which has a
                 high energy consumption and Proof of Stake (POS) which needs to

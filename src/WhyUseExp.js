@@ -41,7 +41,7 @@ function WhyUseExp() {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 Why should we use Centichain?
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
+              <Typography variant="h5">
                 If you think maintaining mining machines is hard, participating
                 in mining pools is unsafe, paying to be in a blockchain network,
                 named stake, is unfair and costly or if you intend to set your

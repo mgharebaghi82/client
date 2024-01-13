@@ -41,7 +41,7 @@ function CentiExp() {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 What is CENTI?
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
+              <Typography variant="h5">
                 CENTI is the name of the value in the blockchain network of
                 decentralized Centichain. CENTI, in fact, is a digital asset
                 which can be kept or spent as a value. The reward for being in

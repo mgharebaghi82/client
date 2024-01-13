@@ -54,16 +54,16 @@ function WtsExp({ id }) {
               <Typography style={{ fontWeight: "bold" }} variant="h3">
                 What is Centichain?
               </Typography>
-              <Typography variant="h5" style={{ lineHeight: "1.7" }}>
-                Centichain is a decentralized digital asset which you can use as
-                money or store of value. Like other decentralized digital
-                assets, Centichain does not need a reliable third person
-                (middlemen like the banks). However, it technically presents
-                dissimilitude to others, something like a consensus mechanism,
-                and so can be more effective for network participants with
-                regard to energy consumption and cost. In fact, Centichain is a
-                blockchain network for a safe value saving and transferring,
-                both energy-wise and financial-wise.
+              <Typography variant="h5">
+                Centichain is a decentralized digital asset that can be used as
+                money or a store of value. Unlike traditional currencies that
+                rely on trusted intermediaries (such as banks), Centichain
+                operates on a peer-to-peer network that does not need a central
+                authority. Centichain also has a unique consensus mechanism that
+                makes it more efficient and cost-effective for network
+                participants in terms of energy consumption and transaction
+                fees. Centichain is a blockchain network that provides a secure
+                and sustainable way of saving and transferring value.
               </Typography>
             </ThemeProvider>
           </Col>
