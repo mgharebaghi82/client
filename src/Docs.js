@@ -192,6 +192,7 @@ function Docs() {
       style={{
         width: "100%",
         overflow: "hidden",
+        minHeight:"600px"
       }}
     >
       <div
@@ -214,6 +215,7 @@ function Docs() {
           >
             <img
               src={patience}
+              data-aos="fade-right"
               style={{ borderRadius: "50%", width: "100%" }}
               alt="Proof Of Patience"
             />
