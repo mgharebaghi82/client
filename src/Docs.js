@@ -214,7 +214,6 @@ function Docs() {
           >
             <img
               src={patience}
-              data-aos="fade-right"
               style={{ borderRadius: "50%", width: "100%" }}
               alt="Proof Of Patience"
             />
