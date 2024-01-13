@@ -101,7 +101,6 @@ function CardData() {
                     data-aos="fade-zoom-in"
                     style={{
                       width: "100%",
-                      borderRadius: "50%",
                     }}
                   />
                 </div>
@@ -117,13 +116,13 @@ function CardData() {
                 marginTop: "15px",
               }}
             >
-              <ThemeProvider theme={theme}>
-                <Row>
-                  <Col span={24}>
+              <Row>
+                <Col span={24}>
+                  <ThemeProvider theme={theme}>
                     <Typography>{body}</Typography>
-                  </Col>
-                </Row>
-              </ThemeProvider>
+                  </ThemeProvider>
+                </Col>
+              </Row>
             </div>
           </Container>
         </>

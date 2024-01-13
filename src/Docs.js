@@ -195,28 +195,21 @@ function Docs() {
       }}
     >
       <div
-        style={{
-          width: "100%",
-          backgroundColor: "#8ac7cb",
-          padding: "2%",
-          minHeight: "700px",
-          display: "flex",
-          alignItems: "center",
-        }}
+        className="low-opacity-whitepaper"
       >
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={11}
-            lg={11}
-            xl={11}
+            md={10}
+            lg={10}
+            xl={10}
             style={{
               display: "grid",
               justifyContent: "center",
-              // minHeight: "600px",
               width: "100%",
               alignItems: "center",
+              padding:"2%"
             }}
           >
             <img
@@ -229,15 +222,15 @@ function Docs() {
           <Col
             xs={24}
             sm={24}
-            md={13}
-            lg={13}
-            xl={13}
+            md={14}
+            lg={14}
+            xl={14}
             style={{
               display: "grid",
               justifyContent: "center",
               alignItems: "center",
+              padding:"2%"
             }}
-            data-aos="zoom-in"
           >
             <div style={{ textAlign: "center", paddingLeft: "1%" }}>
               <ThemeProvider theme={theme}>

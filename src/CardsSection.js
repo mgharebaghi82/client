@@ -6,7 +6,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import { Col, Row } from "antd";
+import { Col, Divider, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -63,8 +63,9 @@ function CardsSection({ mainData }) {
                           <Typography gutterBottom variant="h5" component="div">
                             <span>{data.title}</span>
                           </Typography>
+                          <Divider />
                           <Typography variant="body2" color="text.secondary">
-                            {data.desc}
+                            {data.desc.length > 100 ? <><span>{data.desc.slice(0, 100)}</span><span style={{color:"blue"}}>... (click to see more)</span></> : data.desc}
                           </Typography>
                         </CardContent>
                       </CardActionArea>
