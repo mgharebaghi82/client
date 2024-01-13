@@ -1,10 +1,12 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, useMediaQuery } from "@mui/material";
 import { Col, Divider, Row } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BounceLoader } from "react-spinners";
+import { DNA } from "react-loader-spinner";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
@@ -15,6 +17,11 @@ function CardData() {
   const parse = require("html-react-parser");
   const { title } = useParams();
   const [body, setBody] = useState("");
+  const match = useMediaQuery("(min-width: 600px)");
+
+  useEffect(() => {
+    AOS.init({ duration: "1000" });
+  }, []);
 
   useEffect(() => {
     axios
@@ -38,38 +45,77 @@ function CardData() {
       }}
     >
       {dataLoad ? (
-        <Container maxWidth="lg">
-          <div style={{ width: "100%", backgroundColor: "white" }}>
-            <ThemeProvider theme={theme}>
-              <Row style={{ minHeight: "400px", marginTop: "10px" }}>
-                <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-                  <img src={data.img} width="100%" />
-                </Col>
-                <Col
-                  xs={24}
-                  sm={24}
-                  md={24}
-                  lg={16}
-                  xl={16}
-                  style={{ padding: "15px" }}
-                >
-                  <Typography variant="h2" fontWeight="bold">
+        <>
+          <Row style={{ backgroundColor: "#8ac7cb" }}>
+            <Col
+              xs={24}
+              sm={24}
+              md={14}
+              lg={14}
+              xl={14}
+              style={{
+                padding: "2%",
+                display: "grid",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div style={{ textAlign: "center" }}>
+                <ThemeProvider theme={theme}>
+                  <Typography variant="h2" fontWeight="bold" color="#004750">
                     {data.title}
                   </Typography>
-                  <Typography variant="h4" style={{ lineHeight: "1.7" }}>
-                    {data.desc}
-                  </Typography>
-                </Col>
-              </Row>
-              <Divider />
-              <Row>
-                <Col span={24}>
-                  <Typography>{body}</Typography>
-                </Col>
-              </Row>
-            </ThemeProvider>
-          </div>
-        </Container>
+                  <Divider />
+                  <Typography variant="h5">{data.desc}</Typography>
+                </ThemeProvider>
+              </div>
+            </Col>
+            <Col
+              xs={24}
+              sm={24}
+              md={10}
+              lg={10}
+              xl={10}
+              style={{
+                padding: "2%",
+                justifyContent: "center",
+                display: "grid",
+              }}
+            >
+              <div
+                style={{
+                  height: !match ? "auto" : "600px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={data.img}
+                  data-aos="fade-zoom-in"
+                  style={{ width: "100%", borderRadius: "50%" }}
+                />
+              </div>
+            </Col>
+          </Row>
+          <Container maxWidth="lg">
+            <div
+              style={{
+                width: "100%",
+                backgroundColor: "white",
+                marginTop: "15px",
+              }}
+            >
+              <ThemeProvider theme={theme}>
+                <Row>
+                  <Col span={24}>
+                    <Typography>{body}</Typography>
+                  </Col>
+                </Row>
+              </ThemeProvider>
+            </div>
+          </Container>
+        </>
       ) : (
         <div
           style={{
@@ -80,7 +126,14 @@ function CardData() {
             alignContent: "center",
           }}
         >
-          <BounceLoader color="lightorange" />
+          <DNA
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+          />
         </div>
       )}
     </div>

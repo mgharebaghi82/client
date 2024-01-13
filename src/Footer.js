@@ -76,7 +76,7 @@ function MyFooter() {
               }}
               style={{cursor:"pointer"}}
             >
-              <Typography color="white">Become a Validator</Typography>
+              <Typography color="white">Validator</Typography>
             </div>
             <div
               onClick={() => {
@@ -85,7 +85,7 @@ function MyFooter() {
               }}
               style={{cursor:"pointer"}}
             >
-              <Typography color="white">Become a Relay</Typography>
+              <Typography color="white">Relay</Typography>
             </div>
             <div
               onClick={() => {

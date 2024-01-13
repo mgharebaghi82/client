@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import { Download } from "@mui/icons-material";
 import headImg from "./Images/LOGO-Transparent.png";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
@@ -13,6 +13,7 @@ theme = responsiveFontSizes(theme);
 
 function MyHeader({ learnClick }) {
   const navigate = useNavigate();
+  const match = useMediaQuery("(min-width: 600px)");
 
   useEffect(() => {
     AOS.init({ duration: "1000" });
@@ -124,11 +125,13 @@ function MyHeader({ learnClick }) {
             height: "100%",
           }}
         >
-          <img
-            src={headImg}
-            data-aos="fade-zoom-in"
-            style={{ width: "100%" }}
-          />
+          <div style={{height: !match ? "auto" : "600px" , display:"flex", alignItems:"center", justifyContent:"center"}}>
+            <img
+              src={headImg}
+              data-aos="fade-zoom-in"
+              style={{ width: "100%" }}
+            />
+          </div>
         </Col>
       </Row>
     </div>

@@ -79,7 +79,7 @@ function MenuBar() {
           >
             <Tab
             key={1}
-              label="Become a Validator"
+              label="Validator"
               onClick={() => {
                 navigate(`/cards/${validator}`);
                 window.scroll(0, 0);
@@ -88,7 +88,7 @@ function MenuBar() {
             />
             <Tab
             key={2}
-              label="Become a Relay"
+              label="Relay"
               onClick={() => {
                 navigate(`/cards/${relay}`);
                 window.scroll(0, 0);
@@ -166,7 +166,7 @@ function MenuBar() {
                         style={{ float: "left", marginTop: "3px" }}
                       />
                       <p style={{ float: "left", paddingLeft: "10px" }}>
-                        Become a Validator
+                        Validator
                       </p>
                     </div>
                   </ListItemText>
@@ -184,7 +184,7 @@ function MenuBar() {
                     <div style={{ width: "100%" }}>
                       <SiRelay style={{ float: "left", marginTop: "3px" }} />
                       <p style={{ float: "left", paddingLeft: "10px" }}>
-                        Become a Relay
+                        Relay
                       </p>
                     </div>
                   </ListItemText>
