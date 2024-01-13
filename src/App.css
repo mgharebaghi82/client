@@ -102,3 +102,37 @@
     margin: 2rem 0;
   }
 }
+
+.low-opacity-become {
+  display: grid;
+  position: relative;
+  isolation: isolate;
+  background-color: #8ac7cb;
+}
+
+.low-opacity-become::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.04;
+  /* background: #61dafb; */
+  background-image: url("./Images/banner.png");
+}
+
+.low-opacity-main {
+  display: grid;
+  position: relative;
+  isolation: isolate;
+  background-color: #011422;
+}
+
+.low-opacity-main::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.04;
+  /* background: #61dafb; */
+  background-image: url("./Images/MainBanner.png");
+}

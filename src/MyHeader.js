@@ -20,120 +20,118 @@ function MyHeader({ learnClick }) {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        float: "left",
-        padding: "25px",
-        backgroundColor: "#011422",
-        minHeight: "600px",
-        userSelect: "none",
-      }}
-    >
-      <Row>
-        <Col
-          xs={24}
-          sm={24}
-          md={12}
-          lg={12}
-          xl={12}
-          style={{
-            textAlign: "center",
-            padding: "25px",
-            justifyContent: "center",
-            display: "grid",
-            minHeight: "600px",
-          }}
-        >
-          <Row>
-            <Col span={24}>
-              <ThemeProvider theme={theme}>
-                <Typography
-                  variant="h1"
-                  fontWeight="bold"
-                  color="white"
-                  style={{ textShadow: "0px 0px 25px #AEC9FF" }}
+    <div style={{width:"100%", minHeight:"600px"}}>
+      <div className="low-opacity-main">
+        <Row>
+          <Col
+            xs={24}
+            sm={24}
+            md={14}
+            lg={14}
+            xl={14}
+            style={{
+              textAlign: "center",
+              padding: "25px",
+              justifyContent: "center",
+              display: "grid",
+              alignItems:"center"
+            }}
+          >
+            <Row>
+              <Col span={24}>
+                <ThemeProvider theme={theme}>
+                  <Typography
+                    variant="h1"
+                    fontWeight="bold"
+                    color="white"
+                    style={{ textShadow: "0px 0px 25px #AEC9FF" }}
+                  >
+                    Centichain
+                  </Typography>
+                  <Typography color="lightgray">
+                    Centichain is a blockchain network that allows anyone to
+                    join and participate without any special requirements. You
+                    do not need specialized hardware or high-performance
+                    computing devices like miners, nor do you need to stake any
+                    value in the network. Therefore, you can easily become a
+                    member of the network, confirm and register blocks, and get
+                    rewarded. In addition, if you have a public IP address, you
+                    can help network communication as a relay and get rewarded
+                    again.
+                  </Typography>
+                </ThemeProvider>
+              </Col>
+            </Row>
+            <Row style={{ marginTop: "20px" }}>
+              <Col
+                xs={24}
+                sm={24}
+                md={12}
+                lg={12}
+                xl={12}
+                style={{ justifyContent: "center", padding: "10px" }}
+              >
+                <Button
+                  variant="contained"
+                  style={{ height: "50px", width: "100%" }}
+                  onClick={() => {
+                    navigate("/dl");
+                    window.scroll(0, 0);
+                  }}
                 >
-                  Centichain
-                </Typography>
-                <br />
-                <Typography color="lightgray" style={{ lineHeight: "2" }}>
-                  Centichain is a blockchain network that allows anyone to join
-                  and participate without any special requirements. You do not
-                  need specialized hardware or high-performance computing
-                  devices like miners, nor do you need to stake any value in the
-                  network. Therefore, you can easily become a member of the
-                  network, confirm and register blocks, and get rewarded. In
-                  addition, if you have a public IP address, you can help
-                  network communication as a relay and get rewarded again.
-                </Typography>
-              </ThemeProvider>
-            </Col>
-          </Row>
-          <Row style={{ marginTop: "20px" }}>
-            <Col
-              xs={24}
-              sm={24}
-              md={12}
-              lg={12}
-              xl={12}
-              style={{ justifyContent: "center", padding: "10px" }}
-            >
-              <Button
-                variant="contained"
-                style={{ height: "50px", width: "100%" }}
-                onClick={() => {
-                  navigate("/dl");
-                  window.scroll(0, 0);
-                }}
+                  <Download /> <Typography>Download</Typography>
+                </Button>
+              </Col>
+              <Col
+                xs={24}
+                sm={24}
+                md={12}
+                lg={12}
+                xl={12}
+                style={{ justifyContent: "center", padding: "10px" }}
               >
-                <Download /> <Typography>Download</Typography>
-              </Button>
-            </Col>
-            <Col
-              xs={24}
-              sm={24}
-              md={12}
-              lg={12}
-              xl={12}
-              style={{ justifyContent: "center", padding: "10px" }}
+                <Button
+                  variant="outlined"
+                  style={{
+                    height: "50px",
+                    width: "100%",
+                    color: "white",
+                    borderColor: "white",
+                  }}
+                  onClick={learnClick}
+                >
+                  <Typography>learn more</Typography>
+                </Button>
+              </Col>
+            </Row>
+          </Col>
+          <Col
+            xs={24}
+            sm={24}
+            md={10}
+            lg={10}
+            xl={10}
+            style={{
+              height: "100%",
+            }}
+          >
+            <div
+              style={{
+                height: !match ? "auto" : "600px",
+                display: "grid",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              <Button
-                variant="outlined"
-                style={{
-                  height: "50px",
-                  width: "100%",
-                  color: "white",
-                  borderColor: "white",
-                }}
-                onClick={learnClick}
-              >
-                <Typography>learn more</Typography>
-              </Button>
-            </Col>
-          </Row>
-        </Col>
-        <Col
-          xs={24}
-          sm={24}
-          md={12}
-          lg={12}
-          xl={12}
-          style={{
-            display: "grid",
-            justifyContent: "center",
-            height: "100%",
-          }}
-        >
-          <div style={{height: !match ? "auto" : "600px" , display:"flex", alignItems:"center", justifyContent:"center"}}>
-            <img
-              src={headImg}
-              data-aos="fade-zoom-in"
-              style={{ width: "100%" }}
-            />
-          </div>
-        </Col>
-      </Row>
+              <img
+                src={headImg}
+                data-aos="fade-zoom-in"
+                style={{ width: "100%" }}
+              />
+            </div>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 }
