@@ -197,7 +197,7 @@ function Docs() {
       <div
         className="low-opacity-whitepaper"
       >
-        <Row>
+        <Row style={{userSelect:"none"}}>
           <Col
             xs={24}
             sm={24}

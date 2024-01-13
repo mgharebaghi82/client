@@ -15,7 +15,7 @@ import { useEffect } from "react";
 const cardsStyle = {
   marginLeft: "auto",
   marginRight: "auto",
-  width: "75%",
+  width: "90%",
   marginTop: "10px",
   marginBottom: "10px",
 };
@@ -57,15 +57,15 @@ function CardsSection({ mainData }) {
                           component="img"
                           image={myImg}
                           alt=""
-                          style={{ height: "300px" }}
+                          style={{ height: "350px" }}
                         />
-                        <CardContent style={{height:"150px"}}>
+                        <CardContent style={{minHeight:"auto"}}>
                           <Typography gutterBottom variant="h5" component="div">
                             <span>{data.title}</span>
                           </Typography>
                           <Divider />
                           <Typography variant="body2" color="text.secondary">
-                            {data.desc.length > 100 ? <><span>{data.desc.slice(0, 100)}</span><span style={{color:"blue"}}>... (click to see more)</span></> : data.desc}
+                            {data.desc.length > 150 ? <><span>{data.desc.slice(0, 150)}</span><span style={{color:"blue"}}>... (click to see more)</span></> : data.desc}
                           </Typography>
                         </CardContent>
                       </CardActionArea>

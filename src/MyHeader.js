@@ -22,7 +22,7 @@ function MyHeader({ learnClick }) {
   return (
     <div style={{width:"100%", minHeight:"600px"}}>
       <div className="low-opacity-main">
-        <Row>
+        <Row style={{userSelect:"none"}}>
           <Col
             xs={24}
             sm={24}

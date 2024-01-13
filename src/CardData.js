@@ -48,7 +48,7 @@ function CardData() {
       {dataLoad ? (
         <>
           <div className="low-opacity-become">
-            <Row>
+            <Row style={{userSelect:"none"}}>
               <Col
                 xs={24}
                 sm={24}
