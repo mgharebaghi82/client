@@ -13,7 +13,6 @@ import { FaList } from "react-icons/fa";
 import { DNA } from "react-loader-spinner";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 function API() {
   const [apis, setApis] = useState([]);

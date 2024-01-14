@@ -15,7 +15,6 @@ import MyFooter from "./Footer";
 import Notfound from "./Notfound";
 import Download from "./Download";
 import API from "./API";
-import { Helmet } from "react-helmet";
 const { Header, Content } = Layout;
 
 function App() {

@@ -10,7 +10,6 @@ import { ImCancelCircle } from "react-icons/im";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Helmet } from "react-helmet";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);

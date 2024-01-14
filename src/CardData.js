@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { DNA } from "react-loader-spinner";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import banner from "./Images/banner.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 let theme = createTheme();
