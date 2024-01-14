@@ -65,48 +65,6 @@ function API() {
 
   return (
     <>
-      <Helmet>
-        <meta
-          name="description"
-          content="The REST API allows you to communicate directly with the Centichain network."
-        />
-
-        {/* <!-- Google / Search Engine Tags --> */}
-        <meta itemprop="name" content="Centichain" />
-        <meta
-          itemprop="description"
-          content="The REST API allows you to communicate directly with the Centichain network."
-        />
-        <meta
-          itemprop="image"
-          content="http://centichain.org/static/media/C-Logo.a2c978f558ee73e0eac5.png"
-        />
-
-        {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://centichain.org" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Centichain" />
-        <meta
-          property="og:description"
-          content="The REST API allows you to communicate directly with the Centichain network."
-        />
-        <meta
-          property="og:image"
-          content="http://centichain.org/static/media/C-Logo.a2c978f558ee73e0eac5.png"
-        />
-
-        {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Centichain" />
-        <meta
-          name="twitter:description"
-          content="The REST API allows you to communicate directly with the Centichain network."
-        />
-        <meta
-          name="twitter:image"
-          content="http://centichain.org/static/media/C-Logo.a2c978f558ee73e0eac5.png"
-        />
-      </Helmet>
       {dataLoaded && apis.length > 0 ? (
         <div
           style={{
