@@ -40,17 +40,19 @@ function First() {
   }
 
   return (
-    <div style={{ width: "100%", overflow: "hidden" }}>
-      <MyHeader learnClick={learnClick} />
-      <WtsExp id={id} />
-      <WhyUseExp />
-      <WhoRunExp />
-      {dataLoaded && <CardsSection mainData={mainData} />}
-      <CentiExp />
-      <EnergyExp />
-      <ConsensusExp />
-      <Roadmap />
-    </div>
+    <>
+      <div style={{ width: "100%", overflow: "hidden" }}>
+        <MyHeader learnClick={learnClick} />
+        <WtsExp id={id} />
+        <WhyUseExp />
+        <WhoRunExp />
+        {dataLoaded && <CardsSection mainData={mainData} />}
+        <CentiExp />
+        <EnergyExp />
+        <ConsensusExp />
+        <Roadmap />
+      </div>
+    </>
   );
 }
 

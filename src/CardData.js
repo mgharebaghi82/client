@@ -36,116 +36,122 @@ function CardData() {
   }, [title]);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        overflow: "hidden",
-        minHeight: "500px",
-        backgroundColor: "white",
-      }}
-    >
-      {dataLoad ? (
-        <>
-          <div className="low-opacity-become">
-            <Row style={{userSelect:"none"}}>
-              <Col
-                xs={24}
-                sm={24}
-                md={14}
-                lg={14}
-                xl={14}
-                style={{
-                  padding: "2%",
-                  display: "grid",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <div
+    <>
+      <div
+        style={{
+          width: "100%",
+          overflow: "hidden",
+          minHeight: "500px",
+          backgroundColor: "white",
+        }}
+      >
+        {dataLoad ? (
+          <>
+            <div className="low-opacity-become">
+              <Row style={{ userSelect: "none" }}>
+                <Col
+                  xs={24}
+                  sm={24}
+                  md={14}
+                  lg={14}
+                  xl={14}
                   style={{
-                    textAlign: "center",
-                  }}
-                >
-                  <ThemeProvider theme={theme}>
-                    <Typography variant="h2" fontWeight="bold" color="#004750">
-                      {data.title}
-                    </Typography>
-                    <Divider />
-                    <Typography variant="h5">{data.desc}</Typography>
-                  </ThemeProvider>
-                </div>
-              </Col>
-              <Col
-                xs={24}
-                sm={24}
-                md={10}
-                lg={10}
-                xl={10}
-                style={{
-                  padding: "2%",
-                  justifyContent: "center",
-                  display: "grid",
-                }}
-              >
-                <div
-                  style={{
-                    height: !match ? "auto" : "600px",
-                    display: "flex",
-                    alignItems: "center",
+                    padding: "2%",
+                    display: "grid",
                     justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  <img
-                    src={data.img}
-                    data-aos="fade-zoom-in"
+                  <div
                     style={{
-                      width: "100%",
+                      textAlign: "center",
                     }}
-                  />
-                </div>
-              </Col>
-            </Row>
-          </div>
-
-          <Container maxWidth="lg">
-            <div
-              style={{
-                width: "100%",
-                backgroundColor: "white",
-                marginTop: "15px",
-              }}
-            >
-              <Row>
-                <Col span={24}>
-                  <ThemeProvider theme={theme}>
-                    <Typography>{body}</Typography>
-                  </ThemeProvider>
+                  >
+                    <ThemeProvider theme={theme}>
+                      <Typography
+                        variant="h2"
+                        fontWeight="bold"
+                        color="#004750"
+                      >
+                        {data.title}
+                      </Typography>
+                      <Divider />
+                      <Typography variant="h5">{data.desc}</Typography>
+                    </ThemeProvider>
+                  </div>
+                </Col>
+                <Col
+                  xs={24}
+                  sm={24}
+                  md={10}
+                  lg={10}
+                  xl={10}
+                  style={{
+                    padding: "2%",
+                    justifyContent: "center",
+                    display: "grid",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: !match ? "auto" : "600px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      src={data.img}
+                      data-aos="fade-zoom-in"
+                      style={{
+                        width: "100%",
+                      }}
+                    />
+                  </div>
                 </Col>
               </Row>
             </div>
-          </Container>
-        </>
-      ) : (
-        <div
-          style={{
-            width: "100%",
-            height: "700px",
-            display: "grid",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <DNA
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper"
-          />
-        </div>
-      )}
-    </div>
+
+            <Container maxWidth="lg">
+              <div
+                style={{
+                  width: "100%",
+                  backgroundColor: "white",
+                  marginTop: "15px",
+                }}
+              >
+                <Row>
+                  <Col span={24}>
+                    <ThemeProvider theme={theme}>
+                      <Typography>{body}</Typography>
+                    </ThemeProvider>
+                  </Col>
+                </Row>
+              </div>
+            </Container>
+          </>
+        ) : (
+          <div
+            style={{
+              width: "100%",
+              height: "700px",
+              display: "grid",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
+            <DNA
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper"
+            />
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
