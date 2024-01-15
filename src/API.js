@@ -1,4 +1,4 @@
-import "./prism.css";
+import Prism from "prismjs";
 import {
   Button,
   Drawer,
@@ -25,6 +25,8 @@ function API() {
   const navigate = useNavigate();
   const { title } = useParams();
   const [defaultItem, setDefaultItem] = useState("");
+  Prism.manual = true;
+  Prism.highlightAll();
 
   useEffect(() => {
     document.title = "Centichain - DEV";
