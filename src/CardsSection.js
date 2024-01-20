@@ -42,6 +42,7 @@ function CardsSection({ mainData }) {
                 {data.category === "mainpage" ? (
                   <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                     <Card
+                      
                       style={cardsStyle}
                       data-aos="fade-up"
                       data-aos-anchor-placement="top-bottom"

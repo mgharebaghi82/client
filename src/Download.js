@@ -30,34 +30,43 @@ function Download() {
       <Container style={{ minHeight: "700px", overflowWrap: "break-word" }}>
         <ThemeProvider theme={theme}>
           <Row>
-            <Col span={24} style={{ textAlign: "center" }}>
+            <Col span={24} style={{ textAlign: "center", marginTop: "50px" }}>
               <Typography variant="h2" fontWeight="bold">
                 Validator Node
               </Typography>
-              <Typography variant="h3" color="#493393">
-                0.8.5
+              <Typography variant="h3" color="#E05757">
+                0.9.1
               </Typography>
             </Col>
           </Row>
 
           <Row>
             <Col span={24} style={{ textAlign: "center", color: "darkgray" }}>
-              <Typography>Release date: Monday, December 18, 2023</Typography>
+              <Typography>Release date: Saturday, January 20, 2024</Typography>
             </Col>
           </Row>
+          <Row>
+            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+              <DownloadBoxes
+                appType="Windows msi-x64"
+                icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
+              />
+            </Col>
 
-          <DownloadBoxes
-            appType="Windows msi-x64"
-            icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
-          />
-          <DownloadBoxes
-            appType="Windows nsis-x64"
-            icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
-          />
-          <LinuxDlBox
-            icon={<FaLinux style={{ width: "40px", height: "40px" }} />}
-            text={validatorCmd}
-          />
+            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+              <DownloadBoxes
+                appType="Linux"
+                icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
+              />
+            </Col>
+
+            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+              <DownloadBoxes
+                appType="Mac OS"
+                icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
+              />
+            </Col>
+          </Row>
           <Divider />
           {/* ---------------------------------------------------------------------- */}
           <Row>
@@ -81,35 +90,7 @@ function Download() {
             icon={<FaLinux style={{ width: "40px", height: "40px" }} />}
             text={relayCmd}
           />
-          <Divider />
           {/* ---------------------------------------------------------------------- */}
-          <Row>
-            <Col span={24} style={{ textAlign: "center" }}>
-              <Typography variant="h2" fontWeight="bold">
-                Wallet
-              </Typography>
-              <Typography variant="h3" color="#493393"></Typography>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col span={24} style={{ textAlign: "center", color: "darkgray" }}>
-              <Typography>Comming soon...</Typography>
-            </Col>
-          </Row>
-
-          <DownloadBoxes
-            appType="Comming soon..."
-            icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
-          />
-          <DownloadBoxes
-            appType="Comming soon..."
-            icon={<SiWindows11 style={{ width: "40px", height: "40px" }} />}
-          />
-          <LinuxDlBox
-            icon={<FaLinux style={{ width: "40px", height: "40px" }} />}
-            text={walletCmd}
-          />
         </ThemeProvider>
       </Container>
     </>

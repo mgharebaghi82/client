@@ -1,91 +1,41 @@
-import { Button, Typography } from "@mui/material";
-import { Col, Row } from "antd";
-import { FaDownload } from "react-icons/fa";
-import { SiWindows11 } from "react-icons/si";
+import { Typography } from "@mui/material";
+import { Card, Divider, Row } from "antd";
+import windowsImg from "./Images/microsoft.png";
+import appleImg from "./Images/apple.png";
+import linuxImg from "./Images/linux.png";
 
 function DownloadBoxes({ appType, icon }) {
-  const downloadBox = {
-    backgroundColor: "white",
-    borderRadius: "5px",
-    minHeight: "70px",
-    marginTop: "30px",
-  };
-
-  const btnBox = {
-    display: "grid",
-    justifyContent: "center",
-    alignContent: "center",
-    minHeight: "70px",
-  };
-
   return (
     <>
-      <Row style={downloadBox}>
-        <Col
-          xs={24}
-          sm={24}
-          md={1}
-          lg={1}
-          xl={1}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "5px",
+      <Row style={{ padding: "2%" }}>
+        <Card
+          style={{ width: "100%", textAlign: "center" }}
+          hoverable={true}
+          onClick={() => {
+            if (appType.includes("Windows")) {
+              window.open("https://centichain.org/downloads/Centichain_0.9.1_x64_en-US.msi")
+            }
           }}
         >
-          {icon}
-        </Col>
-        <Col
-          xs={24}
-          sm={24}
-          md={21}
-          lg={21}
-          xl={21}
-          style={{
-            display: "grid",
-            alignItems: "center",
-            padding: "10px",
-            wordBreak: "break-word",
-          }}
-        >
-          <Typography variant="h4">{appType}</Typography>
-        </Col>
-        <Col xs={24} sm={24} md={2} lg={2} xl={2} style={btnBox}>
-          <a
-            // href={
-            //   appType === "Windows msi-x64"
-            //     ? "https://centichain.org/downloads/Centichain_0.8.5_x64_en-US.msi"
-            //     : appType === "Windows nsis-x64"
-            //     ? "https://centichain.org/downloads/Centichain_0.8.5_x64-setup.exe"
-            //     : null
-            // }
-            style={{
-              backgroundColor: "#011422",
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-              borderRadius: "5px",
-            }}
-          >
-            <Button
-              variant="contained"
-              style={{
-                backgroundColor: "#011422",
-                width: "100%",
-                height: "100%",
-                position: "absolute",
-              }}
-            >
-              <Typography
-                variant="h4"
-                color={appType === "Comming soon..." ? "gray" : "white"}
-              >
-                <FaDownload />
-              </Typography>
-            </Button>
-          </a>
-        </Col>
+          <img
+            src={
+              appType.includes("Windows")
+                ? windowsImg
+                : appType.includes("Linux")
+                ? linuxImg
+                : appleImg
+            }
+            style={{ height: "200px" }}
+          />
+          <Divider />
+          <Typography variant="h4">
+            {appType.includes("Mac") || appType.includes("Linux") ? (
+              <span style={{ color: "gray" }}>Comming soon...</span>
+            ) : (
+              appType
+            )}
+          </Typography>
+        </Card>
       </Row>
     </>
   );
