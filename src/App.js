@@ -16,6 +16,7 @@ import MyFooter from "./Footer";
 import Notfound from "./Notfound";
 import Download from "./Download";
 import API from "./API";
+import SseTrx from "./SseTrx";
 const { Header, Content } = Layout;
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/whitepaper" element={<Docs />} />
             <Route path="/dl" element={<Download />} />
             <Route path="/dev/:title" element={<API />} />
+            {/* <Route path="/sse" element={<SseTrx />} /> */}
             <Route path="*" element={<Notfound />} />
           </Routes>
         </Content>

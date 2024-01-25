@@ -10,6 +10,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { IoMdDownload } from "react-icons/io";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -263,42 +264,22 @@ function Docs() {
                   new blocks in blockchain networks. Usually, these systems
                   either need strong hardware with a high energy consumption,
                   investments from users to enter the network, a very special
-                  hardware or a combination of them.{" "}
-                  <a
-                    href="https://www.geeksforgeeks.org/blockchain-proof-of-work-pow/"
-                    target="_blank"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Proof of Work(PoW)
-                  </a>
-                  , as an example, needs miners which are computationally
-                  powerful to solve complicated puzzles, leading to a high
-                  energy consumption and also concentration of power be in the
-                  hands of a few.{" "}
-                  <a
-                    href="https://www.geeksforgeeks.org/proof-of-stake-pos-in-blockchain/?ref=lbp"
-                    target="_blank"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Proof of Stake(PoS)
-                  </a>{" "}
-                  needs stockholders to stake their assets in the network. That
-                  gives rise to inequality since having more stocks increases
-                  the chances of being block generators. The{" "}
-                  <a
-                    href="https://www.geeksforgeeks.org/proof-of-elapsed-time-poet-in-blockchain/"
-                    target="_blank"
-                    style={{ textDecoration: "none" }}
-                  >
-                    Proof of Elapsed Time(PoET)
-                  </a>{" "}
-                  consensus mechanism has been near to a solution, but as it
-                  needs a very precise time computation, queue management may be
-                  affected – even a bit. POET is also vague and could lower the
-                  certainty of choosing the block generator. Having more
-                  processors and more memory might raise the chance of the
-                  generator choosing, it leads to concentration and lack of
-                  justice though.
+                  hardware or a combination of them. <b>Proof of Work(PoW)</b>
+                  <sup>[1]</sup>, as an example, needs miners which are
+                  computationally powerful to solve complicated puzzles, leading
+                  to a high energy consumption and also concentration of power
+                  be in the hands of a few. <b>Proof of Stake(PoS)</b>
+                  <sup>[2]</sup> needs stockholders to stake their assets in the
+                  network. That gives rise to inequality since having more
+                  stocks increases the chances of being block generators. The{" "}
+                  <b>Proof of Elapsed Time(PoET)</b>
+                  <sup>[3]</sup> consensus mechanism has been near to a
+                  solution, but as it needs a very precise time computation,
+                  queue management may be affected – even a bit. POET is also
+                  vague and could lower the certainty of choosing the block
+                  generator. Having more processors and more memory might raise
+                  the chance of the generator choosing, it leads to
+                  concentration and lack of justice though.
                 </Typography>
               </ThemeProvider>
             </Col>
@@ -452,14 +433,17 @@ function Docs() {
                   to validator nodes and, of course, they also receive rewards
                   for it. In fact, each validator in the network connects to a
                   relay node, and the relay node sends the messages of the
-                  validator using the gossip protocol to other validators that
-                  are connected to it. Each relay node can have more than one
-                  validator connected. Centichain does not use port forwarding
+                  validator using the <b>gossip protocol</b>
+                  <sup>[4]</sup> to other validators that are connected to it.
+                  Each relay node can have more than one validator connected.
+                  Centichain does not use <b>port forwarding</b>
+                  <sup>[5]</sup>
                   at all, which preserves the security of the participants and
                   makes it easier to become a validator. Therefore, there is no
                   need to configure the modem for port forwarding or use a VPN
-                  to bypass NAT to be a validator in the Centichain network, and
-                  it is easy to become a validator without any special
+                  to bypass <b>NAT</b>
+                  <sup>[6]</sup> to be a validator in the Centichain network,
+                  and it is easy to become a validator without any special
                   configuration and with a home internet. In addition, a user
                   with a public IP address or even a Virtual Private Server
                   (VPS) or dedicated server can also be a relay node, in
@@ -506,11 +490,15 @@ function Docs() {
                 </Typography>
                 <Typography variant="h5">
                   Centichain uses common cryptography to secure transactions on
-                  the network. Centichain uses the ECDSA public key encryption
+                  the network. Centichain uses the{" "}
+                  <b>ECDSA public key encryption</b>
+                  <sup>[7]</sup>
                   model to secure transactions in the presence of relay nodes
-                  and prevent MITM attacks. In fact, every message sent on the
-                  network has a digital signature. Hashing Also, for hashing
-                  blocks and transactions, Centichain uses the SHA-256 algorithm
+                  and prevent <b>MITM attack</b>
+                  <sup>[8]</sup>. In fact, every message sent on the network has
+                  a digital signature. Hashing Also, for hashing blocks and
+                  transactions, Centichain uses the <b>SHA-256 algorithm</b>
+                  <sup>[9]</sup>
                   to ensure the immutability of information.
                 </Typography>
               </ThemeProvider>
@@ -531,7 +519,9 @@ function Docs() {
                   The total supply of CENTI will be 21 million, as a tribute to
                   Bitcoin. Also, initially, the reward for each validator who
                   verifies and records transactions on the ledger is 50 CENTI.
-                  Of course, it should be noted that Centichain has a halving
+                  Of course, it should be noted that Centichain has a{" "}
+                  <b>halving</b>
+                  <sup>[10]</sup>
                   schedule, and the reward for validators is halved after the
                   production of every 150,000 blocks. Centichain uses 150,000 as
                   the halving interval because it does not require computational
@@ -541,8 +531,9 @@ function Docs() {
                   validators connected to it.
                   <br />
                   to prevent the double-spending problem, Centichain uses the
-                  UTXO model for its transactions. In the UTXO model, each
-                  transaction spends some of the UTXOs (unspent transaction
+                  <b>UTXO</b>
+                  <sup>[11]</sup> model for its transactions. In the UTXO model,
+                  each transaction spends some of the UTXOs (unspent transaction
                   outputs) that the sender has. The receiver then receives new
                   UTXOs as a result of the transaction. This model ensures that
                   each UTXO can only be spent once.
@@ -609,6 +600,114 @@ function Docs() {
                   receiver then receives new UTXOs as a result of the
                   transaction. This model ensures that each UTXO can only be
                   spent once.
+                </Typography>
+                <Divider />
+                <Typography>
+                  <a
+                    href="https://centichain.org/downloads/CentichainWhitepaper01.pdf"
+                    target="_blank"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <IoMdDownload /> Download the whitepaper in PDF format
+                  </a>
+                </Typography>
+                <Divider />
+                <Typography variant="h5">References</Typography>
+                <Typography>
+                  [1]{" "}
+                  <a
+                    href="https://www.geeksforgeeks.org/blockchain-proof-of-work-pow/"
+                    target="_blank"
+                  >
+                    https://www.geeksforgeeks.org/blockchain-proof-of-work-pow/
+                  </a>
+                </Typography>
+                <Typography>
+                  [2]{" "}
+                  <a
+                    href="https://www.geeksforgeeks.org/proof-of-stake-pos-in-blockchain/?ref=lbp"
+                    target="_blank"
+                  >
+                    https://www.geeksforgeeks.org/proof-of-stake-pos-in-blockchain/?ref=lbp
+                  </a>
+                </Typography>
+                <Typography>
+                  [3]{" "}
+                  <a
+                    href="https://www.geeksforgeeks.org/proof-of-elapsed-time-poet-in-blockchain/"
+                    target="_blank"
+                  >
+                    https://www.geeksforgeeks.org/proof-of-elapsed-time-poet-in-blockchain/
+                  </a>
+                </Typography>
+                <Typography>
+                  [4]{" "}
+                  <a
+                    href="https://systemdesign.one/gossip-protocol/"
+                    target="_blank"
+                  >
+                    https://systemdesign.one/gossip-protocol/
+                  </a>
+                </Typography>
+                <Typography>
+                  [5]{" "}
+                  <a href="https://portforward.com/" target="_blank">
+                    https://portforward.com/
+                  </a>
+                </Typography>
+                <Typography>
+                  [6]{" "}
+                  <a
+                    href="https://www.cisco.com/c/en/us/products/routers/network-address-translation.html"
+                    target="_blank"
+                  >
+                    https://www.cisco.com/c/en/us/products/routers/network-address-translation.html
+                  </a>
+                </Typography>
+                <Typography>
+                  [7]{" "}
+                  <a
+                    href="https://www.encryptionconsulting.com/education-center/what-is-ecdsa/"
+                    target="_blank"
+                  >
+                    https://www.encryptionconsulting.com/education-center/what-is-ecdsa/
+                  </a>
+                </Typography>
+                <Typography>
+                  [8]{" "}
+                  <a
+                    href="https://www.fortinet.com/resources/cyberglossary/man-in-the-middle-attack"
+                    target="_blank"
+                  >
+                    https://www.fortinet.com/resources/cyberglossary/man-in-the-middle-attack
+                  </a>
+                </Typography>
+                <Typography>
+                  [9]{" "}
+                  <a
+                    href="https://www.simplilearn.com/tutorials/cyber-security-tutorial/sha-256-algorithm"
+                    target="_blank"
+                  >
+                    https://www.simplilearn.com/tutorials/cyber-security-tutorial/sha-256-algorithm
+                  </a>
+                </Typography>
+                <Typography>
+                  [10]{" "}
+                  <a
+                    href="https://www.investopedia.com/bitcoin-halving-4843769"
+                    target="_blank"
+                  >
+                    https://www.investopedia.com/bitcoin-halving-4843769
+                  </a>
+                </Typography>
+                <Typography>
+                  [11]{" "}
+                  <a
+                    href="https://www.investopedia.com/terms/u/utxo.asp"
+                    target="_blank"
+                  >
+                    https://www.investopedia.com/terms/u/utxo.asp
+                  </a>
                 </Typography>
               </ThemeProvider>
             </Col>
