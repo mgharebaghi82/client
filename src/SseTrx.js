@@ -22,21 +22,31 @@ function SseTrx() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        wordBreak: "break-all"
+        wordBreak: "break-all",
       }}
     >
-      {trx.length > 0
-        ? trx.map((transaction) => {
-            return (
-              <Row>
-                <Col span={24}>
-                  <Typography>{transaction.tx_hash}</Typography>
-                  <Divider />
-                </Col>
-              </Row>
-            );
-          })
-        : <span>no data</span>}
+      {trx.length > 0 ? (
+        trx.map((transaction) => {
+          return (
+            <Row>
+              <Col span={24}>
+                {/* <Typography>hash: {transaction.block_number}</Typography> */}
+                <Typography>hash: {transaction.tx_hash}</Typography>
+                {/* <Typography>from: {transaction.tx_hash}</Typography>
+                <Typography>to: {transaction.tx_hash}</Typography>
+                <Typography>value: {transaction.tx_hash}</Typography>
+                <Typography>fee: {transaction.tx_hash}</Typography>
+                <Typography>fee: {transaction.tx_hash}</Typography>
+                <Typography>status: {transaction.tx_hash}</Typography>
+                <Typography>description: {transaction.tx_hash}</Typography> */}
+                <Divider />
+              </Col>
+            </Row>
+          );
+        })
+      ) : (
+        <span>no data</span>
+      )}
     </div>
   );
 }

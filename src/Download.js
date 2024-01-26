@@ -69,7 +69,7 @@ function Download() {
           </Row>
           <Divider />
           {/* ---------------------------------------------------------------------- */}
-          <Row>
+          {/* <Row>
             <Col span={24} style={{ textAlign: "center" }}>
               <Typography variant="h2" fontWeight="bold">
                 Relay Node
@@ -84,12 +84,12 @@ function Download() {
             <Col span={24} style={{ textAlign: "center", color: "darkgray" }}>
               <Typography>Release date: Monday, December 18, 2023</Typography>
             </Col>
-          </Row>
+          </Row> */}
 
-          <LinuxDlBox
+          {/* <LinuxDlBox
             icon={<FaLinux style={{ width: "40px", height: "40px" }} />}
             text={relayCmd}
-          />
+          /> */}
           {/* ---------------------------------------------------------------------- */}
         </ThemeProvider>
       </Container>
