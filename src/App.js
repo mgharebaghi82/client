@@ -7,8 +7,7 @@ import "@fontsource/roboto/700.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import First from "./First";
 import InsertData from "./InsertData";
-import CardData from "./CardData";
-import Docs from "./Docs";
+import Whitepaper from "./Whitepaper";
 import { Layout } from "antd";
 import MenuBar from "./MenuBar";
 import { CssBaseline } from "@mui/material";
@@ -16,7 +15,7 @@ import MyFooter from "./Footer";
 import Notfound from "./Notfound";
 import Download from "./Download";
 import API from "./API";
-import SseTrx from "./SseTrx";
+import Becomes from "./Becomes";
 const { Header, Content } = Layout;
 
 function App() {
@@ -30,12 +29,11 @@ function App() {
         <Content>
           <Routes>
             <Route path="/" element={<First />} />
+            <Route path="/becomes/:title" element={<Becomes />} />
             <Route path="/post_data" element={<InsertData />} />
-            <Route path="/cards/:title" element={<CardData />} />
-            <Route path="/whitepaper" element={<Docs />} />
+            <Route path="/whitepaper" element={<Whitepaper />} />
             <Route path="/dl" element={<Download />} />
             <Route path="/dev/:title" element={<API />} />
-            <Route path="/sse" element={<SseTrx />} />
             <Route path="*" element={<Notfound />} />
           </Routes>
         </Content>

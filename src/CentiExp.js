@@ -15,27 +15,16 @@ function CentiExp() {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        backgroundColor:"lightgray",
-        display: "grid",
-        alignContent: "center",
-      }}
-      data-aos="fade-up"
-    >
-      <Container maxWidth="lg">
+    <div className="centi">
+      <Container maxWidth="lg" className="sections-darker">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={16}
             lg={16}
             xl={16}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}
-            data-aos="zoom-in"
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">
@@ -55,7 +44,7 @@ function CentiExp() {
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={8}
             lg={8}
             xl={8}
             style={{

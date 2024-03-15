@@ -16,22 +16,14 @@ function WhyUseExp() {
 
   return (
     <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        display: "grid",
-        alignContent: "center",
-        backgroundColor: "#FFBE88",
-      }}
-      data-aos="fade-up"
+      className="why"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="sections-darker">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={16}
             lg={16}
             xl={16}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}
@@ -56,7 +48,7 @@ function WhyUseExp() {
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={8}
             lg={8}
             xl={8}
             style={{
@@ -64,7 +56,7 @@ function WhyUseExp() {
               justifyContent: "center",
               alignContent: "center",
             }}
-            // data-aos="fade-left"
+            data-aos="fade-left"
           >
             <img src={oip} width="100%" />
           </Col>

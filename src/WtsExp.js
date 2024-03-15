@@ -17,21 +17,14 @@ function WtsExp({ id }) {
   return (
     <div
       id={id}
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        display: "grid",
-        alignContent: "center",
-      }}
-      data-aos="fade-up"
+      className="what-is"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="sections-dark">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={9}
             lg={9}
             xl={9}
             style={{
@@ -45,7 +38,7 @@ function WtsExp({ id }) {
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={15}
             lg={15}
             xl={15}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}

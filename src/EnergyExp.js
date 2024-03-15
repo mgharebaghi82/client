@@ -16,21 +16,14 @@ function EnergyExp() {
 
   return (
     <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        display: "grid",
-        alignContent: "center",
-      }}
-      data-aos="fade-up"
+      className="energy"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="sections-darker">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={8}
             lg={8}
             xl={8}
             style={{
@@ -38,16 +31,17 @@ function EnergyExp() {
               justifyContent: "center",
               alignContent: "center",
             }}
+            data-aos="flip-left"
           >
             <img src={oip} width="100%" />
           </Col>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={16}
             lg={16}
             xl={16}
-            style={{ whiteSpace: "break-spaces", padding: "25px" }}
+            style={{ whiteSpace: "break-spaces", padding: "25px", color:"black" }}
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">

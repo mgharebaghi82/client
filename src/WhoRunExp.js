@@ -16,21 +16,14 @@ function WhoRunExp() {
 
   return (
     <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "500px",
-        display: "grid",
-        alignContent: "center",
-      }}
-      data-aos="fade-up"
+      className="who"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="sections-dark">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={8}
             lg={8}
             xl={8}
             style={{
@@ -45,7 +38,7 @@ function WhoRunExp() {
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={16}
             lg={16}
             xl={16}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}

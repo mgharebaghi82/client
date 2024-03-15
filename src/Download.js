@@ -17,9 +17,9 @@ theme = responsiveFontSizes(theme);
 
 function Download() {
   const relayCmd =
-    "wget https://centichain.org/downloads/relay-service && chmod 777 relay-service && ./relay-service";
-  const validatorCmd = "Comming soon...";
-  const walletCmd = "Comming soon...";
+    "wget -N https://centichain.org/downloads/relay-service && chmod 777 relay-service && ./relay-service";
+  // const validatorCmd = "Comming soon...";
+  // const walletCmd = "Comming soon...";
 
   useEffect(() => {
     document.title = "Centichain - Download";
@@ -35,14 +35,14 @@ function Download() {
                 Validator Node
               </Typography>
               <Typography variant="h3" color="#E05757">
-                0.9.1
+                0.9.2
               </Typography>
             </Col>
           </Row>
 
           <Row>
             <Col span={24} style={{ textAlign: "center", color: "darkgray" }}>
-              <Typography>Release date: Saturday, January 20, 2024</Typography>
+              <Typography>Release date: Monday, March 04, 2024</Typography>
             </Col>
           </Row>
           <Row>
@@ -69,7 +69,7 @@ function Download() {
           </Row>
           <Divider />
           {/* ---------------------------------------------------------------------- */}
-          {/* <Row>
+          <Row>
             <Col span={24} style={{ textAlign: "center" }}>
               <Typography variant="h2" fontWeight="bold">
                 Relay Node
@@ -82,14 +82,14 @@ function Download() {
 
           <Row>
             <Col span={24} style={{ textAlign: "center", color: "darkgray" }}>
-              <Typography>Release date: Monday, December 18, 2023</Typography>
+              <Typography>Release date: Monday, March 04, 2024</Typography>
             </Col>
-          </Row> */}
+          </Row>
 
-          {/* <LinuxDlBox
+          <LinuxDlBox
             icon={<FaLinux style={{ width: "40px", height: "40px" }} />}
             text={relayCmd}
-          /> */}
+          />
           {/* ---------------------------------------------------------------------- */}
         </ThemeProvider>
       </Container>

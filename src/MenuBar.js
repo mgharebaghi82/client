@@ -25,13 +25,10 @@ function MenuBar() {
   const location = useLocation();
   const match = useMediaQuery("(min-width: 600px)");
   const [toggle, setToggle] = useState(false);
-  const validator = "Become a Validator";
-  const relay = "Become a Relay";
+  const validator = "Become A Validator";
+  const relay = "Become A Relay";
 
   useEffect(() => {
-    if (location.pathname === "/" || location.pathname === "/card_data") {
-      setValue(null);
-    }
     if (decodeURI(location.pathname).split("/")[1] === "dev") {
       setValue(4);
     }
@@ -41,10 +38,10 @@ function MenuBar() {
     if (location.pathname === "/whitepaper") {
       setValue(2);
     }
-    if (location.pathname === "/cards/Become%20a%20Relay") {
+    if (decodeURI(location.pathname).split("/")[2] === relay) {
       setValue(1);
     }
-    if (location.pathname === "/cards/Become%20a%20Validator") {
+    if (decodeURI(location.pathname).split("/")[2] === validator) {
       setValue(0);
     }
   }, [location]);
@@ -81,7 +78,7 @@ function MenuBar() {
             key={1}
               label="Validator"
               onClick={() => {
-                navigate(`/cards/${validator}`);
+                navigate(`/becomes/${validator}`);
                 window.scroll(0, 0);
               }}
               icon={<RiPassValidLine />}
@@ -90,7 +87,7 @@ function MenuBar() {
             key={2}
               label="Relay"
               onClick={() => {
-                navigate(`/cards/${relay}`);
+                navigate(`/becomes/${relay}`);
                 window.scroll(0, 0);
               }}
               icon={<SiRelay />}
@@ -156,7 +153,7 @@ function MenuBar() {
                   key={1}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate(`/cards/${validator}`);
+                    navigate(`/becomes/${validator}`);
                     window.scroll(0, 0);
                   }}
                 >
@@ -176,7 +173,7 @@ function MenuBar() {
                   key={2}
                   onClick={() => {
                     setToggle(!toggle);
-                    navigate(`/cards/${relay}`);
+                    navigate(`/becomes/${relay}`);
                     window.scroll(0, 0);
                   }}
                 >

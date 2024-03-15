@@ -20,9 +20,9 @@ function MyHeader({ learnClick }) {
   }, []);
 
   return (
-    <div style={{width:"100%", minHeight:"600px"}}>
+    <div style={{ width: "100%", minHeight: "700px" }}>
       <div className="low-opacity-main">
-        <Row style={{userSelect:"none"}}>
+        <Row style={{ userSelect: "none" }}>
           <Col
             xs={24}
             sm={24}
@@ -34,10 +34,9 @@ function MyHeader({ learnClick }) {
               padding: "25px",
               justifyContent: "center",
               display: "grid",
-              alignItems:"center"
             }}
           >
-            <Row>
+            <Row style={{display:"flex", justifyContent:"center", alignItems:"center", paddingTop:"10%"}}>
               <Col span={24}>
                 <ThemeProvider theme={theme}>
                   <Typography
@@ -117,7 +116,7 @@ function MyHeader({ learnClick }) {
           >
             <div
               style={{
-                height: !match ? "auto" : "600px",
+                height: !match ? "auto" : "700px",
                 display: "grid",
                 alignItems: "center",
                 justifyContent: "center",

@@ -15,28 +15,16 @@ function ConsensusExp() {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        display: "grid",
-        alignContent: "center",
-        backgroundColor: "#7FD8FF",
-      }}
-      data-aos="fade-up"
-    >
-      <Container maxWidth="lg">
+    <div className="consensus">
+      <Container maxWidth="lg" className="sections-dark">
         <Row>
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={16}
             lg={16}
             xl={16}
             style={{ whiteSpace: "break-spaces", padding: "25px" }}
-            // data-aos="fade-right"
-            // data-aos-duration="700"
           >
             <ThemeProvider theme={theme}>
               <Typography style={{ fontWeight: "bold" }} variant="h3">
@@ -56,7 +44,7 @@ function ConsensusExp() {
           <Col
             xs={24}
             sm={24}
-            md={24}
+            md={8}
             lg={8}
             xl={8}
             style={{
@@ -64,8 +52,7 @@ function ConsensusExp() {
               justifyContent: "center",
               alignContent: "center",
             }}
-            // data-aos="fade-left"
-            // data-aos-duration="700"
+            data-aos="fade-left"
           >
             <img src={oip} width="100%" />
           </Col>

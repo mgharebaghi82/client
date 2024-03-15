@@ -18,13 +18,7 @@ theme = responsiveFontSizes(theme);
 function Roadmap() {
   return (
     <div
-      style={{
-        width: "100%",
-        float: "left",
-        minHeight: "600px",
-        backgroundColor: "#E0E1F3",
-      }}
-      data-aos="fade-up"
+      className="road-map"
     >
       <Container maxWidth="lg" style={{ padding: "10px" }}>
         <Row>
@@ -41,7 +35,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={wallet}
             title="Wallet:"
-            q="first"
+            q="First"
             desc="Create a wallet for most platforms for easier use and control of user CENTIs"
             bottom="0"
             titleBG="white"
@@ -50,7 +44,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={wOpenSource}
             title="Open-sourcing the wallet:"
-            q="second"
+            q="Second"
             desc="Open-sourcing the wallet for more interaction with developers"
             bottom="15%"
             titleBG="#F79494 "
@@ -59,7 +53,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={rOpenSource}
             title="Open-sourcing the Relay node:"
-            q="third"
+            q="Third"
             desc="Open source Relay node for more interaction with developers"
             bottom="30%"
             titleBG="#94ECF7"
@@ -68,7 +62,7 @@ function Roadmap() {
           <RoadmapSection
             imagesrc={cip}
             title="CIP:"
-            q="last"
+            q="Last"
             desc="Creating CIP (Centichain Improvement Proposal) and opening Centichain source code for developers"
             bottom="40%"
             titleBG="#E0F794"

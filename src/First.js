@@ -4,7 +4,6 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import MyHeader from "./MyHeader";
-import CardsSection from "./CardsSection";
 import WtsExp from "./WtsExp";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -14,6 +13,7 @@ import CentiExp from "./CentiExp";
 import EnergyExp from "./EnergyExp";
 import ConsensusExp from "./ConsensusExp";
 import Roadmap from "./Roadmap";
+import RelayValidator from "./Relay&Validator";
 
 function First() {
   const [mainData, setMainData] = useState([]);
@@ -46,11 +46,11 @@ function First() {
         <WtsExp id={id} />
         <WhyUseExp />
         <WhoRunExp />
-        {dataLoaded && <CardsSection mainData={mainData} />}
         <CentiExp />
+        <RelayValidator />
         <EnergyExp />
         <ConsensusExp />
-        <Roadmap />
+        {/* <Roadmap /> */}
       </div>
     </>
   );
