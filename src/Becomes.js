@@ -48,14 +48,24 @@ function Becomes() {
             {dataLoaded ? (
               <div dangerouslySetInnerHTML={{ __html: data.body }} />
             ) : (
-              <DNA
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="dna-loading"
-                wrapperStyle={{}}
-                wrapperClass="dna-wrapper"
-              />
+              <div
+                style={{
+                  width: "100%",
+                  minHeight: "600px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <DNA
+                  visible={true}
+                  height="80"
+                  width="80"
+                  ariaLabel="dna-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="dna-wrapper"
+                />
+              </div>
             )}
           </Typography>
         </ThemeProvider>

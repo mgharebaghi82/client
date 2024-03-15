@@ -4,7 +4,7 @@ import relayLaptop from "./Images/RelayLaptop.png";
 import { Button, Container, Typography } from "@mui/material";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { DNA } from "react-loader-spinner";
+
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);

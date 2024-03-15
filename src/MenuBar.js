@@ -14,9 +14,13 @@ import {
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RiNewspaperLine, RiPassValidLine,RiCodeSSlashFill  } from "react-icons/ri";
+import {
+  RiNewspaperLine,
+  RiPassValidLine,
+  RiCodeSSlashFill,
+} from "react-icons/ri";
 import { FaDownload } from "react-icons/fa";
-import { SiRelay  } from "react-icons/si";
+import { SiRelay } from "react-icons/si";
 import headImg from "./Images/C-Logo.png";
 
 function MenuBar() {
@@ -29,6 +33,9 @@ function MenuBar() {
   const relay = "Become A Relay";
 
   useEffect(() => {
+    if (location.pathname === "/") {
+      setValue(null);
+    }
     if (decodeURI(location.pathname).split("/")[1] === "dev") {
       setValue(4);
     }
@@ -75,7 +82,7 @@ function MenuBar() {
             indicatorColor="secondary"
           >
             <Tab
-            key={1}
+              key={1}
               label="Validator"
               onClick={() => {
                 navigate(`/becomes/${validator}`);
@@ -84,7 +91,7 @@ function MenuBar() {
               icon={<RiPassValidLine />}
             />
             <Tab
-            key={2}
+              key={2}
               label="Relay"
               onClick={() => {
                 navigate(`/becomes/${relay}`);
@@ -93,7 +100,7 @@ function MenuBar() {
               icon={<SiRelay />}
             />
             <Tab
-            key={3}
+              key={3}
               label="WhitePaper"
               onClick={() => {
                 navigate("/whitepaper");
@@ -102,7 +109,7 @@ function MenuBar() {
               icon={<RiNewspaperLine />}
             />
             <Tab
-            key={4}
+              key={4}
               label="Download"
               onClick={() => {
                 navigate("/dl");
@@ -111,10 +118,10 @@ function MenuBar() {
               icon={<FaDownload />}
             />
             <Tab
-            key={5}
+              key={5}
               label="DEV"
               onClick={() => {
-                let title = "API Providers"
+                let title = "API Providers";
                 navigate(`/dev/${title}`);
                 window.scroll(0, 0);
               }}
@@ -268,7 +275,16 @@ function MenuBar() {
                   </ListItemText>
                 </ListItem>
               </List>
-              <div style={{ position: "absolute", bottom: "7%", width:"100%", display:"flex",justifyContent:"center", paddingBottom:"20px" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "7%",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingBottom: "20px",
+                }}
+              >
                 <img src={headImg} width="50%" />
               </div>
             </Drawer>
