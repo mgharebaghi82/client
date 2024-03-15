@@ -5,7 +5,6 @@ import { Button, Container, Typography } from "@mui/material";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
@@ -136,11 +135,10 @@ function RelayValidator() {
                     Become A Validator
                   </Typography>
                   <Typography>
-                    You can become a relay node on the Centichain network and
-                    earn rewards. More relay nodes on the Centichain network
-                    mean a more secure, faster, and more decentralized network.
-                    By becoming a relay node, you will contribute to the
-                    improvement of the network.
+                    As a validator, you contribute to the network’s security and
+                    consensus, and in return, you receive rewards for your
+                    service. It’s a win-win situation where you support the
+                    Centichain ecosystem while earning incentives.
                   </Typography>
                 </Col>
                 <Col
@@ -155,6 +153,10 @@ function RelayValidator() {
                   <Button
                     variant="contained"
                     style={{ width: "250px", height: "40px" }}
+                    onClick={() => {
+                      window.scroll(0, 0);
+                      naviate(`/becomes/Become A Validator`);
+                    }}
                   >
                     Read more
                   </Button>
