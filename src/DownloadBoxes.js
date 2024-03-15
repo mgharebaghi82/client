@@ -11,11 +11,11 @@ function DownloadBoxes({ appType, icon }) {
         <Card
           style={{ width: "100%", textAlign: "center" }}
           hoverable={true}
-          onClick={() => {
-            if (appType.includes("Windows")) {
-              window.open("https://centichain.org/downloads/Centichain_0.9.2_x64_en-US.msi")
-            }
-          }}
+          // onClick={() => {
+          //   if (appType.includes("Windows")) {
+          //     window.open("https://centichain.org/downloads/Centichain_0.9.2_x64_en-US.msi")
+          //   }
+          // }}
         >
           <img
             src={

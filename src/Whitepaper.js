@@ -212,7 +212,7 @@ function Docs() {
                   Achieving High Scalability and Low Cost in a Blockchain
                   Network
                 </Typography>
-                <Typography variant="h5">
+                <Typography variant="h6">
                   This whitepaper presents a new blockchain network that offers
                   a unique consensus mechanism and user-friendly features.
                   Unlike other blockchain networks, this one does not require
@@ -226,7 +226,7 @@ function Docs() {
           <Row>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Introduction
                 </Typography>
                 <Typography>
@@ -259,7 +259,7 @@ function Docs() {
           <Row>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   A Fair and Scalable Consensus Mechanism for Blockchain
                   Networks
                 </Typography>
@@ -390,7 +390,7 @@ function Docs() {
           <Row style={{ marginTop: "30px" }}>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Network Capacity
                 </Typography>
                 <Typography>
@@ -666,7 +666,7 @@ function Docs() {
                     https://www.investopedia.com/bitcoin-halving-4843769
                   </a>
                 </Typography>
-                <Typography style={{marginBottom:"40px"}}>
+                <Typography style={{ marginBottom: "40px" }}>
                   [11]{" "}
                   <a
                     href="https://www.investopedia.com/terms/u/utxo.asp"

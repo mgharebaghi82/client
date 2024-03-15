@@ -22,6 +22,8 @@ import {
 import { FaDownload } from "react-icons/fa";
 import { SiRelay } from "react-icons/si";
 import headImg from "./Images/C-Logo.png";
+import RemainingCoins from "./RemainingCoins";
+import { Col } from "antd";
 
 function MenuBar() {
   const [value, setValue] = useState();
@@ -71,6 +73,15 @@ function MenuBar() {
           }}
         >
           <Home />
+        </div>
+        <div
+          style={{
+            marginLeft: "20px",
+            paddingTop: "10px",
+            userSelect: "none",
+          }}
+        >
+          <RemainingCoins />
         </div>
         {match ? (
           <Tabs
