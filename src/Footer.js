@@ -25,8 +25,8 @@ const icons = {
 
 function MyFooter() {
   const navigate = useNavigate();
-  const validator = "Become a Validator";
-  const relay = "Become a Relay";
+  const validator = "Become A Validator";
+  const relay = "Become A Relay";
   return (
     <div
       style={{
@@ -71,7 +71,7 @@ function MyFooter() {
           <Col xl={6} lg={6} md={6} sm={12} xs={12} style={topCols}>
           <div
               onClick={() => {
-                navigate(`/cards/${validator}`);
+                navigate(`/becomes/${validator}`);
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}
@@ -80,7 +80,7 @@ function MyFooter() {
             </div>
             <div
               onClick={() => {
-                navigate(`/cards/${relay}`);
+                navigate(`/becomes/${relay}`);
                 window.scroll(0, 0);
               }}
               style={{cursor:"pointer"}}

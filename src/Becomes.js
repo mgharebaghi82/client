@@ -44,30 +44,30 @@ function Becomes() {
         }}
       >
         <ThemeProvider theme={theme}>
-          <Typography>
-            {dataLoaded ? (
+          {dataLoaded ? (
+            <Typography>
               <div dangerouslySetInnerHTML={{ __html: data.body }} />
-            ) : (
-              <div
-                style={{
-                  width: "100%",
-                  minHeight: "600px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <DNA
-                  visible={true}
-                  height="80"
-                  width="80"
-                  ariaLabel="dna-loading"
-                  wrapperStyle={{}}
-                  wrapperClass="dna-wrapper"
-                />
-              </div>
-            )}
-          </Typography>
+            </Typography>
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                minHeight: "600px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <DNA
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="dna-loading"
+                wrapperStyle={{}}
+                wrapperClass="dna-wrapper"
+              />
+            </div>
+          )}
         </ThemeProvider>
       </Container>
     </div>

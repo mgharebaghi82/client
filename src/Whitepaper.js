@@ -196,70 +196,40 @@ function Docs() {
           overflow: "hidden",
         }}
       >
-        <div className="low-opacity-whitepaper">
-          <Row style={{ userSelect: "none" }}>
-            <Col
-              xs={24}
-              sm={24}
-              md={10}
-              lg={10}
-              xl={10}
-              style={{
-                display: "grid",
-                justifyContent: "center",
-                width: "100%",
-                alignItems: "center",
-                padding: "2%",
-              }}
-            >
-              <img
-                src={patience}
-                data-aos="fade-right"
-                style={{ borderRadius: "50%", width: "100%" }}
-                alt="Proof Of Patience"
-              />
-            </Col>
-            <Col
-              xs={24}
-              sm={24}
-              md={14}
-              lg={14}
-              xl={14}
-              style={{
-                display: "grid",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "2%",
-              }}
-            >
-              <div style={{ textAlign: "center", paddingLeft: "1%" }}>
-                <ThemeProvider theme={theme}>
-                  <Typography variant="h3" fontWeight="bold" color="#004750">
-                    Achieving High Scalability and Low Cost in a Blockchain
-                    Network
-                  </Typography>
-                  <Divider />
-                  <Typography variant="h5">
-                    This whitepaper presents a new blockchain network that
-                    offers a unique consensus mechanism and user-friendly
-                    features. Unlike other blockchain networks, this one does
-                    not require any special or powerful hardware, or any kind of
-                    asset staking, to join and participate.
-                  </Typography>
-                </ThemeProvider>
-              </div>
+        <Container
+          maxWidth="lg"
+          style={{
+            backgroundColor: "white",
+            paddingTop: "25px",
+            boxShadow: "0px 0px 20px 3px #00000029",
+          }}
+        >
+          {/* Introduction section */}
+          <Row>
+            <Col span={24}>
+              <ThemeProvider theme={theme}>
+                <Typography variant="h4" fontWeight="bold" color="#004750">
+                  Achieving High Scalability and Low Cost in a Blockchain
+                  Network
+                </Typography>
+                <Typography variant="h5">
+                  This whitepaper presents a new blockchain network that offers
+                  a unique consensus mechanism and user-friendly features.
+                  Unlike other blockchain networks, this one does not require
+                  any special or powerful hardware, or any kind of asset
+                  staking, to join and participate.
+                </Typography>
+              </ThemeProvider>
             </Col>
           </Row>
-        </div>
-        <Container maxWidth="lg">
-          {/* Introduction section */}
-          <Row style={{ marginTop: "25px" }}>
+          <Divider />
+          <Row>
             <Col span={24}>
               <ThemeProvider theme={theme}>
                 <Typography variant="h4" fontWeight="bold">
                   Introduction
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   Consensus mechanisms are used to confirm trades and generate
                   new blocks in blockchain networks. Usually, these systems
                   either need strong hardware with a high energy consumption,
@@ -293,7 +263,7 @@ function Docs() {
                   A Fair and Scalable Consensus Mechanism for Blockchain
                   Networks
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   <b>Proof of Patience (PoP)</b> is a new consensus mechanism to
                   overcome these weaknesses. In this mechanism, the block
                   generators are chosen in turn and each node in the network has
@@ -308,7 +278,7 @@ function Docs() {
                   The Proof of Patience consensus mechanism has several
                   advantages over other existing mechanisms;
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   First, the process is transparent and the current leader
                   chooses the next one among all the network members. Second,
                   the system is fair and every member has an equal chance of
@@ -347,13 +317,13 @@ function Docs() {
           <Row>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Possible Questions and Answers
                 </Typography>
-                <Typography variant="h5" fontWeight="bold" color="#0072D8 ">
+                <Typography fontWeight="bold" color="#0072D8 ">
                   How does the system handle new nodes joining the network?
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   The system’s solution is to make each new node wait for a
                   complete round, meaning that the new node cannot be the leader
                   until all the nodes have created a block since the newcomer’s
@@ -361,29 +331,29 @@ function Docs() {
                   into the queue of eligible nodes.
                 </Typography>
 
-                <Typography variant="h5" fontWeight="bold" color="#0072D8 ">
+                <Typography fontWeight="bold" color="#0072D8 ">
                   What happens if the next generator chosen by the current
                   leader has left the network?
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   The current leader selects a new generator and the process
                   continues until an online leader is found.
                 </Typography>
 
-                <Typography variant="h5" fontWeight="bold" color="#0072D8 ">
+                <Typography fontWeight="bold" color="#0072D8 ">
                   How does the leader choose the next generator?
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   The answer is simple: randomly! Being a leader only once
                   ensures the fairness of the system, because the current leader
                   is removed from the queue as soon as they create a block.
                 </Typography>
 
-                <Typography variant="h5" fontWeight="bold" color="#0072D8 ">
+                <Typography fontWeight="bold" color="#0072D8 ">
                   Who chooses the leader if the current leader has left the
                   network?
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   In this case, Proof of Patience defines the last existing
                   block generator in the network as the one who chooses the new
                   leader among the eligible nodes. Remember that the chosen node
@@ -417,14 +387,13 @@ function Docs() {
               />
             </Col>
           </Row>
-          <Divider />
-          <Row>
+          <Row style={{ marginTop: "30px" }}>
             <Col span={24}>
               <ThemeProvider theme={theme}>
                 <Typography variant="h4" fontWeight="bold">
                   Network Capacity
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   Centichain uses a separate chain as a communication relay.
                   This chain consists of computers with public and accessible
                   addresses, which are called relay nodes in the Centichain
@@ -451,11 +420,11 @@ function Docs() {
                   receive more rewards for their role as a relay node.
                 </Typography>
 
-                <Typography variant="h5" fontWeight="bold" color="#0072D8 ">
+                <Typography fontWeight="bold" color="#0072D8 ">
                   If a relay node leaves the network, what happens to the
                   validators that are connected to it?
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   In this case, Centichain immediately forces the validator to
                   contact other relay nodes and reconnect to the network.
                   Therefore, validators always keep a list of available relay
@@ -485,10 +454,10 @@ function Docs() {
           <Row style={{ marginTop: "40px" }}>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Transaction Legitimacy
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   Centichain uses common cryptography to secure transactions on
                   the network. Centichain uses the{" "}
                   <b>ECDSA public key encryption</b>
@@ -507,10 +476,10 @@ function Docs() {
           <Row style={{ marginTop: "40px" }}>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   CENTI, Supply, Halving, UTXO
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   CENTI is a cryptocurrency that uses Centichain to record and
                   verify its transactions. In fact, CENTI is the native coin of
                   the Centichain network. All rewards and transaction fees are
@@ -545,13 +514,10 @@ function Docs() {
           <Row style={{ marginBottom: "40px" }}>
             <Col span={24}>
               <ThemeProvider theme={theme}>
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Advantages
                 </Typography>
-                <Typography
-                  variant="h5"
-                  style={{ lineHeight: "1.7", color: "#004750" }}
-                >
+                <Typography style={{ lineHeight: "1.7", color: "#004750" }}>
                   <b>
                     Bearing the foregoing in mind, Centichain has these
                     benefits:
@@ -580,10 +546,10 @@ function Docs() {
                   <TiPencil color="green" /> It is fast.
                 </Typography>
                 <Divider />
-                <Typography variant="h4" fontWeight="bold">
+                <Typography variant="h5" fontWeight="bold">
                   Conclusion
                 </Typography>
-                <Typography variant="h5">
+                <Typography>
                   In summary, this paper has presented a new consensus mechanism
                   and a new blockchain network that offer several benefits over
                   existing ones. Proof of Patience is a promising consensus
@@ -700,7 +666,7 @@ function Docs() {
                     https://www.investopedia.com/bitcoin-halving-4843769
                   </a>
                 </Typography>
-                <Typography>
+                <Typography style={{marginBottom:"40px"}}>
                   [11]{" "}
                   <a
                     href="https://www.investopedia.com/terms/u/utxo.asp"
