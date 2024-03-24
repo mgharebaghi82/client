@@ -13,6 +13,12 @@ import { FaList } from "react-icons/fa";
 import { DNA } from "react-loader-spinner";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
+import { FaServer } from "react-icons/fa6";
+import { GiHouseKeys } from "react-icons/gi";
+import { GiTrade } from "react-icons/gi";
+import { FaMoneyCheckAlt } from "react-icons/fa";
+import { FaListCheck } from "react-icons/fa6";
+import { GiStoneBlock } from "react-icons/gi";
 
 function API() {
   const [apis, setApis] = useState([]);
@@ -43,7 +49,26 @@ function API() {
 
   useEffect(() => {
     apis.map((item, index) => {
-      let itemData = { label: item.title, key: index };
+      let icon = <></>;
+      if (item.title === "API Providers") {
+        icon = <FaServer />;
+      }
+      if (item.title === "Keypair Generation") {
+        icon = <GiHouseKeys />;
+      }
+      if (item.title === "Transaction") {
+        icon = <GiTrade />;
+      }
+      if (item.title === "UTXO") {
+        icon = <FaMoneyCheckAlt />;
+      }
+      if (item.title === "Reciept") {
+        icon = <FaListCheck />;
+      }
+      if (item.title === "Block") {
+        icon = <GiStoneBlock />;
+      }
+      let itemData = { label: item.title, key: index, icon: icon };
       setItems((prevData) => prevData.concat(itemData));
     });
   }, [apis]);
@@ -86,6 +111,7 @@ function API() {
                   className="ant-menu-item"
                   items={items}
                   selectedKeys={defaultItem}
+                  itemIcon={items.icon}
                 ></Menu>
               </Col>
               <Col span={20} style={{ paddingRight: "2%" }}>

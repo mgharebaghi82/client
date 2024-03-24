@@ -3,18 +3,33 @@ import { useEffect, useState } from "react";
 import { GiTwoCoins } from "react-icons/gi";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
-import { Col, Row } from "antd";
+import { fetchEventSource } from "@microsoft/fetch-event-source";
 
 function RemainingCoins() {
-  const [centies, setCenties] = useState();
+  const [centies, setCenties] = useState([]);
   useEffect(() => {
     axios
       .get("https://centichain.org/api/remaining_coins")
       .then((res) => {
         setCenties(res.data);
       })
-      .catch((e) => console.log(e));
+      .then(async () => {
+        await fetchEventSource("https://centichain.org/api/utxosse", {
+          onmessage(ev) {
+            console.log(ev)
+            // setCenties(ev.data);
+          },
+        })
+      }).catch((e) => console.log(e));
   }, []);
+
+  // useEffect(async () => {
+  //   await fetchEventSource("https://centichain.org/api/utxosse", {
+  //     onmessage: (ev) => {
+  //       console.log(ev.data);
+  //     }
+  //   })
+  // }, [centies])
 
   return (
     <div>
