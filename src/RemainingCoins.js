@@ -3,37 +3,29 @@ import { useEffect, useState } from "react";
 import { GiTwoCoins } from "react-icons/gi";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
-import { fetchEventSource } from "@microsoft/fetch-event-source";
 
 function RemainingCoins() {
-  const [centies, setCenties] = useState([]);
+  const [centies, setCenties] = useState();
+  const [loading, setLoading] = useState(true);
+  const socket = new WebSocket("wss://centichain.org/api/wsutxo");
   useEffect(() => {
     axios
       .get("https://centichain.org/api/remaining_coins")
       .then((res) => {
         setCenties(res.data);
+        setLoading(false);
       })
       .then(async () => {
-        await fetchEventSource("https://centichain.org/api/utxosse", {
-          onmessage(ev) {
-            console.log(ev)
-            // setCenties(ev.data);
-          },
-        })
-      }).catch((e) => console.log(e));
+        socket.onmessage = (event) => {
+          setCenties(event.data);
+        };
+      })
+      .catch((e) => console.log(e));
   }, []);
-
-  // useEffect(async () => {
-  //   await fetchEventSource("https://centichain.org/api/utxosse", {
-  //     onmessage: (ev) => {
-  //       console.log(ev.data);
-  //     }
-  //   })
-  // }, [centies])
 
   return (
     <div>
-      {centies ? (
+      {!loading ? (
         <Typography style={{ fontSize: "12px", color: "#858585" }}>
           <GiTwoCoins /> Remaining CENTIs: {centies}
         </Typography>
